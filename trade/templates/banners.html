@@ -1,0 +1,120 @@
+	<div id="toyBox" style="float:left;  width:50%">
+		<div id="CommentBox">
+		<h2>コメント更新</h2>
+		<form action="{GLTH}" method="post" accept-charset="UTF-8">
+		<textarea name="MESSAGE" maxlength="100" rows="2" cols="65" class="limited">{comment}</textarea><br>
+		<p>残り文字数: <span id="charsLeft1">100</span></p>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="comment">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="コメント更新">
+		</FORM>
+		</DIV>
+		<div id='NewsBox'>
+   		<h2>ニュース更新</h2>
+		<form action="{GLTH}" method="post" accept-charset="UTF-8">
+		<table><tr><td>
+		<label for="CATEGORY">カテゴリ</label></td>
+		<td>
+		<select name="CATEGORY" size="1" tabindex="0">
+		<option value="【政治】">【政治】</option>
+		<option value="【経済】">【経済】</option>
+		<option value="【社会】">【社会】</option>
+		<option value="【国際】">【国際】</option>
+		<option value="【貿易】">【貿易】</option>
+		</select></td></tr>
+		<tr><td>
+		<label for="TEXT2">発表者</label></td>
+		<td><input type="text" name="TEXT2" size="15" maxlength="10" value="{news_by}"> 最大10文字</td></tr>
+		<tr><td><label for="TEXT">報道内容</label></td><td><input type="text" name="TEXT" size="60" maxlength="40"  class="limited" value="{news}" id='news_text'> 残り<span id="charsLeft2">40</span>文字</td></tr>
+		</table>
+		<p>残り投稿回数：{news_point}回</span></p>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="postnews">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" id="news_post" value="ニュース更新">
+
+		</FORM>
+		</DIV>
+
+		<div id='CapitalName'>
+		<h2>首都名入力</h2>
+		<form action="{GLTH}" method="post">
+		首都名<input type="text" name="MESSAGE" size="30" maxlength="10" value="{CNAM}"><br>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="Cname">
+		<input type="hidden" name="type" value="Cname">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="首都名変更">
+		</form>
+		</div>
+
+		<div id='Banner'>
+		<h2>国旗番号入力</h2>
+		<form action="{GLTH}" method="post">
+		国旗番号<input type="text" name="Number" size="5" maxlength="3" value="{num}"><br>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="Cname">
+		<input type="hidden" name="type" value="Banner">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="国旗番号確定">
+		</form>
+		<a href="/trade/img/up/">国旗ファイルはここからアップロード</a>
+		<p>サイズは任意。ただし表示サイズは45×30ピクセル固定<br>
+		ファイルサイズは4KB以下<br>
+		ファイル形式はPNGのみ<br>
+		手順：アップロード⇒ファイル番号をこのページで入力<br>
+		<b>ファイル番号は半角英数字</b></p>
+		</div>
+		
+		<div id='Wiki_link'>
+		<h2>国紹介ページリンク</h2>
+		<p>貿箱wikiの国情報へのリンクを記入してください</p>
+		<form action="{GLTH}" method="post">
+		リンク先URL<input type="text" name="Wiki_Link" size="60" value="{wiki_link}"><br>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="Cname">
+		<input type="hidden" name="type" value="Wiki_Link">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="リンクURL更新">
+		</form>
+		</div>
+		
+		<div id='Trade_link'>
+		<h2>貿易情報リンク</h2>
+		<p>フォーラムの各国貿易紹介へのリンクを記入してください</p>
+		<form action="{GLTH}" method="post">
+		リンク先URL<input type="text" name="Trade_Link" size="60" value="{trade_link}"><br>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="Cname">
+		<input type="hidden" name="type" value="Trade_Link">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="リンクURL更新">
+		</form>
+		</div>
+		
+		<div id='News_link'>
+		<h2>報道機関リンク</h2>
+		<p>各国報道機関へのリンクを記入してください</p>
+		<form action="{GLTH}" method="post">
+		リンク先URL<input type="text" name="News_Link" size="60" value="{news_link}"><br>
+		<input type="hidden" name="PASSWORD" value="{PAS}">
+		<input type="hidden" name="mode" value="Cname">
+		<input type="hidden" name="type" value="News_Link">
+		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
+		<input type="hidden" name="ISLANDID" value="{id}">
+		<input type="submit" value="リンクURL更新">
+		</form>
+		</div>
+		
+		<div id='Slack_new'>
+		<h2>Slackユーザ登録</h2>
+		<a href='https://join.slack.com/t/bo-hako/shared_invite/MjMzMzQ3MzM1NTcwLTE1MDQwMjUwOTAtNGQ5NDRlMmU3Nw'>貿箱Slackへの登録はこちら</a>
+		</div>
+	</div>

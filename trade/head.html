@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<base href="{bimg}/">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="{cssDir}/{css}">
+<link rel="stylesheet" type="text/css" href="{cssDir}/basic.css">
+<link rel="stylesheet" type="text/css" href="{cssDir}/li-scroller.css">
+<link rel="stylesheet" type="text/css" href="{cssDir}/charting/visualize.css">
+<title>{title}</title>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('jquery', '1');
+google.load('jqueryui', '1');
+google.load('visualization', '1.0',{chart});
+</script>
+<script type="text/javascript" src="{baseDir}/jquery.li-scroller.1.0.js"></script>
+<script type="text/javascript" src="{baseDir}/hako.js"></script>
+<script type="text/javascript" src="{baseDir}/jquery.flot.js"></script>
+<!--[if IE]><script type="text/javascript" src="{baseDir}/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="{baseDir}/visualize.jQuery.js"></script>
+<script type="text/javascript" src="{baseDir}/EnhanceJS/enhance.js"></script>
+<script type="text/javascript" src="{baseDir}/jquery.maxlength.js"></script>
+<script type="text/javascript" src="{baseDir}/autoresize.jquery.js"></script>
+<script type="text/javascript" src="{baseDir}/exvalidation.js"></script>
+</head>
+<body onload="init()">
+
+<div id="LinkHeader"><strong>
+<ul>
+	<li><a href="{urlTopPage}"><img src="home.png">トップページ</a></li>
+	<li><a href="{t_title}"><img src="globe.png">箱庭トップ</a></li>	
+	<li><a href="{t_title}?mode=conf"><img src="config.png">設定変更</a></li>
+	<li><a href="{t_title}?mode=log"><img src="news.png">最近の出来事</a></li>
+	<li><a href="{urlManual}" target="_blank"><img src="help.png">マニュアル</a></li>
+	<li><a href="{urlHowTo}" target="_blank"><img src="info.png">経営講座</a></li>
+	<li><a href="{urlBbs}" target="_blank"><img src="speech.png">掲示板</a></li>
+	<li><a href="{baseDir}/hako-admin.php" target="_blank"><img src="lock.png">管理人室</a></li>
+</ul>
+</strong>
+</div>
+<hr>

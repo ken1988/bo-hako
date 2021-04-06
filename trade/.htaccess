@@ -1,0 +1,14 @@
+order allow,deny
+allow from all
+allow from 27.133.
+allow from 36.54.
+deny from 114.16.18.229
+deny from vips.gol.ne.jp
+deny from neptune.aitai.ne.jp
+deny from rev.home.ne.jp
+deny from 13.2015.com
+deny from 59.156.
+deny from aichi.ocn.ne.jp
+deny from 122.29.54.
+deny from 126.103.250.32
+deny from bunbun.ne.jp
