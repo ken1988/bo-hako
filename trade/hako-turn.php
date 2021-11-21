@@ -4021,8 +4021,8 @@ class Turn {
             $Syukaku_delta = max(0,$Syukaku_cap);
             $Syukaku_delta = $Syukaku_cap / 10;
             
-            $value = round($island['farm'] * 20 * $Syukaku_delta + Util::random(11));
-            // 農業人口１万人ごとに2万トンの収穫
+            $value = round($island['wfarm'] * 20 * $Syukaku_delta + Util::random(11));
+            // 稼働農業人口１万人ごとに2万トンの収穫
             if ($value > 0) {
               $island['food'] += $value;
               $str = "{$value}{$init->unitFood}";
@@ -5828,10 +5828,9 @@ class Turn {
 	$island['nest'] = array();
 
     $pop = $island['pop'];
-    $farm = $island['farm'] * 10;
-    $pfarm = $island['farm'];
-    $factory = $island['factory'];
-    $market =$island['market'];
+    $pfarm = $island['farm']; //農業人口
+    $factory = $island['factory']; //工業人口
+    $market =$island['market']; //商業人口
     $hatuden = $island['hatuden'];
 	$goods	= $island['goods'];
 	$invest	= $island['invest'];
@@ -5894,6 +5893,7 @@ class Turn {
 
       // 商業稼動規模決定
       $wmarket = min((int)($pop / 10) - $service, $market);
+      $island['wmarket'] = $wmarket;
       // 工場稼動規模決定
 	  if($goods == $init->maxGoods){
 	  	$this->log->ProductStop($id, $name);
@@ -5903,6 +5903,7 @@ class Turn {
 		    //wfactory=余剰労働力or最大雇用力
 	        $wfactory = min(((int)($pop / 10) - $service - $market), $factory);
 	        $pfactory = $wfactory;
+          $island['wfactory'] = $wfactory;
 			}
 	  }
 
@@ -5925,6 +5926,7 @@ class Turn {
       } else {
           $wfarm = 0;
       }
+      $island['wfarm'] = $wfarm;
       if($island['fuel'] > (int)($wfarm * 0.4)) {
         // 農場稼動
         $island['fuel'] -= (int)($wfarm * 0.4);
