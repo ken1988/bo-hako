@@ -5433,17 +5433,17 @@ class Turn {
         $x = $island['present']['px'];
         $y = $island['present']['py'];
       } else {
-      $f = 0;
+      $f = 1;
       do {
         $x = Util::random($init->islandSize-1);
         $y = Util::random($init->islandSize-1);
         $landKind = $land[$x][$y];
-        $f = 1;
+        $f = 0;
         if(($landKind == $init->landBigtown) || 
            ($landKind == $init->landIndCity) || 
            ($landKind == $init->landCapital)){
            //対象地形が現代都市、工業都市、首都だったらフラグリセット
-           $f = 0;
+           $f = 1;
            }
         } while ($f > 0);
       }
