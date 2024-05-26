@@ -206,7 +206,7 @@ END;
 	</div>
 	<div ID="Register">
 		新規登録
-		<a href="{$GLOBALS['THIS_FILE']}?mode=New"><img src="regist.png"></a>
+		<a href="http://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/"><img src="regist.png"></a>
 	</div>
 </div>
 
@@ -667,16 +667,15 @@ END;
       } else {
       print <<<END
 
-<p><IMG src="Warning.png"><strong>ユーザー登録</strong>はお済ですか？</a>まだの方は<a href="http://tanstafl.sakura.ne.jp/register.php">こちら</a>からまずユーザー登録を行ってください。<br>ユーザー登録を行うことで掲示板やプライベートメッセージが利用可能になります。</p>
+<p><IMG src="Warning.png"><strong>ユーザー登録</strong>はお済ですか？</a>まだの方は<a href="http://tanstaafl.tokyo/%e7%99%bb%e9%8c%b2/">こちら</a>からまずユーザー登録を行ってください。<br>ユーザー登録を行うことで掲示板やプライベートメッセージが利用可能になります。</p>
 <form id="new_reg" action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset=”UTF-8″>
 <table>
-<tr><th>国名</th><td><input id="new_name" type="text" name="ISLANDNAME" size="32" maxlength="32" class="chkrequired chkzenkaku"><br>
-国名についての<a href="http://tanstafl.sakura.ne.jp/rule.html#name">注意</a>は参照しましたか？</td></tr>
+<tr><th>国名</th><td><input id="new_name" type="text" name="ISLANDNAME" size="32" maxlength="32" class="chkrequired chkzenkaku">
 <tr><th>国主名</th><td><input type="text" id="owner_name" name="OWNERNAME" size="32" maxlength="32" class="chkrequired chkzenkaku"></td></tr>
 <tr><th>パスワード</th><td><input type="password" name="PASSWORD" size="32" maxlength="32"></td></tr>
 <tr><th>パスワードを再度入力してください</th><td><input type="password" name="PASSWORD2" size="32" maxlength="32"></td></tr>
 </table>
-<label id="agree_check"><input type="checkbox" name="agree" value="agree">私は<strong><a href="http://tanstafl.sakura.ne.jp/rule.html" target="_blank">ゲームルール</a></strong>を熟読し内容や制限項目を理解した上で同意しゲームに参加します。</label>
+<label id="agree_check"><input type="checkbox" name="agree" value="agree">私は<strong><a href="http://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/" target="_blank">ゲームルール</a></strong>を熟読し内容や制限項目を理解した上で同意しゲームに参加します。</label>
 <br>
 <input type="hidden" name="mode" value="new">
 <input type="submit" value="新しい国を作る">
