@@ -4274,8 +4274,10 @@ class Turn {
 	  case $init->landMyhome:
 	    $siji = $island['siji'] + $island['hapiness'];
 		if($siji > 100){
-			$siji = 100 - $island['hapiness'];
-		}
+			$siji = 100
+		}elseif($siji < 0){
+      $siji = 0
+    }
 		$landValue[$x][$y] = Ceil($siji);
 	  break;
 

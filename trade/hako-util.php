@@ -190,7 +190,7 @@ class Util {
 	 $year = floor($turn / 36);
 	 $month = ceil(($turn % 36) / 3);
 	 if ($month == 0){
-	 		$month = 1;
+	 		$month = 12;
 	  }
 	  
 	  if($mode == 0){
