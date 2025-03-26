@@ -1,0 +1,75 @@
+{
+    "landSea":{
+        "landValue": 0,
+        "landType" : "base",
+        "levels": [
+          {
+            "levelRange": false,
+            "minlevel": 0,
+            "maxlevel": 0,
+            "naviTitle": "海",
+            "naviText" : "",
+            "imagePath": "path/to/landSea_level0.png",
+            "visitorHidden": false,
+            "fakeTitle" : "",
+            "fakeText":"",
+            "fakeImagePath":""
+          },
+          {
+            "levelRange": false,
+            "minlevel": 0,
+            "maxlevel": 0,
+            "naviTitle": "海",
+            "imagePath": "path/to/landSea_level0.png"
+          }
+        ]
+      },
+      "landWaste":{
+        "chipID": 1,
+        "chipName": "landWaste",
+        "levels": [
+          {
+            "level": 0,
+            "text": "荒地",
+            "imagePath": "path/to/landWaste_level0.png"
+          },
+          {
+            "level": 1,
+            "text": "砂漠",
+            "imagePath": "path/to/landWaste_level1.png"
+          }
+        ]
+      },
+      "landPlanes":{
+        "chipID": 1,
+        "chipName": "landWaste",
+        "levels": [
+          {
+            "level": 0,
+            "text": "荒地",
+            "imagePath": "path/to/landWaste_level0.png"
+          },
+          {
+            "level": 1,
+            "text": "砂漠",
+            "imagePath": "path/to/landWaste_level1.png"
+          }
+        ]
+      },
+      "landTown":{
+        "chipID": 1,
+        "chipName": "landWaste",
+        "levels": [
+          {
+            "level": 0,
+            "text": "荒地",
+            "imagePath": "path/to/landWaste_level0.png"
+          },
+          {
+            "level": 1,
+            "text": "砂漠",
+            "imagePath": "path/to/landWaste_level1.png"
+          }
+        ]
+      }
+}
