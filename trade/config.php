@@ -10,6 +10,7 @@
 *******************************************************************/
 define("GZIP", false);	// true: GZIP 圧縮転送を使用  false: 使用しない
 define("DEBUG", false);	// true: デバッグ false: 通常
+Include("secret_configs.php");
 
 class Init {
   //----------------------------------------
@@ -36,8 +37,9 @@ class Init {
   //パスワードの暗号化 true: 暗号化、false: 暗号化しない
   var $cryptOn		= true;
   // マスターパスワード
-  var $masterPassword	= "63810";
-  var $specialPassword	= "63810";
+  $secretInit = new Secret_Init();
+  var $masterPassword	= $secretInit->masterPassword;
+  var $specialPassword	= $secretInit->specialPassword;
 
   // データディレクトリの名前
   var $dirName		= "data";
