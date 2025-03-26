@@ -35,8 +35,8 @@ function UpdateRSS($newID){
 	$rss->useCached();
 	$rss->title = "フリューゲル共同通信";
 	$rss->description = "貿易版箱庭諸国の最新ニュースをお届けします";
-	$rss->link = "http://tanstafl.sakura.ne.jp/";
-	$rss->syndicationURL = "http://tanstafl.sakura.ne.jp/".$PHP_SELF;
+	$rss->link = "https://tanstafl.sakura.ne.jp/";
+	$rss->syndicationURL = "https://tanstafl.sakura.ne.jp/".$PHP_SELF;
 	
 	$newall = WNSsys::LatestRSS();
 	

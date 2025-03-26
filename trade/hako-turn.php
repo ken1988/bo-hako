@@ -79,6 +79,10 @@ class Make {
 
     $log->discover($island['name']);
 
+	$news_text = "{$island['name']}建国。新政府は国際社会への参加を宣言";
+	$news_cat  = "【速報】";
+    Turn::AutoNews($island['id'],$island['name'],$hako->islandTurn,$news_text,$news_cat);
+
     $htmlMap = new HtmlMap;
     $htmlMap->newIslandHead($island['name']);
     $htmlMap->islandInfo($island, $newNumber);
@@ -3737,6 +3741,10 @@ class Turn {
 
     case $init->comGiveup:
       // 放棄
+	  $news_text = "{$name}の政府機関が機能停止";
+	  $news_cat  = "【速報】";
+      $this->AutoNews($id,$name,$hako->islandTurn,$news_text,$news_cat);
+
       $this->log->giveup($id, $name);
       $island['dead'] = 1;
       unlink("{$init->dirName}/island.{$id}");
@@ -3943,6 +3951,7 @@ class Turn {
 	  }
 	  $landValue[$x][$y] = $lv;
         break;
+        
       case $init->landPoll:
         // 汚染土壌
         if(Util::random(10) == 0) {
@@ -4773,7 +4782,7 @@ class Turn {
 		//民主主義体制の場合、内戦前に政権交代する可能性
 			$island['civwar'] -= 10;
 			$news_text = "総選挙で与党敗北。政権交代へ。";
-			$news_cat  = "【政治】";
+			$news_cat  = "【速報】";
 			$this->log->DesGov($id, $name);
 			$this->AutoNews($id,$name,$hako->islandTurn,$news_text,$news_cat);
 		}
@@ -5103,10 +5112,6 @@ class Turn {
           $kind = 1;
           $island['civwar'] -= 10;
 
-		$news_text = "反政府勢力が武装蜂起。抑圧からの解放を宣言。";
-		$news_cat  = "【政治】";
-		$this->AutoNews($id,$name,$hako->islandTurn,$news_text,$news_cat);
-		
         }elseif($pop >= $init->disMonsBorder3) {
           // level3まで
           $kind = Util::random($init->monsterLevel3) + 1;
@@ -5217,7 +5222,12 @@ class Turn {
     if((($island['area'] > $init->disFallBorder) &&
        (Util::random(1000) < $init->disFalldown)) || ($island['present']['item'] == 4)) {
       // 地盤沈下発生
-      $this->log->falldown($id, $name,$island['area']);
+      $this->log->falldown($id, $name, $island['area']);
+
+	  //自動ニュース
+	  $news_text = "{$name}で地盤沈下が発生。政府は被害を調査中。";
+	  $news_cat  = "【速報】";
+      $this->AutoNews($id, $name, $hako->islandTurn, $news_text, $news_cat);
 
       for($i = 0; $i < $init->pointNumber; $i++) {
         $x = $this->rpx[$i];
@@ -5308,6 +5318,11 @@ class Turn {
 
       // メッセージ
       $this->log->hugeMeteo($id, $name, $point);
+
+	  //自動ニュース
+	  $news_text = "{$name}に巨大隕石が国内に落下。政府は被害を調査中。";
+	  $news_cat  = "【速報】";
+      $this->AutoNews($id, $name, $hako->islandTurn, $news_text, $news_cat);
 
       // 広域被害ルーチン
       $this->wideDamage($id, $name, &$land, &$landValue, $x, $y);
@@ -5798,9 +5813,10 @@ class Turn {
         // 中心、および1ヘックス
         if(($landKind == $init->landMonster) ||
            ($landKind == $init->landSea) ||
+           ($landKind == $init->landSdefence) ||
            ($landKind == $init->landWaste) ||
            ($landKind == $init->landMountain) ||
-		   ($landKind == $init->landnMountain) ||
+		       ($landKind == $init->landnMountain) ||
            ($landKind >= 50 && $landKind < 55)) {
           continue;
         } else {

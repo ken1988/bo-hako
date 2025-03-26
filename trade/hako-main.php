@@ -420,9 +420,9 @@ class Hako extends HakoIO {
         $naviText = "レベル {$level} / 経験値 {$lv}";
       break;
 	case $init->landFBase:
-        // 他国軍駐屯地
+        // 軍駐屯地
 		$image = 'land73.gif';
-        $naviTitle = "他国軍駐屯地";
+        $naviTitle = "軍駐屯地";
         $naviText = "{$target}軍";
       break;
 

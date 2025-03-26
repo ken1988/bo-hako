@@ -206,7 +206,7 @@ END;
 	</div>
 	<div ID="Register">
 		新規登録
-		<a href="http://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/"><img src="regist.png"></a>
+		<a href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/"><img src="regist.png"></a>
 	</div>
 </div>
 
@@ -658,6 +658,9 @@ END;
 	global $init;
 
     print "<div id=\"NewIsland\">\n";
+	print "国の数が最大数か、その他の理由により、現在登録できません。\n";
+
+/*
     print "<h2>新しい国を探す</h2>\n";
     if(($number < $init->maxIsland) &&
        (($init->entryTurn == 0) || ($islandTurn < $init->entryTurn))) {
@@ -667,7 +670,7 @@ END;
       } else {
       print <<<END
 
-<p><IMG src="Warning.png"><strong>ユーザー登録</strong>はお済ですか？</a>まだの方は<a href="http://tanstaafl.tokyo/%e7%99%bb%e9%8c%b2/">こちら</a>からまずユーザー登録を行ってください。<br>ユーザー登録を行うことで掲示板やプライベートメッセージが利用可能になります。</p>
+<p><IMG src="Warning.png"><strong>ユーザー登録</strong>はお済ですか？</a>まだの方は<a href="https://tanstaafl.tokyo/%e7%99%bb%e9%8c%b2/">こちら</a>からまずユーザー登録を行ってください。<br>ユーザー登録を行うことで掲示板やプライベートメッセージが利用可能になります。</p>
 <form id="new_reg" action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset=”UTF-8″>
 <table>
 <tr><th>国名</th><td><input id="new_name" type="text" name="ISLANDNAME" size="32" maxlength="32" class="chkrequired chkzenkaku">
@@ -675,7 +678,7 @@ END;
 <tr><th>パスワード</th><td><input type="password" name="PASSWORD" size="32" maxlength="32"></td></tr>
 <tr><th>パスワードを再度入力してください</th><td><input type="password" name="PASSWORD2" size="32" maxlength="32"></td></tr>
 </table>
-<label id="agree_check"><input type="checkbox" name="agree" value="agree">私は<strong><a href="http://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/" target="_blank">ゲームルール</a></strong>を熟読し内容や制限項目を理解した上で同意しゲームに参加します。</label>
+<label id="agree_check"><input type="checkbox" name="agree" value="agree">私は<strong><a href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/" target="_blank">ゲームルール</a></strong>を熟読し内容や制限項目を理解した上で同意しゲームに参加します。</label>
 <br>
 <input type="hidden" name="mode" value="new">
 <input type="submit" value="新しい国を作る">
@@ -689,6 +692,7 @@ END;
         print "国の数が最大数か、その他の理由により、現在登録できません。\n";
       }
     }
+ */
     print "</div>\n";
     print "<hr>\n";
   }
@@ -884,7 +888,7 @@ END;
   $j = 0;
   
   if(!empty($data['from_year'])){
-  $url = "http://tanstafl.sakura.ne.jp/trade/NEST.php?from={$data['from_year']}&to={$data['to_year']}&id={$data['ISLANDID']}";
+  $url = "https://tanstafl.sakura.ne.jp/trade/NEST.php?from={$data['from_year']}&to={$data['to_year']}&id={$data['ISLANDID']}";
   $json = file_get_contents($url);
   $nest_rep = json_decode($json,true);
   $nest_html = Util::MakeNest($nest_rep,$island['name']);
@@ -1546,7 +1550,7 @@ END;
    $j = 0;
    $year = Util::MKCal($hako->islandTurn,1);
    $o_year = $year - 2;
-   $url = "http://tanstafl.sakura.ne.jp/trade/NEST.php?from={$o_year}&to={$year}&id={$island['id']}";
+   $url = "https://tanstafl.sakura.ne.jp/trade/NEST.php?from={$o_year}&to={$year}&id={$island['id']}";
    $json = file_get_contents($url);
    $nest_rep = json_decode($json,true);
    $nest_html = Util::MakeNest($nest_rep,$island['name']);
@@ -2407,11 +2411,11 @@ print HTML::tplengine('./templates/banners.html',$param);
   function newIslandHead($name) {
     global $init;
     print <<<END
-<div align="center">
-{$init->tagBig_}国を発見しました！！{$initspanend}<br>
-{$init->tagBig_}{$init->tagName_}「{$name}国」{$init->spanend}と命名します。{$init->spanend}<br>
-{$GLOBALS['BACK_TO_TOP']}<br>
-</div>
+	<div align="center">
+	{$init->tagBig_}国を発見しました！！{$initspanend}<br>
+	{$init->tagBig_}{$init->tagName_}「{$name}」{$init->spanend}と命名します。{$init->spanend}<br>
+	{$GLOBALS['BACK_TO_TOP']}<br>
+	</div>
 END;
   }
   //---------------------------------------------------
@@ -2485,7 +2489,7 @@ class HtmlJS extends HtmlMap {
 		$param['urlManual'] = $init->urlManual;
 		$param['urlHowTo'] = $init->urlHowTo;
 		$param['urlBbs'] = $init->urlBbs;
-		$param['chart'] = "{'packages':['corechart']}";
+		$param['chart'] = "google.charts.load('current', {packages: ['corechart']});";
 		print HTML::tplengine('./templates/head.html',$param);
 	}
   }
