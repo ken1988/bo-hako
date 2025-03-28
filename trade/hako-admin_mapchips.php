@@ -1,9 +1,10 @@
 <?php
 // Path to the JSON file
-$jsonFilePath = __DIR__ . '/config_jsons/mapchip.json';
+$jsonFilePath = './config_jsons/mapchip.json';
 
 // Check if the file exists
 if (!file_exists($jsonFilePath)) {
+    echo $jsonFilePath;
     die('JSON file not found.');
 }
 
@@ -11,9 +12,9 @@ if (!file_exists($jsonFilePath)) {
 $jsonData = json_decode(file_get_contents($jsonFilePath), true);
 
 // Check if the JSON data is valid
-if (json_last_error() !== JSON_ERROR_NONE) {
-    die('Invalid JSON data.');
-}
+//if (json_last_error() !== JSON_ERROR_NONE) {
+//    die('Invalid JSON data.');
+//}
 
 // Start HTML output
 ?>

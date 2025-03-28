@@ -187,15 +187,16 @@ class Util {
   // 暦を生成する
   //---------------------------------------------------
   function MKCal($turn,$mode){
-	 $year = floor($turn / 36);
-	 $month = ceil(($turn % 36) / 3);
+   $modTurn = $turn % 36;
+	 $year = floor(($turn - 1) / 36);
+	 $month = ceil($modTurn / 3);
 	 if ($month == 0){
 	 		$month = 12;
 	  }
 	  
 	  if($mode == 0){
 	  //フルセット
-		 $termb =($turn % 36) / 3 - floor(($turn % 36) / 3);
+		 $termb = $modTurn / 3 - floor($modTurn / 3);
 		 if($termb == 0){
 		 	$term = "下旬";
 		 }elseif($termb < 0.34){
