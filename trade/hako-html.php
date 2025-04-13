@@ -284,6 +284,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
       }
     }
     $islandListStart--;
+    $valueNA = "保有せず";
     for($i = $islandListStart; $i < $islandListSentinel ; $i++) {
       $island = $hako->islands[$i];
       $j = $i + 1;
@@ -300,18 +301,18 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
       $okane  = ($island['gold'] < 0) ? "{$island['gold']}{$init->unitMoney}" : "+{$island['gold']}{$init->unitMoney}";
       $gohan  = ($island['rice'] < 0) ? "{$island['rice']}{$init->unitFood}" : "+{$island['rice']}{$init->unitFood}";
       $poin  = ($island['pots'] < 0) ? "{$island['pots']}pts" : "+{$island['pots']}pts";
-      $farm  = ($island['farm'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['farm'] * 10) . $init->unitPop;
-      $factory  = ($island['factory'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['factory'] * 10) . $init->unitPop;
-      $market  = ($island['market'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['market'] * 10) . $init->unitPop;
-	  $service =  ($island['service'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['service'] * 10) . $init->unitPop;
-	  $armypop =  ($island['milpop']<= 0) ? "保有せず" : Util::Rewriter2('',($island['milpop'] * 10)) . $init->unitPop;
-	  $sfarmypop = ($island['sfarmy']<= 0) ? "保有せず" : Util::Rewriter2('',($island['sfarmy']) * 10) . $init->unitPop;
-	  $navypop =  ($island['navy']+$senkan<= 0) ? "保有せず" : Util::Rewriter2('',($island['navy']+$senkan*3)*3) . $init->unitPop;
-      $mfactory  = ($island['mfactory'] <= 0) ? "保有せず" : $island['mfactory'] . $init->unitMaterial;
-      $sfactory  = ($island['sfactory'] <= 0) ? "保有せず" : $island['sfactory'] . $init->unitShell;
-      $ffactory  = ($island['ffactory'] <= 0) ? "保有せず" : $island['ffactory'] . $init->unitOil;
+      $farm  = ($island['farm'] <= 0) ? $valueNA : Util::Rewriter2('',$island['farm'] * 10) . $init->unitPop;
+      $factory  = ($island['factory'] <= 0) ? $valueNA : Util::Rewriter2('',$island['factory'] * 10) . $init->unitPop;
+      $market  = ($island['market'] <= 0) ? $valueNA : Util::Rewriter2('',$island['market'] * 10) . $init->unitPop;
+	  $service =  ($island['service'] <= 0) ? $valueNA : Util::Rewriter2('',$island['service'] * 10) . $init->unitPop;
+	  $armypop =  ($island['milpop']<= 0) ? $valueNA : Util::Rewriter2('',($island['milpop'] * 10)) . $init->unitPop;
+	  $sfarmypop = ($island['sfarmy']<= 0) ? $valueNA : Util::Rewriter2('',($island['sfarmy']) * 10) . $init->unitPop;
+	  $navypop =  ($island['navy']+$senkan<= 0) ? $valueNA : Util::Rewriter2('',($island['navy']+$senkan*3)*3) . $init->unitPop;
+      $mfactory  = ($island['mfactory'] <= 0) ? $valueNA : $island['mfactory'] . $init->unitMaterial;
+      $sfactory  = ($island['sfactory'] <= 0) ? $valueNA : $island['sfactory'] . $init->unitShell;
+      $ffactory  = ($island['ffactory'] <= 0) ? $valueNA : $island['ffactory'] . $init->unitOil;
       $hatuden  = ($island['hatuden'] <= 0) ? "0kw" : $island['hatuden'] * 1000 . kw;
-      $mining = ($island['mining'] <= 0) ? "保有せず" : $island['mining'] * 10 . $init->unitPop;
+      $mining = ($island['mining'] <= 0) ? $valueNA : $island['mining'] * 10 . $init->unitPop;
       $orgmining  = $island['mining'];
       $comment  = $island['comment'];
       $comment_turn = $island['comment_turn'];
@@ -340,7 +341,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 	  $freeze = "";
 	  }
       if($mining == 0) {
-        $mining = "保有せず";
+        $mining = $valueNA;
       } else {
         $minelv; // 総鉱山レベル(各種)
         $mining = "";
