@@ -37,9 +37,8 @@ class Init {
   //パスワードの暗号化 true: 暗号化、false: 暗号化しない
   var $cryptOn		= true;
   // マスターパスワード
-  $secretInit = new Secret_Init();
-  var $masterPassword	= $secretInit->masterPassword;
-  var $specialPassword	= $secretInit->specialPassword;
+  var $masterPassword;
+  var $specialPassword;
 
   // データディレクトリの名前
   var $dirName		= "data";
@@ -1067,6 +1066,11 @@ class Init {
     // 日本時間にあわせる
     // 海外のサーバに設置する場合は次の行にある//をはずす。
     // putenv("TZ=JST-9");
+
+    // Initialize secret passwords
+    $secretInit = new Secret_Init;
+    $this->masterPassword = $secretInit->masterPassword;
+    $this->specialPassword = $secretInit->specialPassword;
 
     // 予\定のように\が勝手に追加される
     $this->stripslashes	= get_magic_quotes_gpc();
