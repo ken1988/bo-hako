@@ -6438,7 +6438,9 @@ if($island['ffactory']> 0){
 			($value == 1) ||
 			($value == 2) ||
 			($value == 3) ||
-			($value == 4)) {
+			($value == 4) ||
+      ($value == 25) ||
+      ($value == 26)) {
 				//記念碑で幸福度Up
 				$m0++;
 			}
@@ -6557,8 +6559,8 @@ if($island['ffactory']> 0){
 		$hapiness += min($m10*3, 12);
 	}
 	if ($m0 >= 1){
-		//記念碑1つにつき幸福度+1（最大5）
-		$hapiness += min($m0, 5);
+		//記念碑1つにつき幸福度+1（最大10）
+		$hapiness += min($m0, 10);
 	}
 	if (($m11 >= 1)&&($polit == 0)){
 		//記念碑1つにつき幸福度+3（最大12/権威主義のみ）
