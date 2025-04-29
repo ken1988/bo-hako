@@ -2941,7 +2941,7 @@ class Turn {
 			     ($tL == $init->landHDefence) ||
 			 	($tL == $init->landSdefence)) &&
                 ($tLv <= 1 || $kind == $init->comMissileLD)) ||
-				($tL == $init->landProcity && ($tLv < 130))) &&
+				($tL == $init->landProcity && ($tLv < $init->ProcityRank[1]))) &&
 				($kind != $init->comMissileSPP)) {
               // 防衛施設に直撃、破壊
               // フラグをクリア

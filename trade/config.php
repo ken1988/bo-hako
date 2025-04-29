@@ -387,8 +387,8 @@ class Init {
   	 'インベーダー', # 7
     );
   // 最低体力、体力の幅、特殊能力、経験値、死体の値段
-  var $monsterBHP	= array(3, 3, 4, 5, 6, 8, 8,99);
-  var $monsterDHP	= array(0, 5, 1, 2, 2, 2, 2,0);
+  var $monsterBHP	= array(10, 5, 5, 7, 7, 10, 10,99);
+  var $monsterDHP	= array(0, 2, 3, 3, 3, 4, 4,0);
   var $monsterSpecial	= array(0x0, 0x0, 0x100, 0x1, 0x100, 0x2, 0x200,0x100);
   var $monsterExp	= array(10, 4, 5, 5, 5, 5, 9,99);
   var $monsterValue	= array(500, 200, 100, 200, 300, 500, 500,1000);
@@ -433,6 +433,7 @@ class Init {
 
   var $Captext = array('なし','原始的','未成熟','発展途上','地方分権/先進的','中央集権/先進的');
 
+  var $ProcityRank = array(110,130,160,200); #E（～110）、D（～130）、C（～160）、B（～200）、A（200）
   /********************
       外見関係
    ********************/
