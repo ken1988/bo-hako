@@ -271,13 +271,13 @@ class Hako extends HakoIO {
       break;
     case $init->landProcity:
       // 防災都市
-      if($lv < 110) {
+      if($lv < $init->ProcityRank[0]) {
         $naviTitle = '防災都市ランクＥ';
-      } else if($lv < 130) {
+      } else if($lv < $init->ProcityRank[1]) {
         $naviTitle = '防災都市ランクＤ';
-      } else if($lv < 160) {
+      } else if($lv < $init->ProcityRank[2]) {
         $naviTitle = '防災都市ランクＣ';
-      } else if($lv < 200) {
+      } else if($lv < $init->ProcityRank[3]) {
         $naviTitle = '防災都市ランクＢ';
       } else {
         $naviTitle = '防災都市ランクＡ';

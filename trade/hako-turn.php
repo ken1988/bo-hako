@@ -2939,10 +2939,10 @@ class Turn {
           } else {
             if((((($tL == $init->landDefence) ||
 			     ($tL == $init->landHDefence) ||
-			 	($tL == $init->landSdefence)) &&
-                ($tLv <= 1 || $kind == $init->comMissileLD)) ||
-				($tL == $init->landProcity && ($tLv < $init->ProcityRank[1]))) &&
-				($kind != $init->comMissileSPP)) {
+			 	   ($tL == $init->landSdefence)) &&
+           ($tLv <= 1 || $kind == $init->comMissileLD)) ||
+				   ($tL == $init->landProcity && ($tLv < $init->ProcityRank[1]))) &&
+				   ($kind != $init->comMissileSPP)) {
               // 防衛施設に直撃、破壊
               // フラグをクリア
               for($i = 0; $i < 19; $i++) {
@@ -2967,12 +2967,12 @@ class Turn {
             }elseif((($tL == $init->landDefence && ($tLv > 1))  ||
                      ($tL == $init->landHDefence && ($tLv > 1)) ||
                      ($tL == $init->landSdefence && ($tLv > 1)) ||
-					 ($tL == $init->landProcity && ($tLv >= 160))) &&
+					 ($tL == $init->landProcity && ($init->$init->ProcityRank[2]))) &&
 					 ($kind != $init->comMissileSPP)) {
                 // ミサイルログ
 			if($tL == $init->landProcity){
 				$this->log->msGensyo($id, $target, $name, $tName, $comName, $tLname, $point, $tPoint);
-                $tLandValue[$tx][$ty] -= 20;
+                $tLandValue[$tx][$ty] -= 40;
 			}else{
             	$this->log->MsDamage($id, $target, $name, $tName, $comName, $point, $tPoint);
             	$tLandValue[$tx][$ty]--;
@@ -4408,7 +4408,7 @@ class Turn {
         $special  = $init->monsterSpecial[$monsSpec['kind']];
         $mName    = $monsSpec['name'];
 
-        if((Turn::countAroundValue($island, $x, $y, $init->landProcity, 200, 7)+
+        if((Turn::countAroundValue($island, $x, $y, $init->landProcity, $init->ProcityRank[3], 7)+
 		    Turn::countAround($island, $x, $y, $init->landFBase, 7)) && ($monsSpec['kind'] != 0)) {
 
           $this->log->BariaAttack($id, $name, $lName, "($x,$y)", $mName, $tPoint);
@@ -4901,7 +4901,7 @@ class Turn {
         $lv = $landValue[$x][$y];
 
         if((($landKind == $init->landTown) && ($lv >= 100)) ||
-           (($landKind == $init->landProcity) && ($lv < 130)) ||
+           (($landKind == $init->landProcity) && ($lv < $init->ProcityRank[1])) ||
            (($landKind == $init->landSfarm) && ($lv < 20)) ||
            (($landKind == $init->landFactory) && ($lv < 100)) ||
            (($landKind == $init->landHatuden) && ($lv < 100)) ||
@@ -5047,7 +5047,7 @@ class Turn {
         $lv = $landValue[$x][$y];
 
         if(($landKind == $init->landTown) ||
-          (($landKind == $init->landProcity) && ($lv < 110)) ||
+          (($landKind == $init->landProcity) && ($lv < $init->ProcityRank[0])) ||
            ($landKind == $init->landNewtown) ||
            (($landKind == $init->landBigtown)&& ($lv < 300)) ||
 		   (($landKind == $init->landCapital)&& ($lv < 110)) ||
