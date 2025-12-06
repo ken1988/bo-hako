@@ -2942,8 +2942,8 @@ class Turn {
 			 	   ($tL == $init->landSdefence)) &&
            ($tLv <= 1 || $kind == $init->comMissileLD)) ||
 				   ($tL == $init->landProcity && ($tLv < $init->ProcityRank[1]))) &&
-				   ($kind != $init->comMissileSPP)) {
-              // 防衛施設に直撃、破壊
+				   ($kind != $init->comMissileSPP)){
+              // 防衛施設、防災都市（C未満）に直撃、破壊
               // フラグをクリア
               for($i = 0; $i < 19; $i++) {
                 $sx = $tx + $init->ax[$i];
@@ -2967,18 +2967,28 @@ class Turn {
             }elseif((($tL == $init->landDefence && ($tLv > 1))  ||
                      ($tL == $init->landHDefence && ($tLv > 1)) ||
                      ($tL == $init->landSdefence && ($tLv > 1)) ||
-					 ($tL == $init->landProcity && ($init->ProcityRank[2]))) &&
+					 ($tL == $init->landProcity && ($tLv > $init->ProcityRank[1]))) &&
 					 ($kind != $init->comMissileSPP)) {
                 // ミサイルログ
 			if($tL == $init->landProcity){
+        //防災都市C以上は減少処理
 				$this->log->msGensyo($id, $target, $name, $tName, $comName, $tLname, $point, $tPoint);
-                $tLandValue[$tx][$ty] -= 40;
+        if($tLv < $init->ProcityRank[2]){
+          //ランクC（B未満）
+            $tLandValue[$tx][$ty] -= 80;
+        }elseif($tLv < $init->ProcityRank[3]){
+          //ランクB（A未満）
+            $tLandValue[$tx][$ty] -= 60;
+        }else{
+          //ランクA
+            $tLandValue[$tx][$ty] -= 40;
+        }
 			}else{
             	$this->log->MsDamage($id, $target, $name, $tName, $comName, $point, $tPoint);
             	$tLandValue[$tx][$ty]--;
 			}
               continue;
-            } elseif((Turn::countAround($tLand, $tx, $ty, $init->landDefence, 19))  ||
+            }elseif((Turn::countAround($tLand, $tx, $ty, $init->landDefence, 19))  ||
                      (Turn::countAround($tLand, $tx, $ty, $init->landHDefence, 19)) ||
                      (Turn::countAround($tLand, $tx, $ty, $init->landSdefence, 19)) ||
                      (Turn::countAround($tLand, $tx, $ty, $init->landProcity, 7))) {
