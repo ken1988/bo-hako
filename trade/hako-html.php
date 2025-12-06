@@ -1032,20 +1032,20 @@ END;
   //---------------------------------------------------
   function islandInfo($island, $number = 0, $mode = 0) {
     global $init;
-	$wns = new WNSsys();
+	  $wns = new WNSsys();
     $rank = $number + 1;
-	$point = $island['point'];
+	  $point = $island['point'];
     $pop   = Util::Rewriter2('',$island['pop']) . $init->unitPop;
-	$spop  = Util::Rewriter2('',$island['spop']) . $init->unitPop;
+	  $spop  = Util::Rewriter2('',$island['spop']) . $init->unitPop;
     $area  = $island['area'] . $init->unitArea;
     $eisei = $island['eisei'];
-	$senkan = $island['ship']['senkan'];
+	  $senkan = $island['ship']['senkan'];
     $farm  = ($island['farm'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['farm'] * 10) . $init->unitPop;
     $market  = ($island['market'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['market'] * 10) . $init->unitPop;
-	$service =  ($island['service'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['service'] * 10) . $init->unitPop;
-	$armypop =  ($island['milpop'] +$island['sfarmy'])* 10;
-	$navypop =  ($island['navy']+$senkan*3)*3;
-    $hatuden  = ($island['hatuden'] <= 0) ? "0kw" : $island['hatuden'] * 1000 . kw;
+	  $service =  ($island['service'] <= 0) ? "保有せず" : Util::Rewriter2('',$island['service'] * 10) . $init->unitPop;
+	  $armypop =  ($island['milpop'] +$island['sfarmy'])* 10;
+	  $navypop =  ($island['navy']+$senkan*3)*3;
+    $hatuden  = ($island['hatuden'] <= 0) ? "0kw" : $island['hatuden'] * 1000 . "kw";
     $factory  = ($island['factory'] <= 0) ? "保有せず" :Util::Rewriter2('',$island['factory'] * 10) . $init->unitPop;
     $mfactory  = ($island['mfactory'] <= 0) ? "保有せず" : $island['mfactory'] . $init->unitMaterial;
     $sfactory  = ($island['sfactory'] <= 0) ? "保有せず" : $island['sfactory'] . $init->unitShell;
@@ -1054,19 +1054,19 @@ END;
     $orgmining  = $island['mining'];
     $taiji  = ($island['taiji'] <= 0) ? "0匹" : $island['taiji'] * 1 . $init->unitMonster;
     $tenki    = $island['tenki'];
-	$freeze   = $island['freeze'];
+	  $freeze   = $island['freeze'];
     $comment  = $island['comment'];
-	$Cname    = $island['Cname'];
-	$invest	= $island['invest'];
-	$edinv	= $island['edinv'];
-	$hapiness = $island['hapiness'];
-	$cmente	  = $island['cmente'];
-	$banum	= $island['banum'];
-	$indnum	= $island['indnum'];
-	$soclv = $island['soclv'];
-	$wiki_link = $island['wiki_link'];
-	$trade_link = $island['trade_link'];
-	$news_link = $island['news_link'];
+	  $Cname    = $island['Cname'];
+	  $invest	= $island['invest'];
+	  $edinv	= $island['edinv'];
+	  $hapiness = $island['hapiness'];
+	  $cmente	  = $island['cmente'];
+	  $banum	= $island['banum'];
+	  $indnum	= $island['indnum'];
+	  $soclv = $island['soclv'];
+	  $wiki_link = $island['wiki_link'];
+	  $trade_link = $island['trade_link'];
+	  $news_link = $island['news_link'];
 
     if($mining == 0) {
         $mining = "保有せず";
@@ -1264,8 +1264,27 @@ END;
         $mStr12 = "<td {$init->bgInfoCell}>$mTmp12</td>";
 
     print <<<END
-<div id="islandInfo">
-{$latestnews}
+<div id="islandInfo" class="app">
+<div id="latestnews">
+  {$latestnews}
+</div>
+ <header id="islandKPI" class="topbar">
+ <table border="1">
+ <tr>
+<th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
+<th {$init->bgTitleCell}>{$init->tagTH_}天気{$init->_tagTH}</th>
+<th {$init->bgTitleCell}>{$init->tagTH_}人口{$init->_tagTH}</th>
+<th {$init->bgTitleCell}>{$init->tagTH_}面積{$init->_tagTH}</th>
+</tr>
+<tr>
+<th {$init->bgNumberCelld} rowspan="4">{$init->tagNumber_}$rank{$init->_tagNumber}<br>$bannerad</th>
+<td class="TenkiCell">$sora</td>
+<td {$init->bgInfoCell}>$pop</td>
+<td {$init->bgInfoCell}>$area</td>
+</tr>
+ </header>
+ <aside id="islandInfoleft" class="left"></aside>
+  <main id="islandInfomain" class="map">
 <table border="1">
 <tr>
 <th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
@@ -1359,6 +1378,9 @@ $mStr11
 <td colspan="12" {$init->bgCommentCell}>$comment</td>
 </tr>
 </table>
+</main>
+  <aside id="islandInforight" class="right"></aside>
+</div>
 </div>
 END;
   }

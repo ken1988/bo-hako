@@ -2967,7 +2967,7 @@ class Turn {
             }elseif((($tL == $init->landDefence && ($tLv > 1))  ||
                      ($tL == $init->landHDefence && ($tLv > 1)) ||
                      ($tL == $init->landSdefence && ($tLv > 1)) ||
-					 ($tL == $init->landProcity && ($init->$init->ProcityRank[2]))) &&
+					 ($tL == $init->landProcity && ($init->ProcityRank[2]))) &&
 					 ($kind != $init->comMissileSPP)) {
                 // ミサイルログ
 			if($tL == $init->landProcity){
