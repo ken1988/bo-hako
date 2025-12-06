@@ -37,9 +37,8 @@ class Init {
   //パスワードの暗号化 true: 暗号化、false: 暗号化しない
   var $cryptOn		= true;
   // マスターパスワード
-  $secretInit = new Secret_Init;
-  var $masterPassword	= $secretInit->masterPassword;
-  var $specialPassword	= $secretInit->specialPassword;
+  var $masterPassword;
+  var $specialPassword;
 
   // データディレクトリの名前
   var $dirName		= "data";
@@ -388,8 +387,8 @@ class Init {
   	 'インベーダー', # 7
     );
   // 最低体力、体力の幅、特殊能力、経験値、死体の値段
-  var $monsterBHP	= array(3, 3, 4, 5, 6, 8, 8,99);
-  var $monsterDHP	= array(0, 5, 1, 2, 2, 2, 2,0);
+  var $monsterBHP	= array(10, 5, 5, 7, 7, 10, 10,99);
+  var $monsterDHP	= array(0, 2, 3, 3, 3, 4, 4,0);
   var $monsterSpecial	= array(0x0, 0x0, 0x100, 0x1, 0x100, 0x2, 0x200,0x100);
   var $monsterExp	= array(10, 4, 5, 5, 5, 5, 9,99);
   var $monsterValue	= array(500, 200, 100, 200, 300, 500, 500,1000);
@@ -420,11 +419,7 @@ class Init {
   // 記念碑
   var $monumentNumber	= 54;
   var $monumentName	= array (
-    '建国記念碑', '国立墓地', '解放記念碑', '成長記念碑', '平和祈念塔', 'キャッスル城', 'モノリス', '聖樹', '戦いの碑', 
-    'ラスカル', 'カテドラル', '宮殿', '刑務所', '白鳥城', '官邸', '自由の女神', 'モアイ', '地球儀', 'バッグ', '南夏電波塔', 
-    'ダークいのら像', 'テトラ像', 'はねはむ像', 'ロケット', 'ピラミッド', '多目的ドーム', 'スタジアム', 'チューリップ', '水仙', 
-    'サボテン', '仙人掌', '魔方陣', '神殿', '神社', '闇石', '地石', '氷石', '風石', '炎石', '光石', '卵', '卵', '卵', '卵', 
-    '古代遺跡', '銀杏', '壊れた侵略者', '憩いの公園', '桜', '向日葵', 'ポートタワー', '灯台', '総督府', '幸福の女神像'
+    '建国記念碑', '国立墓地', '解放記念碑', '成長記念碑', '平和祈念塔', 'キャッスル城', 'モノリス', '聖樹', '戦いの碑', 'ラスカル', 'カテドラル', '宮殿', '刑務所', '白鳥城', '官邸', '自由の女神', 'モアイ', '地球儀', 'バッグ', '南夏電波塔', 'ダークいのら像', 'テトラ像', 'はねはむ像', 'ロケット', 'ピラミッド', '多目的ドーム', 'スタジアム', 'チューリップ', '水仙', 'サボテン', '仙人掌', '魔方陣', '神殿', '神社', '闇石', '地石', '氷石', '風石', '炎石', '光石', '卵', '卵', '卵', '卵', '古代遺跡', '銀杏', '壊れた侵略者', '憩いの公園', '桜', '向日葵', 'ポートタワー', '灯台', '総督府', '幸福の女神像'
     );
 
   // 人工衛星
@@ -432,10 +427,13 @@ class Init {
   var $EiseiNumber = 6;
 
   // 名前
-  var $EiseiName = array ('気象衛星', '観測衛星', '迎撃衛星', '軍事衛星', '防衛衛星', 'イレギュラー');
+  var $EiseiName = array (
+    '気象衛星', '観測衛星', '迎撃衛星', '軍事衛星', '防衛衛星', 'イレギュラー'
+    );
 
   var $Captext = array('なし','原始的','未成熟','発展途上','地方分権/先進的','中央集権/先進的');
 
+  var $ProcityRank = array(110,130,160,200); #E（～110）、D（～130）、C（～160）、B（～200）、A（200）
   /********************
       外見関係
    ********************/
@@ -1069,6 +1067,11 @@ class Init {
     // 日本時間にあわせる
     // 海外のサーバに設置する場合は次の行にある//をはずす。
     // putenv("TZ=JST-9");
+
+    // Initialize secret passwords
+    $secretInit = new Secret_Init;
+    $this->masterPassword = $secretInit->masterPassword;
+    $this->specialPassword = $secretInit->specialPassword;
 
     // 予\定のように\が勝手に追加される
     $this->stripslashes	= get_magic_quotes_gpc();
