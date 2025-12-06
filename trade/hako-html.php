@@ -3401,8 +3401,8 @@ $click_com2<hr>
 <b>コマンド入力</b><br>
 <b>
 <a href="javascript:void(0);" onclick="cominput(InputPlan,1)">挿入</a>
-　<a href="javascript:void(0);" onclick="cominput(InputPlan,2)">上書き</a>
-　<a href="javascript:void(0);" onclick="cominput(InputPlan,3)">削除</a>
+<a href="javascript:void(0);" onclick="cominput(InputPlan,2)">上書き</a>
+<a href="javascript:void(0);" onclick="cominput(InputPlan,3)">削除</a>
 </b>
 <hr>
 <b>計画番号</b>
