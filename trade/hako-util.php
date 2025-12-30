@@ -16,8 +16,8 @@ class Util {
   function aboutMoney($m,$t) {
     global $init;
     if($init->moneyMode) {
-	$max = $init->allmax[$t];
-	$perc = ceil($m/$max*100);
+        $max = $init->allmax[$t];
+        $perc = ceil($m/$max*100);
       if($perc < 5) {
         return '<IMG SRC="infoc1.png" align="left" title="皆無" ALT="皆無">';
       } elseif($perc < 20) {
@@ -30,7 +30,7 @@ class Util {
         return '<IMG SRC="infoc5.png" align="left" title="底無" ALT="底無">';
       }
     } else {
-      return $money . $init->unitMoney;
+      return $m . $init->unitMoney;
     }
   }
   //---------------------------------------------------
