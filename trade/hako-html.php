@@ -1265,103 +1265,102 @@ END;
 
     print <<<END
 <div id="islandInfo" class="app">
-<div id="latestnews">
-  {$latestnews}
-</div>
-<table border="1">
-<tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}天気{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}人口{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}面積{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}公務員{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}軍人{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}農業人口{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}商業人口{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}工業人口{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}発電所{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}建材工場{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}畜産場{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}軍事工場{$init->_tagTH}</th>
+    {$latestnews}
+  <div id="islandMain">
+    <table border="1">
+    <tr>
+    <th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}天気{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}人口{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}面積{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}公務員{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}軍人{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}農業人口{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}商業人口{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}工業人口{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}発電所{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}建材工場{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}畜産場{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}軍事工場{$init->_tagTH}</th>
 
-</tr>
-<tr>
-<th {$init->bgNumberCelld} rowspan="4">{$init->tagNumber_}$rank{$init->_tagNumber}<br>$bannerad</th>
-<td class="TenkiCell">$sora</td>
-<td {$init->bgInfoCell}>$pop</td>
-<td {$init->bgInfoCell}>$area</td>
-<td {$init->bgInfoCell}>$service</td>
-<td {$init->bgInfoCell}>$milpop</td>
-<td {$init->bgInfoCell}>$farm</td>
-<td {$init->bgInfoCell}>$market</td>
-<td {$init->bgInfoCell}>$factory</td>
-<td {$init->bgInfoCell}>$hatuden</td>
-<td {$init->bgInfoCell}>$mfactory</td>
-<td {$init->bgInfoCell}>$ffactory</td>
-<td {$init->bgInfoCell}>$sfactory</td>
+    </tr>
+    <tr>
+    <th {$init->bgNumberCelld} rowspan="4">{$init->tagNumber_}$rank{$init->_tagNumber}<br>$bannerad</th>
+    <td class="TenkiCell">$sora</td>
+    <td {$init->bgInfoCell}>$pop</td>
+    <td {$init->bgInfoCell}>$area</td>
+    <td {$init->bgInfoCell}>$service</td>
+    <td {$init->bgInfoCell}>$milpop</td>
+    <td {$init->bgInfoCell}>$farm</td>
+    <td {$init->bgInfoCell}>$market</td>
+    <td {$init->bgInfoCell}>$factory</td>
+    <td {$init->bgInfoCell}>$hatuden</td>
+    <td {$init->bgInfoCell}>$mfactory</td>
+    <td {$init->bgInfoCell}>$ffactory</td>
+    <td {$init->bgInfoCell}>$sfactory</td>
 
-</tr>
-<tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}資金{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}食料{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}商品{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}建材{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}燃料{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}砲弾{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}木材{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}石材{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}鋼鉄{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}石油{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}銀{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}食肉{$init->_tagTH}</th>
-</tr>
-<tr>
-$mStr1
-$mStr2
-$mStr3
-$mStr4
-$mStr5
-$mStr6
-$mStr7
-$mStr8
-$mStr9
-$mStr10
-$mStr12
-$mStr11
-</tr>
-<tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}怪獣退治数{$init->_tagTH}</th>
-<td {$init->bgInfoCell}>$taiji</td>
+    </tr>
+    <tr>
+    <th {$init->bgTitleCell}>{$init->tagTH_}資金{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}食料{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}商品{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}建材{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}燃料{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}砲弾{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}木材{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}石材{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}鋼鉄{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}石油{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}銀{$init->_tagTH}</th>
+    <th {$init->bgTitleCell}>{$init->tagTH_}食肉{$init->_tagTH}</th>
+    </tr>
+    <tr>
+    $mStr1
+    $mStr2
+    $mStr3
+    $mStr4
+    $mStr5
+    $mStr6
+    $mStr7
+    $mStr8
+    $mStr9
+    $mStr10
+    $mStr12
+    $mStr11
+    </tr>
+    <tr>
+    <th {$init->bgTitleCell}>{$init->tagTH_}怪獣退治数{$init->_tagTH}</th>
+    <td {$init->bgInfoCell}>$taiji</td>
 
-<th {$init->bgTitleCell}>{$init->tagTH_}ステータス{$init->_tagTH}</th>
-<td class="ItemCell" colspan="2"> $indad $investad $edcad $socad $happiad</td>
-<th {$init->bgTitleCell}>{$init->tagTH_}国情報{$init->_tagTH}</th>
-<td {$init->bgInfoCell} colspan="2">
-<a href="$wiki_link">国情報<IMG SRC="dash_borad/paper_content.png" width="30" height="30"></a>
-<a href="$trade_link">貿易情報<IMG SRC="dash_borad/table.png" width="30" height="30" ALT="貿易情報"></a>
-<a href="$news_link">報道機関<IMG SRC="dash_borad/newspaper.png" width="30" height="30" ALT="報道機関"></a>
-</td>
-<th {$init->bgTitleCell}>{$init->tagTH_}生産性{$init->_tagTH}</th>
-<td {$init->bgInfoCell} colspan="3">$Tokka</td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}ステータス{$init->_tagTH}</th>
+    <td class="ItemCell" colspan="2"> $indad $investad $edcad $socad $happiad</td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}国情報{$init->_tagTH}</th>
+    <td {$init->bgInfoCell} colspan="2">
+    <a href="$wiki_link">国情報<IMG SRC="dash_borad/paper_content.png" width="30" height="30"></a>
+    <a href="$trade_link">貿易情報<IMG SRC="dash_borad/table.png" width="30" height="30" ALT="貿易情報"></a>
+    <a href="$news_link">報道機関<IMG SRC="dash_borad/newspaper.png" width="30" height="30" ALT="報道機関"></a>
+    </td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}生産性{$init->_tagTH}</th>
+    <td {$init->bgInfoCell} colspan="3">$Tokka</td>
 
 
-</tr>
-<tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}人工衛星{$init->_tagTH}</th>
-<td class="ItemCell" colspan="5">$eiseis</td>
-<th {$init->bgTitleCell}>{$init->tagTH_}軍事技術{$init->_tagTH}</th>
-<td {$init->bgInfoCell} colspan="2">{$arm}</td>
-<th {$init->bgTitleCell}>{$init->tagTH_}維持費{$init->_tagTH}</th>
-<td {$init->bgInfoCell}>$mentad</td>
-<th {$init->bgTitleCell}>{$init->tagTH_}鉱業{$init->_tagTH}</th>
-<td {$init->bgInfoCell}>$mining</td>
-</tr>
-<tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}コメント{$init->_tagTH}</th>
-<td colspan="12" {$init->bgCommentCell}>$comment</td>
-</tr>
-</table>
-</div>
+    </tr>
+    <tr>
+    <th {$init->bgTitleCell}>{$init->tagTH_}人工衛星{$init->_tagTH}</th>
+    <td class="ItemCell" colspan="5">$eiseis</td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}軍事技術{$init->_tagTH}</th>
+    <td {$init->bgInfoCell} colspan="2">{$arm}</td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}維持費{$init->_tagTH}</th>
+    <td {$init->bgInfoCell}>$mentad</td>
+    <th {$init->bgTitleCell}>{$init->tagTH_}鉱業{$init->_tagTH}</th>
+    <td {$init->bgInfoCell}>$mining</td>
+    </tr>
+    <tr>
+    <th {$init->bgTitleCell}>{$init->tagTH_}コメント{$init->_tagTH}</th>
+    <td colspan="12" {$init->bgCommentCell}>$comment</td>
+    </tr>
+    </table>
+  </div>
 </div>
 END;
   }
