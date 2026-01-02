@@ -886,11 +886,11 @@ class Init {
     $this->comCost[$this->comMissileNM]    = -10;
     $this->comSCost[$this->comMissileNM]   = -10;
     $this->comName[$this->comMissilePP]    = 'PPミサイル発射';
-    $this->comCost[$this->comMissilePP]    = -100;
-    $this->comSCost[$this->comMissilePP]   = -100;
+    $this->comCost[$this->comMissilePP]    = -30;
+    $this->comSCost[$this->comMissilePP]   = -30;
 	$this->comName[$this->comMissileSPP]    = 'SPPミサイル発射';
-    $this->comCost[$this->comMissileSPP]   = -250;
-	$this->comSCost[$this->comMissileSPP]    = -250;
+    $this->comCost[$this->comMissileSPP]   = -300;
+	$this->comSCost[$this->comMissileSPP]    = -300;
     $this->comName[$this->comMissileBT]    = 'BTミサイル発射';
     $this->comCost[$this->comMissileBT]    = -30;
     $this->comSCost[$this->comMissileBT]   = -30;
@@ -910,8 +910,8 @@ class Init {
     $this->comCost[$this->comEiseiAtt]     = 40000;
     $this->comSCost[$this->comEiseiAtt]    = -300;
     $this->comName[$this->comEiseiLzr]     = '衛星レーザー発射';
-    $this->comCost[$this->comEiseiLzr]     = 10000;
-    $this->comSCost[$this->comEiseiLzr]    = -2500;
+    $this->comCost[$this->comEiseiLzr]     = 30000;
+    $this->comSCost[$this->comEiseiLzr]    = -2000;
     $this->comName[$this->comSendMonster]  = '陸上部隊派遣';
     $this->comCost[$this->comSendMonster]  = 500;
     $this->comSCost[$this->comSendMonster] = -500;
