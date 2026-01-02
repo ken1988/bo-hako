@@ -317,6 +317,9 @@ class Init {
   // 経験値がいくつでレベルアップか
   var $baseLevelUp	= array(5,8,11,15,19,23,28,33,38,43,48,53,58,63,68,74,80,86,92,100,110,120,130,145,160,175,190,210,225,255); // ミサイル基地
 
+  // ダメージリスト
+  var $damageList = array("MSProCityA"=>40,"MSProCityB"=>60,"MSProCityC"=>80,"LZBigCity"=>200);
+
   // 目標の島 所有の島が選択された状態でリストを生成 1、順位がTOPの島なら0
   // ミサイルの誤射が多い場合などに使用すると良いかもしれない
   var $targetIsland = 1;
@@ -341,7 +344,7 @@ class Init {
   var $dBaseInitLv = 1;
 
   // 防衛施設の最大レベル
-  var $dBaseMaxLv = 3;
+  var $dBaseMaxLv = 5;
 
   //----------------------------------------
   // 災害
@@ -875,20 +878,20 @@ class Init {
     $this->comCost[$this->comMissileNM]    = -10;
     $this->comSCost[$this->comMissileNM]   = -10;
     $this->comName[$this->comMissilePP]    = 'PPミサイル発射';
-    $this->comCost[$this->comMissilePP]    = -10;
-    $this->comSCost[$this->comMissilePP]   = -20;
+    $this->comCost[$this->comMissilePP]    = -100;
+    $this->comSCost[$this->comMissilePP]   = -100;
 	$this->comName[$this->comMissileSPP]    = 'SPPミサイル発射';
-    $this->comCost[$this->comMissileSPP]    = -20;
-	$this->comSCost[$this->comMissileSPP]   = -40;
+    $this->comCost[$this->comMissileSPP]   = -250;
+	$this->comSCost[$this->comMissileSPP]    = -250;
     $this->comName[$this->comMissileBT]    = 'BTミサイル発射';
     $this->comCost[$this->comMissileBT]    = -30;
     $this->comSCost[$this->comMissileBT]   = -30;
     $this->comName[$this->comMissileSP]    = '催眠弾発射';
-    $this->comCost[$this->comMissileSP]    = -20;
-    $this->comSCost[$this->comMissileSP]   = -20;
+    $this->comCost[$this->comMissileSP]    = -30;
+    $this->comSCost[$this->comMissileSP]   = -30;
     $this->comName[$this->comMissileLD]    = '陸地破壊弾発射';
-    $this->comCost[$this->comMissileLD]    = -50;
-    $this->comSCost[$this->comMissileLD]   = -50;
+    $this->comCost[$this->comMissileLD]    = -200;
+    $this->comSCost[$this->comMissileLD]   = -200;
     $this->comName[$this->comEisei]        = '人工衛星打ち上げ';
     $this->comCost[$this->comEisei]        = 9999;
     $this->comSCost[$this->comEisei]       = -9999;
@@ -899,8 +902,8 @@ class Init {
     $this->comCost[$this->comEiseiAtt]     = 40000;
     $this->comSCost[$this->comEiseiAtt]    = -300;
     $this->comName[$this->comEiseiLzr]     = '衛星レーザー発射';
-    $this->comCost[$this->comEiseiLzr]     = 15000;
-    $this->comSCost[$this->comEiseiLzr]    = -200;
+    $this->comCost[$this->comEiseiLzr]     = 10000;
+    $this->comSCost[$this->comEiseiLzr]    = -2500;
     $this->comName[$this->comSendMonster]  = '陸上部隊派遣';
     $this->comCost[$this->comSendMonster]  = 500;
     $this->comSCost[$this->comSendMonster] = -500;

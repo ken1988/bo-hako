@@ -2751,9 +2751,9 @@ class Turn {
           $tLandValue[$x][$y] = 1;
         } elseif(($tL == $init->landBigtown) || ($tL == $init->landCapital) ||
         		 ($tl== $init->landIndCity)  || ($tL == $init->landProcity)){
-
+          //大人口地形（現代都市、首都、防災都市、工業都市）は人口減少
 	        	$this->log->EiseiLzr($id, $target, $name, $tName, $comName, $tLname, $tPoint, "が攻撃されました。");
-	        	$tLandValue[$x][$y] -=30;
+	        	$tLandValue[$x][$y] -= $init->damageList["LZBigCity"];
 
 	        	if ($tLandValue[$x][$y] < 0) {
 		          // その他は荒地に
@@ -2975,13 +2975,13 @@ class Turn {
 				$this->log->msGensyo($id, $target, $name, $tName, $comName, $tLname, $point, $tPoint);
         if($tLv < $init->ProcityRank[2]){
           //ランクC（B未満）
-            $tLandValue[$tx][$ty] -= 80;
+            $tLandValue[$tx][$ty] -= $init->damageList["MSProCityC"];
         }elseif($tLv < $init->ProcityRank[3]){
           //ランクB（A未満）
-            $tLandValue[$tx][$ty] -= 60;
+            $tLandValue[$tx][$ty] -= $init->damageList["MSProCityB"];
         }else{
           //ランクA
-            $tLandValue[$tx][$ty] -= 40;
+            $tLandValue[$tx][$ty] -= $init->damageList["MSProCityA"];
         }
 			}else{
             	$this->log->MsDamage($id, $target, $name, $tName, $comName, $point, $tPoint);
