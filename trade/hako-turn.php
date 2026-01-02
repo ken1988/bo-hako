@@ -2552,7 +2552,7 @@ class Turn {
 		break;
 	  }
 	 $arg = $arg + 1;
-	if(($arg > 201)||(abs($arg-$island['soclv']) > 11)){
+	if(($arg > $init->SocLvMax)||(abs($arg-$island['soclv']) > $init->SocLvUpMax)){
 		 $this->log->InvestFail($id, $name, $comName);
 		 $returnMode = 0;
 		 break;

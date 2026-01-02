@@ -2739,8 +2739,8 @@ function cominput(theForm, x, k, z) {
             alert("数量は半角数字で指定してください。");
             return false;
         }
-  if (tmpe < 0 || tmpe > 300){
-  			alert("数量は0-300の範囲で指定してください。");
+  if (tmpe < 0 || tmpe > 999){
+  			alert("数量は0-999の範囲で指定してください。");
   			return false;
   }
   a = theForm.NUMBER.options[theForm.NUMBER.selectedIndex].value;
@@ -3478,7 +3478,7 @@ END;
     print <<<END
 </select><b> )</b>
 <hr>
-<b>数量</b><input type="text" name="AMOUNT" id="AMOUNT" size="3" maxlength="30" value="0">入力範囲：0-300
+<b>数量</b><input type="text" name="AMOUNT" id="AMOUNT" size="3" maxlength="30" value="0">入力範囲：0-999
 <hr>
 <b>目標の国</b><br>
 <select name="TARGETID" onchange="settarget(this);">
