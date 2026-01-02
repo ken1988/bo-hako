@@ -429,7 +429,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
       $eiseis = "";
       for($e = 0; $e < $init->EiseiNumber; $e++) {
         if($eisei[$e] > 0) {
-          $eiseis .= "{$init->EiseiList[$e]['name']}<img src=\"eisei{$e}.gif\" alt=\"{$init->EiseiName[$e]} {$eisei[$e]}%\"> ";
+          $eiseis .= "<img src=\"eisei{$e}.gif\" alt=\"{$init->EiseiName[$e]} {$eisei[$e]}%\"> ";
         } else {
           $eiseis .= "";
         }

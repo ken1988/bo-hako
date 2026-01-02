@@ -2572,19 +2572,14 @@ class Turn {
 	  }
       if($arg > 5) $arg = 0;
       $value = ($arg + 1) * $cost;
-      // 気象, 観測, 迎撃, 軍事, 防衛, イレ
-      $rocket = array(1, 1, 2, 2, 3, 4);
-      $tech   = array(10, 40, 100, 250, 300, 500);
-      $failp  = array(700, 500, 600, 400, 200, 3000);
-      $failq  = array(100, 100, 10, 10, 10, 1);
 
-      if($island['m23'] < $rocket[$arg]) {
-        // ロケットが$rocket以上ないとダメ
+      if($island['m23'] < $init->EiseiList[$arg]['rocket']) {
+        // ロケットがrocket以上ないとダメ
         $this->log->NoAny($id, $name, $comName, "ロケットが足りない");
         $returnMode = 0;
         break;
-      } elseif($island['rena'] < $tech[$arg]) {
-        // 軍事技術Lv$tech以上ないとダメ
+      } elseif($island['rena'] < $init->EiseiList[$arg]['tech']) {
+        // 軍事技術Lv tech以上ないとダメ
         $this->log->NoAny($id, $name, $comName, "軍事技術が足りない");
         $returnMode = 0;
         break;
@@ -2592,14 +2587,14 @@ class Turn {
         $this->log->NoAny($id, $name, $comName, "資金不足の");
         $returnMode = 0;
         break;
-      } elseif(Util::random(10000) > $failp[$arg] + $failq[$arg] * $island['rena']) {
+      } elseif(Util::random(10000) > $init->EiseiList[$arg]['failp'] + $init->EiseiList[$arg]['failq'] * $island['rena']) {
         $this->log->Eiseifail($id, $name, $comName, $point);
         // 金を差し引く
         $island['money'] -= $value;
         $returnMode = 1;
         break;
       }
-      $island['eisei'][$arg] = $init->EiseiMaxEnergy[$arg];
+      $island['eisei'][$arg] = $init->EiseiList[$arg]['MaxEnergy'];
       $this->log->Eiseisuc($id, $name, $init->EiseiName[$arg], "の打ち上げ");
       // 金を差し引く
       $island['money'] -= $value;
@@ -2615,7 +2610,7 @@ class Turn {
 	  }
       if($arg > 5) $arg = 0;
       if($island['eisei'][$arg] > 0) {
-        $island['eisei'][$arg] = $init->EiseiMaxEnergy[$arg];
+        $island['eisei'][$arg] = $init->EiseiList[$arg]['MaxEnergy'];
         $this->log->Eiseisuc($id, $name, $init->EiseiName[$arg], "の修復");
       } else {
         $this->log->NoAny($id, $name, $comName, "指定の人工衛星がない");

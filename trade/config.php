@@ -436,9 +436,8 @@ class Init {
   var $EiseiName = array (
     '気象衛星', '観測衛星', '迎撃衛星', '軍事衛星', '防衛衛星', 'イレギュラー'
     );
-  // 最大エネルギー
-  var $EiseiMaxEnergy = array (150,150,150,150,150,250);
 
+  // 衛星データ
   var $EiseiList = array(array('name'=>"気象衛星",'MaxEnergy'=>150,'rocket'=>1,'tech'=>10,'failp'=>700,'failq'=>100),
                          array('name'=>"観測衛星",'MaxEnergy'=>150,'rocket'=>1,'tech'=>40,'failp'=>500,'failq'=>100),
                          array('name'=>"迎撃衛星",'MaxEnergy'=>150,'rocket'=>2,'tech'=>100,'failp'=>600,'failq'=>10),
