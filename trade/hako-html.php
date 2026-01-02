@@ -1268,23 +1268,6 @@ END;
 <div id="latestnews">
   {$latestnews}
 </div>
- <header id="islandKPI" class="topbar">
- <table border="1">
- <tr>
-<th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}天気{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}人口{$init->_tagTH}</th>
-<th {$init->bgTitleCell}>{$init->tagTH_}面積{$init->_tagTH}</th>
-</tr>
-<tr>
-<th {$init->bgNumberCelld} rowspan="4">{$init->tagNumber_}$rank{$init->_tagNumber}<br>$bannerad</th>
-<td class="TenkiCell">$sora</td>
-<td {$init->bgInfoCell}>$pop</td>
-<td {$init->bgInfoCell}>$area</td>
-</tr>
- </header>
- <aside id="islandInfoleft" class="left"></aside>
-  <main id="islandInfomain" class="map">
 <table border="1">
 <tr>
 <th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
@@ -1378,8 +1361,6 @@ $mStr11
 <td colspan="12" {$init->bgCommentCell}>$comment</td>
 </tr>
 </table>
-</main>
-  <aside id="islandInforight" class="right"></aside>
 </div>
 </div>
 END;
