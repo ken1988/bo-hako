@@ -436,9 +436,18 @@ class Init {
   var $EiseiName = array (
     '気象衛星', '観測衛星', '迎撃衛星', '軍事衛星', '防衛衛星', 'イレギュラー'
     );
+  // 最大エネルギー
+  var $EiseiMaxEnergy = array (150,150,150,150,150,250);
+
+  var $EiseiList = array(array('name'=>"気象衛星",'MaxEnergy'=>150,'rocket'=>1,'tech'=>10,'failp'=>700,'failq'=>100),
+                         array('name'=>"観測衛星",'MaxEnergy'=>150,'rocket'=>1,'tech'=>40,'failp'=>500,'failq'=>100),
+                         array('name'=>"迎撃衛星",'MaxEnergy'=>150,'rocket'=>2,'tech'=>100,'failp'=>600,'failq'=>10),
+                         array('name'=>"軍事衛星",'MaxEnergy'=>150,'rocket'=>2,'tech'=>250,'failp'=>400,'failq'=>10),
+                         array('name'=>"防衛衛星",'MaxEnergy'=>150,'rocket'=>3,'tech'=>300,'failp'=>200,'failq'=>10),
+                         array('name'=>"イレギュラー",'MaxEnergy'=>250,'rocket'=>4,'tech'=>500,'failp'=>3000,'failq'=>1)
+                        );
 
   var $Captext = array('なし','原始的','未成熟','発展途上','地方分権/先進的','中央集権/先進的');
-
   var $ProcityRank = array(110,130,160,200); #E（～110）、D（～130）、C（～160）、B（～200）、A（200）
   /********************
       外見関係

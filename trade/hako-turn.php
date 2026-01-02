@@ -2599,7 +2599,7 @@ class Turn {
         $returnMode = 1;
         break;
       }
-      $island['eisei'][$arg] = ($arg == 5) ? 250 : 100;
+      $island['eisei'][$arg] = $init->EiseiMaxEnergy[$arg];
       $this->log->Eiseisuc($id, $name, $init->EiseiName[$arg], "の打ち上げ");
       // 金を差し引く
       $island['money'] -= $value;
@@ -2608,14 +2608,14 @@ class Turn {
       break;
 
     case $init->comEiseimente:
-      // 人工衛星打修復
+      // 人工衛星修復
 	  if(Turn::ChkCapLevel($init->comEiseimente,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
       if($arg > 5) $arg = 0;
       if($island['eisei'][$arg] > 0) {
-        $island['eisei'][$arg] = 150;
+        $island['eisei'][$arg] = $init->EiseiMaxEnergy[$arg];
         $this->log->Eiseisuc($id, $name, $init->EiseiName[$arg], "の修復");
       } else {
         $this->log->NoAny($id, $name, $comName, "指定の人工衛星がない");
