@@ -156,7 +156,7 @@ class Main {
 
   function execute() {
     $html = new HtmlPresent;
-    $hako =& new Hako;
+    $hako = new Hako;
 
     $this->parseInputData();
     $hako->init($this);

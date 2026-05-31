@@ -13,7 +13,7 @@ class Util {
   //---------------------------------------------------
   // 資金の表示
   //---------------------------------------------------
-  function aboutMoney($m,$t) {
+  public static function aboutMoney($m,$t) {
     global $init;
     if($init->moneyMode) {
         $max = $init->allmax[$t];
@@ -36,7 +36,7 @@ class Util {
   //---------------------------------------------------
   // 経験地からミサイル基地レベルを算出
   //---------------------------------------------------
-  function expToLevel($kind, $exp) {
+  public static function expToLevel($kind, $exp) {
     global $init;
     if(($kind == $init->landBase)||
 	   ($kind == $init->landHBase)){
@@ -52,7 +52,7 @@ class Util {
   //---------------------------------------------------
   // 怪獣の種類・名前・体力を算出
   //---------------------------------------------------
-  function monsterSpec($lv) {
+  public static function monsterSpec($lv) {
     global $init;
     // 種類
     $kind = (int)($lv / 100);
@@ -65,7 +65,7 @@ class Util {
   //---------------------------------------------------
   // 島の名前から番号を算出
   //---------------------------------------------------
-  function  nameToNumber($hako, $name) {
+  public static function nameToNumber($hako, $name) {
     // 全島から探す
     for($i = 0; $i < $hako->islandNumber; $i++) {
       if(strcmp($name, "{$hako->islands[$i]['name']}") == 0) {
@@ -78,7 +78,7 @@ class Util {
   //---------------------------------------------------
   // 島名を返す
   //---------------------------------------------------
-  function islandName($island, $ally, $idToAllyNumber) {
+  public static function islandName($island, $ally, $idToAllyNumber) {
     $name = '';
     foreach ($island['allyId'] as $id) {
       $i = $idToAllyNumber[$id];
@@ -93,7 +93,7 @@ class Util {
   //---------------------------------------------------
   // 数字を見やすくする
   //---------------------------------------------------
-  function Rewriter($amount){
+  public static function Rewriter($amount){
       $amount = strrev($amount);
 	  $len = strlen($amount);
 	  $lens = floor($len/4);
@@ -116,7 +116,7 @@ class Util {
    //---------------------------------------------------
   // 資源ごとに数字を整える
   //---------------------------------------------------
-  function Rewriter2($type,$base){
+  public static function Rewriter2($type,$base){
 
 	//ベース値を整える
 		switch($type){
@@ -147,7 +147,7 @@ class Util {
   //---------------------------------------------------
   // 桁区切り数字を置き換える
   //---------------------------------------------------
-  function Replacer($type,$amounts){
+  public static function Replacer($type,$amounts){
   if($type == ""){
   	$amounts = substr($amounts,0,strlen($amounts)-3);
   }else{
@@ -186,7 +186,7 @@ class Util {
   //---------------------------------------------------
   // 暦を生成する
   //---------------------------------------------------
-  function MKCal($turn,$mode){
+  public static function MKCal($turn,$mode){
    $modTurn = $turn % 36;
 	 $year = floor(($turn - 1) / 36);
 	 $month = ceil($modTurn / 3);
@@ -226,7 +226,7 @@ class Util {
   //---------------------------------------------------
   //統計データ出力(総合）
   //---------------------------------------------------
-  function Makewstat(){
+  public static function Makewstat(){
     global $init;
     $fileName = "{$init->dirName}/statistic.xml";
 	$xmldata = simplexml_load_file($fileName);
@@ -238,7 +238,7 @@ class Util {
   //---------------------------------------------------
   //統計データ出力(人口系）
   //---------------------------------------------------
-  function Makepstat($xmldata){
+  public static function Makepstat($xmldata){
 
 	foreach($xmldata->factdata as  $tstat){
 		if($tstat->year != 0){
@@ -257,7 +257,7 @@ class Util {
   //---------------------------------------------------
   //統計データ出力(金銭系）
   //---------------------------------------------------
-  function Makemstat($xmldata){
+  public static function Makemstat($xmldata){
 
 	foreach($xmldata->factdata as  $tstat){
 		if($tstat->year != 0){
@@ -274,7 +274,7 @@ class Util {
   //---------------------------------------------------
   //統計データ抽出
   //---------------------------------------------------
-    function arrdata($data,$onum){
+    public static function arrdata($data,$onum){
 	$num = count($data);
 	$i = 0;
 	foreach($data as $year => $ydata){
@@ -288,7 +288,7 @@ class Util {
   //---------------------------------------------------
   // 国家経済統計データ出力
   //---------------------------------------------------
-	function MakeNest($nest_items,$name){
+	public static function MakeNest($nest_items,$name){
 	global $init;
 
 	$html = "";
@@ -343,7 +343,7 @@ class Util {
   //---------------------------------------------------
   // 国家経済統計データ出力
   //---------------------------------------------------
-	function MakeNest2($nest_items){
+	public static function MakeNest2($nest_items){
 	global $init;
 	$dat = array();
 	
@@ -382,7 +382,7 @@ class Util {
   //---------------------------------------------------
   // 2次元配列連結
   //---------------------------------------------------
-	function array_merge_x($a1, $a2){
+	public static function array_merge_x($a1, $a2){
 		foreach($a2 as $key => $val){
 			if(isset($a1[$key]) && is_array($val)){
 				$a1[$key] = Util::array_merge_x($a1[$key], $val);
@@ -395,7 +395,7 @@ class Util {
   //---------------------------------------------------
   // パスワードチェック
   //---------------------------------------------------
-  function checkPassword($p1 = "", $p2 = "") {
+  public static function checkPassword($p1 = "", $p2 = "") {
     global $init;
 
     // nullチェック
@@ -414,7 +414,7 @@ class Util {
   //---------------------------------------------------
   // パスワードのエンコード
   //---------------------------------------------------
-  function encode($s) {
+  public static function encode($s) {
     global $init;
     if($init->cryptOn) {
       return crypt($s, 'h2');
@@ -425,7 +425,7 @@ class Util {
   //---------------------------------------------------
   // 改行コードを LF（\n）に統一
   //---------------------------------------------------
-  function conv_LF($str){
+  public static function conv_LF($str){
   	$str=str_replace("\r\n", "\n", $str);
   	$str=str_replace("\r", "\n", $str);
   	return $str;
@@ -433,14 +433,14 @@ class Util {
   //---------------------------------------------------
   // 0 ～ num -1 の乱数生成
   //---------------------------------------------------
-  function random($num = 0) {
+  public static function random($num = 0) {
     if($num <= 1) return 0;
     return mt_rand(0, $num - 1);
   }
   //---------------------------------------------------
   // ローカル掲示板のメッセージを一つ前にずらす
   //---------------------------------------------------
-  function slideBackLbbsMessage(&$lbbs, $num) {
+  public static function slideBackLbbsMessage(&$lbbs, $num) {
     global $init;
     array_splice($lbbs, $num, 1);
     $lbbs[$init->lbbsMax - 1] = '0>>0>>';
@@ -448,14 +448,14 @@ class Util {
   //---------------------------------------------------
   // ローカル掲示板のメッセージを一つ後ろにずらす
   //---------------------------------------------------
-  function slideLbbsMessage(&$lbbs) {
+  public static function slideLbbsMessage(&$lbbs) {
     array_pop($lbbs);
     array_unshift($lbbs, $lbbs[0]);
   }
   //---------------------------------------------------
   // 定期輸送の計画を一つ前にずらす
   //---------------------------------------------------
-  function slideregT(&$regT, $num) {
+  public static function slideregT(&$regT, $num) {
     global $init;
     array_splice($regT, $num, 1);
     $regT[$init->regTMax - 1] = "";
@@ -463,14 +463,14 @@ class Util {
   //---------------------------------------------------
   // 定期輸送の計画を1つ後ろにずらす
   //---------------------------------------------------
-  function regTpush(&$regT) {
+  public static function regTpush(&$regT) {
     array_pop($regT);
     array_unshift($regT, $regT[0]);
   }
   //---------------------------------------------------
   // ランダムな座標を生成
   //---------------------------------------------------
-  function makeRandomPointArray() {
+  public static function makeRandomPointArray() {
     global $init;
     $rx = $ry = array();
     for($i = 0; $i < $init->islandSize; $i++)
@@ -499,7 +499,7 @@ class Util {
   //---------------------------------------------------
   // ランダムな島の順序を生成
   //---------------------------------------------------
-  function randomArray($n = 1) {
+  public static function randomArray($n = 1) {
     // 初期値
     for($i = 0; $i < $n; $i++) {
       $list[$i] = $i;
@@ -519,7 +519,7 @@ class Util {
   //---------------------------------------------------
   // コマンドを前にずらす
   //---------------------------------------------------
-  function slideFront(&$command, $number = 0) {
+  public static function slideFront(&$command, $number = 0) {
     global $init;
     // それぞれずらす
     array_splice($command, $number, 1);
@@ -536,7 +536,7 @@ class Util {
   //---------------------------------------------------
   // コマンドを後にずらす
   //---------------------------------------------------
-  function slideBack(&$command, $number = 0) {
+  public static function slideBack(&$command, $number = 0) {
     global $init;
     // それぞれずらす
     if($number == count($command) - 1)
@@ -547,7 +547,7 @@ class Util {
     }
   }
 
-  function euc_convert($arg) {
+  public static function euc_convert($arg) {
     // 文字コードをEUC-JPに変換して返す
     // 文字列の文字コードを判別
     $code = i18n_discover_encoding("$arg");
@@ -557,7 +557,7 @@ class Util {
     }
     return $arg;
   }
-  function sjis_convert($arg) {
+  public static function sjis_convert($arg) {
     // 文字コードをSHIFT_JISに変換して返す
     // 文字列の文字コードを判別
     $code = i18n_discover_encoding("$arg");
@@ -570,7 +570,7 @@ class Util {
   //---------------------------------------------------
   // 船なのかのチェック
   //---------------------------------------------------
-    function checkShip($kind,$lv) {
+    public static function checkShip($kind,$lv) {
       global $init;
       $shiplev = $init->shipKind + 2;
       if(($kind == $init->landSea) && ((($lv > 1) && ($lv < $shiplev)) || ($lv == 255))){
@@ -581,7 +581,7 @@ class Util {
   //---------------------------------------------------
   // ファイルをロックする(書き込み時)
   //---------------------------------------------------
-  function lockw($fp) {
+  public static function lockw($fp) {
     set_file_buffer($fp, 0);
     if(!flock($fp, LOCK_EX)) {
       fclose($fp);
@@ -592,7 +592,7 @@ class Util {
   //---------------------------------------------------
   // ファイルをロックする(読み込み時)
   //---------------------------------------------------
-  function lockr($fp) {
+  public static function lockr($fp) {
     set_file_buffer($fp, 0);
     if(!flock($fp, LOCK_SH)) {
       fclose($fp);
@@ -603,7 +603,7 @@ class Util {
   //---------------------------------------------------
   // ファイルをアンロックする
   //---------------------------------------------------
-  function unlock($fp) {
+  public static function unlock($fp) {
     flock($fp, LOCK_UN);
   }
 }
