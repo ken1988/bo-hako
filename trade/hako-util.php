@@ -585,7 +585,7 @@ class Util {
     set_file_buffer($fp, 0);
     if(!flock($fp, LOCK_EX)) {
       fclose($fp);
-      Error::lockFail();
+      HakoError::lockFail();
     }
     rewind($fp);
   }
@@ -596,7 +596,7 @@ class Util {
     set_file_buffer($fp, 0);
     if(!flock($fp, LOCK_SH)) {
       fclose($fp);
-      Error::lockFail();
+      HakoError::lockFail();
     }
     rewind($fp);
   }

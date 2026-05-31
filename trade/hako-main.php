@@ -1015,7 +1015,7 @@ class Main {
     $cgi->getCookies();
     if(!$hako->readIslands($cgi)) {
       HTML::header($cgi->dataSet);
-      Error::noDataFile();
+      HakoError::noDataFile();
       HTML::footer();
       exit();
     }

@@ -605,7 +605,7 @@ END;
     // パスワード
     if(!Util::checkPassword("", $data['PASSWORD'])) {
       // password間違い
-      Error::wrongPassword();
+      HakoError::wrongPassword();
       return;
     }
 
@@ -705,7 +705,7 @@ END;
     // パスワード
     if(!Util::checkPassword("", $data['PASSWORD'])) {
       // password間違い
-      Error::wrongPassword();
+      HakoError::wrongPassword();
       return;
     }
 
@@ -872,7 +872,7 @@ END;
     // パスワード
     if(!Util::checkPassword("", $data['PASSWORD'])) {
       // password間違い
-      Error::wrongPassword();
+      HakoError::wrongPassword();
       return;
     }
 
@@ -928,7 +928,7 @@ class Main {
     $cgi->parseInputData();
     if(!$hako->readIslands($cgi)) {
       HTML::header($cgi->dataSet);
-      Error::noDataFile();
+      HakoError::noDataFile();
       HTML::footer();
       exit();
     }
