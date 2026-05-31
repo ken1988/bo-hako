@@ -95,7 +95,7 @@ class HakoIO {
     $factory  = chop(fgets($fp, READ_LINE));
     list($factory, $mfactory, $sfactory, $ffactory) = explode(",", $factory);
     $mountain   = chop(fgets($fp, READ_LINE));
-    list($mountain, $mining,) = explode(",", $mountain);
+    list($mountain, $mining) = explode(",", $mountain);
     $power    = chop(fgets($fp, READ_LINE));
     list($taiji, $rena, $fire) = explode(",", $power);
     $tenki    = chop(fgets($fp, READ_LINE));
@@ -182,7 +182,7 @@ class HakoIO {
       'material' => $material,
       'oil'      => $oil,
       'fuel'     => $fuel,
-      'explosive' => $explosive,
+      'explosive' => (int)$explosive,
       'shell'    => $shell,
       'farm'     => $farm,
       'factory'  => $factory,

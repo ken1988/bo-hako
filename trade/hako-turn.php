@@ -231,6 +231,7 @@ class Make {
       'material'  => $init->initialMaterial,
       'oil'	      => $init->initialOil,
       'fuel'	  => $init->initialFuel,
+      'explosive' => $init->initialExplosive,
       'shell'	  => $init->initialShell,
       'land'	  => $land,
       'landValue' => $landValue,
@@ -6658,7 +6659,7 @@ if($island['ffactory']> 0){
 	if($island['pop'] == 0) {
       $island['point'] = 0;
     } else {
-      $island['point'] = round(($island['pop']+$island['spop'])*3 + ($island['money'] + $island['material'] + $island['fuel'] + $island['shell'] + $island['wood'] + $island['stone'] + $island['steel'] + $island['oil'] + $island['explosive'] + $island['alcohol'])*0.01 + ($island['farm'] + $island['factory'] + $island['market'] + $island['hatuden'])*8 + $island['area']*120 + $island['taiji']*40 + $islansd['fire']*60);
+      $island['point'] = round(($island['pop']+$island['spop'])*3 + ($island['money'] + $island['material'] + $island['fuel'] + $island['shell'] + $island['wood'] + $island['stone'] + $island['steel'] + $island['oil'] + $island['explosive'] + $island['alcohol'])*0.01 + ($island['farm'] + $island['factory'] + $island['market'] + $island['hatuden'])*8 + $island['area']*120 + $island['taiji']*40 + $island['fire']*60);
     }
     $island['seichi']   = 0;
   }
