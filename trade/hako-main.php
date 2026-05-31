@@ -234,7 +234,7 @@ class Hako extends HakoIO {
       // 森
       if($mode == 1) {
         $image = 'land6.gif';
-        $naviText= "{$lv}{$init->unitTree}";
+          $naviText= "{$lv}{$init->unitTree}";
       } else {
         // 観光者の場合は木の本数隠す
         $image = 'land6.gif';
@@ -986,7 +986,7 @@ class Cgi {
     $this->modifiedSinces($time_stamp);
   }
   function modifiedSinces($time) {
-    $modsince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : "";
+      $modsince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : "";
 
     $ms = gmdate("D, d M Y G:i:s", $time) . " GMT";
     if($modsince == $ms)

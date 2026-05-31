@@ -1,31 +1,31 @@
 <?php
 /***
-  ™‚¨‚Ü‚¯™
-* ƒTƒ€ƒlƒCƒ‹ƒJƒbƒ^[@i‰æ‘œˆê——jby ToR
+  â˜†ãŠã¾ã‘â˜†
+* ã‚µãƒ ãƒã‚¤ãƒ«ã‚«ãƒƒã‚¿ãƒ¼ã€€ï¼ˆç”»åƒä¸€è¦§ï¼‰by ToR
 
-* ¦PHPƒIƒvƒVƒ‡ƒ“‚ÉGD‚ª•K—v‚Å‚·i–³—¿I‚Å‚Íƒ_ƒ‚È‚Æ‚±‚ë‚ª‘½‚¢
-* $_GET“™g—p‚µ‚Ä‚Ü‚·BŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚ÌPHP‚Å‚Í$_GET¨$HTTP_GET_VARS $_SERVER¨$HTTP_SERVER_VARS
+* â€»PHPã‚ªãƒ—ã‚·ãƒ§ãƒ³ã«GDãŒå¿…è¦ã§ã™ï¼ˆç„¡æ–™é¯–ã§ã¯ãƒ€ãƒ¡ãªã¨ã“ã‚ãŒå¤šã„
+* $_GETç­‰ä½¿ç”¨ã—ã¦ã¾ã™ã€‚å¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®PHPã§ã¯$_GETâ†’$HTTP_GET_VARS $_SERVERâ†’$HTTP_SERVER_VARS
 **/
 
-$img_dir   = "./log/";			//‰æ‘œˆê——ƒfƒBƒŒƒNƒgƒŠ
-$thumb_dir = "./imgs/";		//ƒTƒ€ƒlƒCƒ‹•Û‘¶ƒfƒBƒŒƒNƒgƒŠ
-$ext       = ".+\.png$|.+\.jpe?g$";	//Šg’£qCGIF‚ÍGD‚ÌÊŞ°¼Ş®İ‚É‚æ‚Á‚Ä‚Í–³—
-$W         = 90;			//o—Í‰æ‘œ•
-$H         = 60;			//o—Í‰æ‘œ‚‚³
-$cols      = 4;				//1s‚É•\¦‚·‚é‰æ‘œ”
-$page_def  = 20;			//1ƒy[ƒW‚É•\¦‚·‚é‰æ‘œ”
+$img_dir   = "./log/";			//ç”»åƒä¸€è¦§ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+$thumb_dir = "./imgs/";		//ã‚µãƒ ãƒã‚¤ãƒ«ä¿å­˜ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+$ext       = ".+\.png$|.+\.jpe?g$";	//æ‹¡å¼µå­ï¼ŒGIFã¯GDã®ï¾Šï¾ï½°ï½¼ï¾ï½®ï¾ã«ã‚ˆã£ã¦ã¯ç„¡ç†
+$W         = 90;			//å‡ºåŠ›ç”»åƒå¹…
+$H         = 60;			//å‡ºåŠ›ç”»åƒé«˜ã•
+$cols      = 4;				//1è¡Œã«è¡¨ç¤ºã™ã‚‹ç”»åƒæ•°
+$page_def  = 20;			//1ãƒšãƒ¼ã‚¸ã«è¡¨ç¤ºã™ã‚‹ç”»åƒæ•°
 
 if ($_GET["cmd"]=="min" && isset($_GET["pic"])) {
   $src = $img_dir.$_GET["pic"];
 
-  // ‰æ‘œ‚Ì•‚Æ‚‚³‚Æƒ^ƒCƒv‚ğæ“¾
+  // ç”»åƒã®å¹…ã¨é«˜ã•ã¨ã‚¿ã‚¤ãƒ—ã‚’å–å¾—
   $size = GetImageSize($src);
   switch ($size[2]) {
     case 1 : $im_in = ImageCreateFromGIF($src);  break;
     case 2 : $im_in = ImageCreateFromJPEG($src); break;
     case 3 : $im_in = ImageCreateFromPNG($src);  break;
   }
-  // “Ç‚İ‚İƒGƒ‰[
+  // èª­ã¿è¾¼ã¿ã‚¨ãƒ©ãƒ¼æ™‚
   if (!$im_in) {
     $im_in = ImageCreate($W,$H);
     $bgc = ImageColorAllocate($im_in, 0xff, 0xff, 0xff);
@@ -35,7 +35,7 @@ if ($_GET["cmd"]=="min" && isset($_GET["pic"])) {
     ImagePNG($im_in);
     exit;
    }
-  // ƒŠƒTƒCƒY
+  // ãƒªã‚µã‚¤ã‚º
   if ($size[0] > $W || $size[1] > $H) {
     $key_w = $W / $size[0];
     $key_h = $H / $size[1];
@@ -47,27 +47,27 @@ if ($_GET["cmd"]=="min" && isset($_GET["pic"])) {
     $out_w = $size[0];
     $out_h = $size[1];
   }
-  // o—Í‰æ‘œiƒTƒ€ƒlƒCƒ‹j‚ÌƒCƒ[ƒW‚ğì¬
+    if (preg_match('/' . preg_quote($ext, '/') . '/i', $ent)) {
   $im_out = ImageCreateTrueColor($out_w, $out_h);
-  // Œ³‰æ‘œ‚ğc‰¡‚Æ‚à ƒRƒs[‚µ‚Ü‚·B
+  // å…ƒç”»åƒã‚’ç¸¦æ¨ªã¨ã‚‚ ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
   ImageCopyResampled($im_out, $im_in, 0, 0, 0, 0, $out_w, $out_h, $size[0], $size[1]);
 
-  // ‚±‚±‚ÅƒGƒ‰[‚ªo‚é•û‚Í‰º‚Qs‚Æ’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢B(GD2.0ˆÈ‰º
+  // ã“ã“ã§ã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹æ–¹ã¯ä¸‹ï¼’è¡Œã¨ç½®ãæ›ãˆã¦ãã ã•ã„ã€‚(GD2.0ä»¥ä¸‹
   //$im_out = ImageCreate($out_w, $out_h);
   //ImageCopyResized($im_out, $im_in, 0, 0, 0, 0, $out_w, $out_h, $size[0], $size[1]);
 
-  // ƒTƒ€ƒlƒCƒ‹‰æ‘œ‚ğƒuƒ‰ƒEƒU‚Éo—ÍA•Û‘¶
+  // ã‚µãƒ ãƒã‚¤ãƒ«ç”»åƒã‚’ãƒ–ãƒ©ã‚¦ã‚¶ã«å‡ºåŠ›ã€ä¿å­˜
   switch ($size[2]) {
   case 1 : if (function_exists('ImageGIF')) { ImageGIF($im_out); ImageGIF($im_out, $thumb_dir.$_GET["pic"]); } break;
   case 2 : ImageJPEG($im_out);ImageJPEG($im_out, $thumb_dir.$_GET["pic"]); break;
   case 3 : ImagePNG($im_out); ImagePNG($im_out, $thumb_dir.$_GET["pic"]);  break;
   }
-  // ì¬‚µ‚½ƒCƒ[ƒW‚ğ”jŠü
+  // ä½œæˆã—ãŸã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’ç ´æ£„
   ImageDestroy($im_in);
   ImageDestroy($im_out);
   exit;
 }
-// ƒfƒBƒŒƒNƒgƒŠˆê——æ“¾Aƒ\[ƒg
+// ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä¸€è¦§å–å¾—ã€ã‚½ãƒ¼ãƒˆ
 $d = dir($img_dir);
 while ($ent = $d->read()) {
   if (eregi($ext, $ent)) {
@@ -75,10 +75,10 @@ while ($ent = $d->read()) {
   }
 }
 $d->close();
-// ƒ\[ƒg
+// ã‚½ãƒ¼ãƒˆ
 natsort($files);
 $files2 = array_reverse($files);
-//ƒwƒbƒ_HTML
+//ãƒ˜ãƒƒãƒ€HTML
 echo <<<HEAD
 <html>
 <head>
@@ -111,7 +111,7 @@ a:hover {
 }
 </STYLE>
 </head>
-<body><center><b>ƒTƒ€ƒlƒCƒ‹ˆê——</b><br><br>
+<body><center><b>ã‚µãƒ ãƒã‚¤ãƒ«ä¸€è¦§</b><br><br>
 <BR><BR><table border="0" cellpadding="4">
 <tr>
 HEAD;
@@ -123,10 +123,10 @@ $counter = 0;
 while (list($line, $filename) = each($files2)) {
   if (($line >= $start) && ($line <= $ends)) {
     $image = rawurlencode($filename);
-    // ƒTƒ€ƒlƒCƒ‹‚ª‚ ‚é‚Í»ÑÈ²Ù‚Ö‚ÌØİ¸A‚»‚êˆÈŠO‚Í»ÑÈ²Ù•\¦Aì¬
+    // ã‚µãƒ ãƒã‚¤ãƒ«ãŒã‚ã‚‹æ™‚ã¯ï½»ï¾‘ï¾ˆï½²ï¾™ã¸ã®ï¾˜ï¾ï½¸ã€ãã‚Œä»¥å¤–ã¯ï½»ï¾‘ï¾ˆï½²ï¾™è¡¨ç¤ºã€ä½œæˆ
     if (file_exists($thumb_dir.$image)) $piclink = $thumb_dir.$image;
     else $piclink = $_SERVER["PHP_SELF"]."?cmd=min&pic=".$image;
-//ƒƒCƒ“HTML
+?>
     echo <<<EOD
 <td align=center><a href="$img_dir$image" target=_blank>
 <img src="$piclink" border="0"><br>$filename</a></td>
@@ -137,16 +137,16 @@ EOD;
 }
 echo "</tr></table><br>";
 
-//Íß°¼ŞƒŠƒ“ƒN
+//ï¾ï¾Ÿï½°ï½¼ï¾ãƒªãƒ³ã‚¯
 if ($_GET["start"] > 0) {
   $prevstart = $_GET["start"] - $page_def;
-  echo "<a href=\"$_SERVER[PHP_SELF]?start=$prevstart\">&lt;&lt;‘O‚Ö</a>@";
+  echo "<a href=\"$_SERVER[PHP_SELF]?start=$prevstart\">&lt;&lt;å‰ã¸</a>ã€€";
 }
 if ($ends < $maxs) {
   $nextstart = $ends+1;
-  echo "@<a href=\"$_SERVER[PHP_SELF]?start=$nextstart\">Ÿ‚Ö&gt;&gt;</a>";
+  echo "ã€€<a href=\"$_SERVER[PHP_SELF]?start=$nextstart\">æ¬¡ã¸&gt;&gt;</a>";
 }
 
-echo "</center><div align=right><a href=http://php.s3.to>ƒŒƒbƒcPHP!</a> <a href=http://php.s3.to/bbs/up/sam.php.txt>ƒ\[ƒX</a></div>
+echo "</center><div align=right><a href=http://php.s3.to>ãƒ¬ãƒƒãƒ„PHP!</a> <a href=http://php.s3.to/bbs/up/sam.php.txt>ã‚½ãƒ¼ã‚¹</a></div>
 </body></html>";
 ?>

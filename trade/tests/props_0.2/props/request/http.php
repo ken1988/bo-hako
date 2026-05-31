@@ -36,7 +36,7 @@ class propsRequest_http extends propsRequest
 
     function propsRequest()
     {
-        $this->_magic_quotes = get_magic_quotes_gpc();
+        $this->_magic_quotes = function_exists('get_magic_quotes_gpc') ? get_magic_quotes_gpc() : false;
     }
 
     /**
@@ -115,7 +115,6 @@ class propsRequest_http extends propsRequest
             return $this->_stripslashes($_COOKIE[$name]);
         else
             return false;
-        break;
     }
 
     function getEnvVar($name)

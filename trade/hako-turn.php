@@ -34,7 +34,7 @@ class Make {
       return;
     }
     // 名前が正当化チェック
-    if(ereg("[,?()<>$]", $data['ISLANDNAME']) || strcmp($data['ISLANDNAME'], "無人") == 0) {
+    if(preg_match('/[,?()<>$]/', $data['ISLANDNAME']) || strcmp($data['ISLANDNAME'], "無人") == 0) {
       Error::newIslandBadName();
       return;
     }
@@ -616,7 +616,7 @@ class Make {
     // モードで分岐
 	if(!empty($data['DEL'])) {
       // 削除モード
-	  list($t,$k,$a,$start) = split(",",$regT[$data['NUMBER']]);
+      list($t,$k,$a,$start) = explode(",",$regT[$data['NUMBER']]);
 	  if(($hako->islandTurn < $start + $init->regTTerm)&&($hako->islandTurn !== $start)){
 	  Error::problem();
 	  }else{
@@ -695,7 +695,7 @@ class Make {
     if(!empty($data['ISLANDNAME'])) {
       // 名前変更の場合
       // 名前が正当かチェック
-      if(ereg("[,?()<>$]", $data['ISLANDNAME']) || strcmp($data['ISLANDNAME'], "無人") == 0) {
+      if(preg_match('/[,?()<>$]/', $data['ISLANDNAME']) || strcmp($data['ISLANDNAME'], "無人") == 0) {
         Error::newIslandBadName();
         return;
       }
@@ -904,7 +904,7 @@ class MakeJS extends Make {
     }
     // モードで分岐
     $command = $island['command'];
-    $comary = split(" " , $data['COMARY']);
+    $comary = explode(" " , $data['COMARY']);
 
     for($i = 0; $i < $init->commandMax; $i++) {
       $pos = $i * 5;
@@ -1165,7 +1165,7 @@ class Turn {
 
     $comArray = &$island['command'];
     $command  = $comArray[0];
-    Util::slideFront(&$comArray, 0);
+      Util::slideFront($comArray, 0);
     $island['command'] = $comArray;
 
     $kind   = $command['kind'];
@@ -2306,7 +2306,7 @@ class Turn {
         // 回数付きなら、コマンドを戻す
         if($arg > 1) {
           $arg--;
-          Util::slideBack(&$comArray, 0);
+            Util::slideBack($comArray, 0);
           $comArray[0] = array (
             'kind'   => $kind,
             'target' => $target,
@@ -2982,7 +2982,7 @@ class Turn {
             	$this->log->MsDamage($id, $target, $name, $tName, $comName, $point, $tPoint);
             	$tLandValue[$tx][$ty]--;
 			}
-              continue;
+              continue 2;
             }elseif((Turn::countAround($tLand, $tx, $ty, $init->landDefence, 19))  ||
                      (Turn::countAround($tLand, $tx, $ty, $init->landHDefence, 19)) ||
                      (Turn::countAround($tLand, $tx, $ty, $init->landSdefence, 19)) ||
@@ -3158,7 +3158,7 @@ class Turn {
                   $island['taiji']++;
 
                   // 賞関係
-                  list($flags, $monsters, $turns) = split(",", $prize, 3);
+                  list($flags, $monsters, $turns) = explode(",", $prize, 3);
                   $v = 1 << $monsSpec['kind'];
                   $monsters |= $v;
 
@@ -3382,7 +3382,7 @@ class Turn {
           // 難民の数が一定数以上なら、平和賞の可能性あり
           if($achive >= 200) {
             $prize = $island['prize'];
-            list($flags, $monsters, $turns) = split(",", $prize, 3);
+            list($flags, $monsters, $turns) = explode(",", $prize, 3);
 
             if((!($flags & 8)) &&  $achive >= 200){
               $flags |= 8;
@@ -3421,7 +3421,7 @@ class Turn {
           }
 
           if (($island['fire'] > 0) && ($island['money'] >= $cost)) { // 少なくとも1発は撃てる
-            Util::slideFront(&$comArray, 0);
+            Util::slideFront($comArray, 0);
             $island['command'] = $comArray;
 
             $kind   = $command['kind'];
@@ -3864,7 +3864,7 @@ class Turn {
             $land[$x][$y] = $init->landWaste;
             $landValue[$x][$y] = 0;
 			$this->log->popDamage($id, $name, $this->landName($landKind, $lv), "({$x}, {$y})");
-            continue;
+            continue 2;
           }
 		} else {
           // 成長
@@ -3980,7 +3980,7 @@ class Turn {
             $land[$x][$y] = $init->landWaste;
             $landValue[$x][$y] = 0;
 			$this->log->popDamage($id, $name, $this->landName($landKind, $lv), "({$x}, {$y})");
-            continue;
+            continue 2;
           }
 	    } else {
           // 成長
@@ -4072,7 +4072,7 @@ class Turn {
           $this->log->bombFire($id, $name, $lName, "($x, $y)");
 
           // 広域被害ルーチン
-          $this->wideDamage($id, $name, &$land, &$landValue, $x, $y);
+            $this->wideDamage($id, $name, $land, $landValue, $x, $y);
         }
         break;
 
@@ -4109,7 +4109,7 @@ class Turn {
           $this->log->OilBomb($id, $name, $lName, "($x, $y)");
 
           // 広域被害ルーチン
-          $this->oilwideDamage($id, $name, &$land, &$landValue, $x, $y);
+            $this->oilwideDamage($id, $name, $land, $landValue, $x, $y);
         }
         break;
 
@@ -4520,7 +4520,7 @@ class Turn {
           $this->log->monsMoveDefence($id, $name, $lName, $point, $mName);
 
           // 広域被害ルーチン
-          $this->wideDamage($id, $name, &$land, &$landValue, $sx, $sy);
+            $this->wideDamage($id, $name, $land, $landValue, $sx, $sy);
         } else {
           // 行き先が荒地になる
           if($island['id'] != 1)
@@ -4814,7 +4814,7 @@ class Turn {
     for($i = 0; $i < $max; $i++) {
 			if(!empty($regT[$i])){
 			$fport = true;
-		    list($target,$kind,$arg) = split(",", $regT[$i]);
+               list($target,$kind,$arg) = explode(",", $regT[$i]);
 
 			$cost = $init->comCost[$kind];//コストを取得
 			$tn = $hako->idToNumber[$target];//ターゲットナンバー取得
@@ -5330,7 +5330,7 @@ class Turn {
       $this->AutoNews($id, $name, $hako->islandTurn, $news_text, $news_cat);
 
       // 広域被害ルーチン
-      $this->wideDamage($id, $name, &$land, &$landValue, $x, $y);
+        $this->wideDamage($id, $name, $land, $landValue, $x, $y);
     }
 
     // 隕石判定
@@ -5640,7 +5640,7 @@ class Turn {
     $pop = $island['pop'];
     $damage = $island['oldPop'] - $pop;
     $prize = $island['prize'];
-    list($flags, $monsters, $turns) = split(",", $prize, 3);
+    list($flags, $monsters, $turns) = explode(",", $prize, 3);
 
     $island['peop'] = $island['pop'] - $island['oldPop'];
     $island['pots'] = $island['point'] - $island['oldPoint'];
