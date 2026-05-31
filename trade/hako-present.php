@@ -192,7 +192,7 @@ class Main {
   function parseInputData() {
     $this->mode = $_POST['mode'];    
     if(!empty($_POST)) {
-      while(list($name, $value) = each($_POST)) {
+      foreach($_POST as $name => $value) {
         // 半角カナがあれば全角に変換して返す
         JcodeConvert($value, 0, 2);
         $value = str_replace(",", "", $value);

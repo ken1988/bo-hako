@@ -802,7 +802,7 @@ class Cgi {
   //---------------------------------------------------
 	function getCookies() {
     if(!empty($_COOKIE)) {
-      while(list($name, $value) = each($_COOKIE)) {
+      foreach($_COOKIE as $name => $value) {
         switch($name) {
         case "OWNISLANDID":
           $this->dataSet['defaultID'] = $value;
@@ -901,7 +901,7 @@ class Cgi {
 
     $this->mode = $_POST['mode'];
     if(!empty($_POST)) {
-      while(list($name, $value) = each($_POST)) {
+      foreach($_POST as $name => $value) {
         $value = str_replace(",", "", $value);
         $value = JcodeConvert($value, 0, 4);
         //$value = HANtoZEN($value,4);

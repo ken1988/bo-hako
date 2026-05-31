@@ -559,7 +559,7 @@ class Cgi {
 
     $this->mode = $_POST['mode'];
     if(!empty($_POST)) {
-      while(list($name, $value) = each($_POST)) {
+      foreach($_POST as $name => $value) {
         $value = str_replace(",", "", $value);
         $value = JcodeConvert($value, 0, 2);
         $value = HANtoZEN_SJIS($value);
