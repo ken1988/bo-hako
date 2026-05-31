@@ -243,14 +243,14 @@ class HtmlTemplate
 
     function _index_each($val_name, $each_vals)
     {
-        $names = split('/', $val_name);
+        $names = explode('/', $val_name);
         $last = array_pop($names);
         return HtmlTemplate::_index($names, $each_vals).'["'.$last.'"]';
     }
 
     function _index_val($val_name, $each_vals)
     {
-        $names = split('/', $val_name);
+        $names = explode('/', $val_name);
         return HtmlTemplate::_index($names, $each_vals);
     }
 }

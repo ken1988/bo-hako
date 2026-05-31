@@ -1088,7 +1088,7 @@ class Init {
     $this->specialPassword = $secretInit->specialPassword;
 
     // 予\定のように\が勝手に追加される
-    $this->stripslashes	= get_magic_quotes_gpc();
+    $this->stripslashes    = function_exists("get_magic_quotes_gpc") ? get_magic_quotes_gpc() : false;
   }
 }
 ?>

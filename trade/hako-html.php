@@ -69,8 +69,8 @@ class HTML {
 	$param['urlTopPage'] = $init->urlTopPage;
 
 	if($init->performance) {
-    	list($tmp1, $tmp2) = split(" ", $init->CPU_start);
-        list($tmp3, $tmp4) = split(" ", microtime());
+    list($tmp1, $tmp2) = explode(" ", $init->CPU_start);
+       list($tmp3, $tmp4) = explode(" ", microtime());
         $tex = sprintf("　<SMALL>(CPU : %.6f秒)</SMALL>", $tmp4-$tmp2+$tmp3-$tmp1);
     }
 
@@ -828,7 +828,7 @@ END;
 　詳しくは<B><a href="{$init->imgExp}">説明のページ</a></B>をご覧下さい。
 </td></tr></table>
 <table border=0 width=50%><tr><td class="M">
-現在の設定<B>[</B> ${Himgflag} <B>]</B>
+ 現在の設定<B>[</B> {$Himgflag} <B>]</B>
 <form action="{$GLOBALS['THIS_FILE']}" method="post">
 <input type=file name="IMGLINE">
 <input type="hidden" name="mode" value="imgset">
@@ -1518,7 +1518,7 @@ END;
 END;
     for($i = 0; $i < $init->regTMax; $i++) {
 		if(!empty($regT[$i])){
-			list($target,$kind,$value,$turn) = split(",", $regT[$i]);
+                  list($target,$kind,$value,$turn) = explode(",", $regT[$i]);
 			$j = $i + 1;
 			$tnum = $hako->idToNumber[$target];
 			$tisland = $hako->islands[$tnum];
@@ -2537,7 +2537,7 @@ class HtmlJS extends HtmlMap {
     $All_listCom = 0;
     $com_count = count($init->commandDivido);
     for($m = 0; $m < $com_count; $m++) {
-      list($aa,$dd,$ff) = split(",", $init->commandDivido[$m]);
+      list($aa,$dd,$ff) = explode(",", $init->commandDivido[$m]);
       $set_listcom .= "[ ";
       for($i = 0; $i < $init->commandTotal; $i++) {
         $l_kind = $init->comList[$i];
@@ -3414,7 +3414,7 @@ END;
 END;
 
     for($i = 0; $i < $com_count; $i++) {
-      list($aa, $tmp) = split(",", $init->commandDivido[$i], 2);
+      list($aa, $tmp) = explode(",", $init->commandDivido[$i], 2);
       print "<option value=\"$i\">{$aa}</option>\n";
     }
     print <<<END
