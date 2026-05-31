@@ -4554,7 +4554,7 @@ class Turn {
 	  case $init->landSeeCity:
 	  case $init->landCapital:
         // 火災判定
-        if(Util::random(1000) < $init->disFire - (int)($island['eisei'][0] / 20)) {
+        if(Util::random(1000) < $init->disFire - (int)((int)$island['eisei'][0] / 20)) {
           // 周囲の森と記念碑を数える
           if((Turn::countAround($land, $x, $y, $init->landForest, 7) +
               Turn::countAround($land, $x, $y, $init->landProcity, 7) +
