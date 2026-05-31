@@ -209,7 +209,7 @@ class HakoIO {
       'ship'     => array('passenger' => $passenger, 'fishingboat' => $fishingboat, 'tansaku' => $tansaku, 'senkan' => $senkan, 'viking' => $viking),
       'eisei'    => array(0 => $eisei0, 1 => $eisei1, 2 => $eisei2, 3 => $eisei3, 4 => $eisei4, 5 => $eisei5),
 	  'hapiness' => (int)$hapiness,
-	  'siji'	 => $siji,
+	  'siji'	 => (int)$siji,
 	  'invest'	 => (float)$invest,
 	  'capital'  => (int)$capital,
 	  'Cname'    => $Cname,
