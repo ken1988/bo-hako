@@ -311,7 +311,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
       $mfactory  = ($island['mfactory'] <= 0) ? $valueNA : $island['mfactory'] . $init->unitMaterial;
       $sfactory  = ($island['sfactory'] <= 0) ? $valueNA : $island['sfactory'] . $init->unitShell;
       $ffactory  = ($island['ffactory'] <= 0) ? $valueNA : $island['ffactory'] . $init->unitOil;
-      $hatuden  = ($island['hatuden'] <= 0) ? "0kw" : $island['hatuden'] * 1000 . kw;
+      $hatuden  = ($island['hatuden'] <= 0) ? $init->unitPower : $island['hatuden'] * 1000 . $init->unitPower;
       $mining = ($island['mining'] <= 0) ? $valueNA : $island['mining'] * 10 . $init->unitPop;
       $orgmining  = $island['mining'];
       $comment  = $island['comment'];

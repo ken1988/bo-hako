@@ -243,6 +243,8 @@ class Init {
   // 木の数の単位
   var $unitTree		= "万本";
 
+  var $unitPower  = "kw";
+
   // 木の単位当たりの木材換算
   var $treeValue	= 8;
 
