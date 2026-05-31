@@ -17,19 +17,19 @@ class Init {
   // 各種設定値
   //----------------------------------------
   // プログラムを置くディレクトリ
-  var $baseDir		= "https://tanstafl.sakura.ne.jp/trade";
+  var $baseDir		= "https://tanstaafl.tokyo/trade";
 
   // 画像を置くディレクトリ
-  var $imgDir		= "https://tanstafl.sakura.ne.jp/trade/img";
+  var $imgDir		= "https://tanstaafl.tokyo/trade/img";
 
 
   // ローカル設定用画像
-  var $imgPack          = "https://tanstafl.sakura.ne.jp/trade/img.lzh";
+  var $imgPack          = "https://tanstaafl.tokyo/trade/img.lzh";
   // ローカル設定説明ページ
-  var $imgExp           = "https://tanstafl.sakura.ne.jp/trade/local.html";
+  var $imgExp           = "https://tanstaafl.tokyo/trade/local.html";
 
   // CSSファイルを置くディレクトリ
-  var $cssDir		= "https://tanstafl.sakura.ne.jp/trade/css";
+  var $cssDir		= "https://tanstaafl.tokyo/trade/css";
 
   // CSSリスト
   var $cssList		= array('Autumn.css');
