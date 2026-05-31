@@ -1003,7 +1003,7 @@ class Init {
 	  'oil'=>$this->maxOil);
 
 	 $this->comGovernment = array(
-	  $init->comTrain => '1',
+	  $this->comTrain => '1',
       $this->comMissileNM=>'1',
 	  $this->comPubinvest=>'2',
 	  $this->comEduinvest=>'2',
@@ -1072,6 +1072,10 @@ class Init {
 		'bgCommandCell'=>$this->bgCommandCell
 	);
 
+  }
+
+  function __construct() {
+    $this->Init();
   }
 
   function Init() {
