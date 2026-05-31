@@ -80,9 +80,9 @@ class Hako extends HakoIO {
   //---------------------------------------------------
   function getPrizeList($prize) {
     global $init;
-    list($flags, $monsters, $turns) = split(",", $prize, 3);
+    list($flags, $monsters, $turns) = explode(",", $prize, 3);
 
-    $turns = split(",", $turns);
+    $turns = explode(",", $turns);
     $prizeList = "";
     // ターン杯
     $max = -1;
@@ -234,7 +234,7 @@ class Hako extends HakoIO {
       // 森
       if($mode == 1) {
         $image = 'land6.gif';
-        $naviText= "${lv}{$init->unitTree}";
+        $naviText= "{$lv}{$init->unitTree}";
       } else {
         // 観光者の場合は木の本数隠す
         $image = 'land6.gif';
@@ -628,7 +628,7 @@ class LogIO {
     $fp = fopen($fileName, "r");
     Util::lockr($fp);
     while($line = chop(fgets($fp, READ_LINE))) {
-      list($m, $turn, $id1, $id2, $message) = split(",", $line, 5);
+      list($m, $turn, $id1, $id2, $message) = explode(",", $line, 5);
       if($m == 1) {
         if(($mode == 0) || ($id1 != $id)) {
           continue;
@@ -669,7 +669,7 @@ class LogIO {
       $k++;
     }
     for($i = 0; $i < $k; $i++) {
-      list($turn, $his) = split(",", array_pop($history), 2);
+      list($turn, $his) = explode(",", array_pop($history), 2);
       print "{$init->tagNumber_}ターン{$turn}{$init->_tagNumber}：$his<br>\n";
     }
   }
@@ -986,7 +986,7 @@ class Cgi {
     $this->modifiedSinces($time_stamp);
   }
   function modifiedSinces($time) {
-    $modsince = $_SERVER{'HTTP_IF_MODIFIED_SINCE'};
+    $modsince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : "";
 
     $ms = gmdate("D, d M Y G:i:s", $time) . " GMT";
     if($modsince == $ms)
