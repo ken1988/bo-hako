@@ -949,7 +949,7 @@ class HtmlMap extends HTML {
 
     // パスワードチェック
     if(!Util::checkPassword($island['password'], $data['PASSWORD'])){
-      Error::wrongPassword();
+      HakoError::wrongPassword();
       return;
     }
     $this->tempOwer($hako, $data, $number);
@@ -2431,7 +2431,7 @@ END;
     $number = $hako->idToNumber[$id];
     // なぜかその国がない場合
     if($number < 0 || $number > $hako->islandNumber) {
-      Error::problem();
+      HakoError::problem();
       return;
     }
     $island = $hako->islands[$number];
@@ -3827,112 +3827,112 @@ class HtmlSetted extends HTML {
     print "{$init->tagBig_}コマンドを登録しました{$init->spanend}<hr>\n";
   }
 }
-class Error {
-  function wrongPassword() {
+class HakoError {
+  public static function wrongPassword() {
     global $init;
     print "{$init->tagBig_}パスワードが違います。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function wrongID() {
+  public static function wrongID() {
     global $init;
     print "{$init->tagBig_}IDが違います。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
   // hakojima.datがない
-  function noDataFile() {
+  public static function noDataFile() {
     global $init;
     print "{$init->tagBig_}データファイルが開けません。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandFull() {
+  public static function newIslandFull() {
     global $init;
     print "{$init->tagBig_}申し訳ありません、国が一杯で登録できません！！{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
   // 受付中かどうか
-  function tempNewIslandForbbiden() {
+  public static function tempNewIslandForbbiden() {
     global $init;
     print "{$init->tagBig_}申し訳ありません、受付を中止しています。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandNoName() {
+  public static function newIslandNoName() {
     global $init;
     print "{$init->tagBig_}国につける名前が必要です。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandBadName() {
+  public static function newIslandBadName() {
     global $init;
     print "{$init->tagBig_},?()<>\$とか入ってたり、「無人国」とかいった変な名前はやめましょうよ～。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandAlready() {
+  public static function newIslandAlready() {
     global $init;
     print "{$init->tagBig_}その国ならすでに発見されています。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandNoPassword() {
+  public static function newIslandNoPassword() {
     global $init;
     print "{$init->tagBig_}パスワードが必要です。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function newIslandNoAgree() {
+  public static function newIslandNoAgree() {
     global $init;
     print "{$init->tagBig_}規約に同意してください。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function changeNoMoney() {
+  public static function changeNoMoney() {
     global $init;
     print "{$init->tagBig_}資金不足のため変更できません{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function changeNothing() {
+  public static function changeNothing() {
     global $init;
     print "{$init->tagBig_}名前、パスワードともに空欄です{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function problem() {
+  public static function problem() {
     global $init;
     print "{$init->tagBig_}問題発生、とりあえず戻ってください。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function lbbsNoMessage() {
+  public static function lbbsNoMessage() {
     global $init;
     print "{$init->tagBig_}名前または内容の欄が空欄です。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function NewsNoText() {
+  public static function NewsNoText() {
     global $init;
     print "{$init->tagBig_}報道内容欄が空欄です。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function NewsNoPoint() {
+  public static function NewsNoPoint() {
     global $init;
     print "{$init->tagBig_}残り投稿回数が0のため記帳できません。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function lockFail() {
+  public static function lockFail() {
     global $init;
     print "{$init->tagBig_}同時アクセスエラーです。<BR>ブラウザの「戻る」ボタンを押し、<BR>しばらく待ってから再度お試し下さい。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
-  function lbbsNoMoney() {
+  public static function lbbsNoMoney() {
     global $init;
     print "{$init->tagBig_}資金不足のため記帳できません。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
