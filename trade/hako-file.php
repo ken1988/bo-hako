@@ -197,7 +197,7 @@ class HakoIO {
       'monster'  => $monster,
       'taiji'    => (int)$taiji,
       'rena'     => (int)$rena,
-      'fire'     => $fire,
+      'fire'     => (int)$fire,
       'tenki'    => $tenki,
 	  'freeze'	 => $freeze,
       'land'     => $land,
