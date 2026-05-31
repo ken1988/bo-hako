@@ -210,7 +210,7 @@ class HakoIO {
       'eisei'    => array(0 => $eisei0, 1 => $eisei1, 2 => $eisei2, 3 => $eisei3, 4 => $eisei4, 5 => $eisei5),
 	  'hapiness' => (int)$hapiness,
 	  'siji'	 => $siji,
-	  'invest'	 => $invest,
+	  'invest'	 => (float)$invest,
 	  'capital'  => (int)$capital,
 	  'Cname'    => $Cname,
 	  'edinv'    => (int)$edinv,
