@@ -543,7 +543,7 @@ class Util {
     if($number == count($command) - 1)
       return;
 
-    for($i = $init->commandMax - 1; $i >= $number; $i--) {
+    for($i = $init->commandMax - 1; $i > $number; $i--) {
       $command[$i] = $command[$i - 1];
     }
   }
