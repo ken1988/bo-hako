@@ -663,6 +663,15 @@ class HakoIO {
   function readPresentFile( $erase = false ) {
     global $init;
 
+    for($i = 0; $i < $this->islandNumber; $i++) {
+      if(!isset($this->islands[$i]['present']) || !is_array($this->islands[$i]['present'])) {
+        $this->islands[$i]['present'] = array();
+      }
+      $this->islands[$i]['present']['item'] = 0;
+      $this->islands[$i]['present']['px'] = 0;
+      $this->islands[$i]['present']['py'] = 0;
+    }
+
     $fileName = "{$init->dirName}/present.dat";
     if(is_file($fileName)) {
       $presents = file($fileName);
@@ -683,7 +692,13 @@ class HakoIO {
     $presents = array();
     $fileName = "{$init->dirName}/present.dat";
     for($i = 0; $i < $this->islandNumber; $i++) {
+      if(!isset($this->islands[$i]['present']) || !is_array($this->islands[$i]['present'])) {
+        $this->islands[$i]['present'] = array('item' => 0, 'px' => 0, 'py' => 0);
+      }
       $present =& $this->islands[$i]['present'];
+      $present['item'] = isset($present['item']) ? $present['item'] : 0;
+      $present['px'] = isset($present['px']) ? $present['px'] : 0;
+      $present['py'] = isset($present['py']) ? $present['py'] : 0;
       if ((( $present['item'] == 0 ) && (( $present['px'] != 0 ) || (
 $present['py'] != 0 ))) ||
           (( $present['item'] > 0 ) && ( $present['item'] < 9 ))) {
