@@ -1111,6 +1111,8 @@ class Turn {
     }
 	//統計前処理
 	$year = Util::MKCal($hako->islandTurn,1);
+	$nests = array();
+	$stat = array('pop' => 0, 'farm' => 0, 'ind' => 0, 'market' => 0, 'shell' => 0, 'pgoods' => 0, 'pmoneys' => 0);
 	for($i = 0; $i < $hako->islandNumber; $i++){
 	
 	$nest_country = array(
@@ -1138,18 +1140,20 @@ class Turn {
 		'DC' => 'C', 
 		'amount' => '0')
     );
-	  foreach((array)$hako->islands[$i]['nest'] as $nest_item){
-	  	$account = $nest_item['account'];
-		$nest_country[$account]['amount'] += $nest_item['amount'];
+	  foreach((array)($hako->islands[$i]['nest'] ?? array()) as $nest_item){
+		$account = $nest_item['account'] ?? null;
+		if(isset($nest_country[$account])) {
+		  $nest_country[$account]['amount'] += $nest_item['amount'] ?? 0;
+		}
 	  }
 	  $nests[] = $nest_country;
-	  $stat['pop'] += $hako->islands[$i]['pop'];
-	  $stat['farm'] += $hako->islands[$i]['farm'] * 10;
-	  $stat['ind'] += $hako->islands[$i]['factory'] * 10;
-	  $stat['market'] += $hako->islands[$i]['market'] * 10;
-      $stat['shell'] += $hako->islands[$i]['shell'];
-	  $stat['pgoods'] += $hako->islands[$i]['p_goods'];
-	  $stat['pmoneys'] += $hako->islands[$i]['p_moneys'];
+	  $stat['pop'] += $hako->islands[$i]['pop'] ?? 0;
+	  $stat['farm'] += ($hako->islands[$i]['farm'] ?? 0) * 10;
+	  $stat['ind'] += ($hako->islands[$i]['factory'] ?? 0) * 10;
+	  $stat['market'] += ($hako->islands[$i]['market'] ?? 0) * 10;
+      $stat['shell'] += $hako->islands[$i]['shell'] ?? 0;
+	  $stat['pgoods'] += $hako->islands[$i]['p_goods'] ?? 0;
+	  $stat['pmoneys'] += $hako->islands[$i]['p_moneys'] ?? 0;
     }
 
     // 島数カット
@@ -3847,7 +3851,7 @@ class Turn {
       $addpop = 0;
     } elseif(($island['siji'] + $island['hapiness']) <= 15) {
 	  //暴動発生中なら人口減少
-	  if(($island['polit'] != 2)||($island['policestat'] == 1)){
+	  if(($island['polit'] != 2)||(($island['policestat'] ?? 0) == 1)){
 	  //警察国家以外or警察スト中
 	  if (Util::random(500) < $init->disRobViking){
 			if (($hako->islandTurn - $island['starturn']) > $init->noMissile){
@@ -3917,6 +3921,7 @@ class Turn {
             continue 2;
           }
 		} else {
+		  $nsize = 0;
           // 成長
 		  if($landKind == $init->landCapital){
 		  //首都用
@@ -4830,7 +4835,7 @@ class Turn {
 
       // 自動輸送系
       // 記録済みベースデータ取得
-	$regT = $island['regT'];//輸送データ取得
+	$regT = $island['regT'] ?? array();//輸送データ取得
 
 	if($island['bport'] > 0){
 	  //大規模港が存在する場合自動輸送20本
@@ -4847,12 +4852,17 @@ class Turn {
 			$fport = true;
                list($target,$kind,$arg) = explode(",", $regT[$i]);
 
+			if(!isset($hako->idToNumber[$target])){
+			  //対象国が存在しない時はログなしでループを飛ばす
+			  $fport = false;
+			  continue;
+			}
 			$cost = $init->comCost[$kind];//コストを取得
 			$tn = $hako->idToNumber[$target];//ターゲットナンバー取得
 			$mn = $hako->idToNumber[$id];//自国ナンバー取得
 			$tIsland = &$hako->islands[$tn];//ターゲット国変数一括取得
-			$tName = $tIsland['name'];//ターゲット名取得
-			$tport = $tIsland['port']+$tIsland['bport'];//ターゲット国港数取得
+			$tName = $tIsland['name'] ?? '';//ターゲット名取得
+			$tport = ($tIsland['port'] ?? 0)+($tIsland['bport'] ?? 0);//ターゲット国港数取得
 			$comName = $init->comName[$kind];
 
 		  $container = "";//参照渡し用
@@ -5563,7 +5573,7 @@ class Turn {
 		$rflag = false;
 	}
 	// 幸福度デモ&暴動
-	if($rflag = true){
+	if($rflag == true){
 	if(!empty($island['riot'])) {
 				//暴動発生
 			        if(!($island['money'] < $init->disVikingMinMoney)){
@@ -5576,12 +5586,12 @@ class Turn {
 			        	}
 		    } elseif (($island['siji'] + $hapiness) <= 25) {
 			 // デモメッセージ
-			 if(($island['polit'] != 2)||($island['policestat'] == 1)){
+			 if(($island['polit'] != 2)||(($island['policestat'] ?? 0) == 1)){
 		      	$this->log->gvDemo($id, $name);
 			  }
 			} elseif (($island['siji'] + $hapiness) <= 35) {
 			// 警告メッセージ
-			 if(($island['polit'] != 2)||($island['policestat'] == 1)){
+			 if(($island['polit'] != 2)||(($island['policestat'] ?? 0) == 1)){
 			 	$this->log->gvAlert($id, $name);
 				}
 			}
@@ -7144,7 +7154,8 @@ function AutoNews($id,$name,$turn,$text,$category){
 	$dataset['author']	 = "国際ニュースネット/".$name;
 	$dataset['ip']		 = "0.0.0.0";
 
-	Make::NewsPost($dataset);
+	$make = new Make;
+	$make->NewsPost($dataset);
 }
 
 }

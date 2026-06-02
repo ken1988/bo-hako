@@ -23,6 +23,9 @@ class HTML {
   function header($data = "") {
     global $init;
     global $PRODUCT_VERSION;
+    if(!is_array($data)) {
+      $data = array();
+    }
 
     // 圧縮転送
     if(GZIP == true) {
@@ -39,7 +42,7 @@ class HTML {
 	$param['title'] =$init->title;
 	$param['baseDir'] = $init->baseDir;
 
-	if($data['mobile'] == true){
+	if(!empty($data['mobile'])){
 		print HTML::tplengine('./templates/mobile/head.html',$param);
 	}else{
 		$param['urlTopPage'] = $init->urlTopPage;
@@ -55,8 +58,11 @@ class HTML {
   //---------------------------------------------------
   // HTML フッタ出力
   //---------------------------------------------------
-  function footer() {
+  function footer($data = "") {
     global $init;
+    if(!is_array($data)) {
+      $data = array();
+    }
 
 	if(GZIP == true) {
       global $http;
@@ -74,8 +80,8 @@ class HTML {
         $tex = sprintf("　<SMALL>(CPU : %.6f秒)</SMALL>", $tmp4-$tmp2+$tmp3-$tmp1);
     }
 
-	$param['perform'] = $tex;
-	if($data['mobile'] == true){
+	$param['perform'] = $tex ?? '';
+	if(!empty($data['mobile'])){
 		print HTML::tplengine('./templates/mobile/footer.html',$param);
 	}else{
 		print HTML::tplengine('./templates/footer.html',$param);
@@ -138,7 +144,7 @@ END;
   //---------------------------------------------------
   // テンプレートエンジン
   //---------------------------------------------------
-	Function tplengine($tpl,$param){
+	static function tplengine($tpl,$param){
 		global $init;
 		$param = array_merge($param,$init->tplcss);
 		//テンプレートエンジン部分
@@ -534,7 +540,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		$httool = "<div class=\"tooltip\" id=\"t{$id}\"><p id=\"comm\">{$comment}</p></div>";
 
 		$scapital = $init->Captext[$capital];
-	  	if($data['mobile'] == true){
+		if(!empty($data['mobile'])){
 			$param['banner'] = $bannerad;
 			$param['name'] = $name;
 			$param['id'] = $id;
@@ -934,7 +940,8 @@ END;
   function historyPrint() {
     print "<div id=\"HistoryLog\">\n";
     print "<h2>発見の記録</h2>";
-    LogIO::historyPrint();
+    $log = new LogIO;
+    $log->historyPrint();
     print "</div>\n";
   }
 }
@@ -2468,6 +2475,9 @@ class HtmlJS extends HtmlMap {
   function header($data = "") {
     global $init;
     global $PRODUCT_VERSION;
+    if(!is_array($data)) {
+      $data = array();
+    }
 
     // 圧縮転送
     if(GZIP == true) {
@@ -2484,7 +2494,7 @@ class HtmlJS extends HtmlMap {
 	$param['title'] =$init->title;
 	$param['baseDir'] = $init->baseDir;
 
-	if($data['mobile'] == true){
+	if(!empty($data['mobile'])){
 		print HTML::tplengine('./templates/mobile/head.html',$param);
 	}else{
 		$param['bimg'] = $bimg;
