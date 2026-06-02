@@ -620,7 +620,7 @@ class LogIO {
   //---------------------------------------------------
   // 最近の出来事を出力
   //---------------------------------------------------
-  function logFilePrint($num = 0, $id = 0, $mode = 0) {
+  public static function logFilePrint($num = 0, $id = 0, $mode = 0) {
     global $init;
     $fileName = $init->dirName . "/hakojima.log" . $num;
     if(!is_file($fileName)) {

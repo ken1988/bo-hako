@@ -797,7 +797,7 @@ class Init {
     $this->comSCost[$this->comDestroy]     = 0;
     $this->comName[$this->comDestroy2]      = '連続掘削';
     $this->comCost[$this->comDestroy2]      = 200;
-    $this->comSCost[$this->comDestroy]     = 0;
+    $this->comSCost[$this->comDestroy2]    = 0;
     $this->comName[$this->comSellTree]     = '伐採';
     $this->comCost[$this->comSellTree]     = 50;
     $this->comSCost[$this->comSellTree]    = 0;
