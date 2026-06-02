@@ -676,11 +676,15 @@ class HakoIO {
     if(is_file($fileName)) {
       $presents = file($fileName);
       foreach ($presents as $present) {
-        list($id, $item, $px, $py) = explode(",", chop($present));
+        $present = array_pad(explode(",", chop($present), 4), 4, 0);
+        list($id, $item, $px, $py) = $present;
+        if(!isset($this->idToNumber[$id])) {
+          continue;
+        }
         $num = $this->idToNumber[$id];
-        $this->islands[$num]['present']['item'] = $item;
-        $this->islands[$num]['present']['px'] = $px;
-        $this->islands[$num]['present']['py'] = $py;
+        $this->islands[$num]['present']['item'] = is_numeric($item) ? (int)$item : 0;
+        $this->islands[$num]['present']['px'] = is_numeric($px) ? (int)$px : 0;
+        $this->islands[$num]['present']['py'] = is_numeric($py) ? (int)$py : 0;
       }
       if ( $erase )
         unlink($fileName);
