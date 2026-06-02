@@ -948,6 +948,30 @@ class Turn {
   var $rpx;
   var $rpy;
   //---------------------------------------------------
+  // 島データの任意項目を初期化する
+  //---------------------------------------------------
+  function normalizeIslandDefaults(&$island) {
+    $island['propaganda'] = isset($island['propaganda']) ? $island['propaganda'] : 0;
+    $island['riot'] = isset($island['riot']) ? $island['riot'] : 0;
+    $island['monstersend'] = isset($island['monstersend']) ? $island['monstersend'] : 0;
+    $island['prepare2'] = isset($island['prepare2']) ? $island['prepare2'] : 0;
+    $island['fsocst'] = isset($island['fsocst']) ? $island['fsocst'] : false;
+    $island['percat'] = isset($island['percat']) ? $island['percat'] : 0;
+    $island['ffactory'] = isset($island['ffactory']) ? $island['ffactory'] : 0;
+
+    $island['present'] = (isset($island['present']) && is_array($island['present'])) ? $island['present'] : array('item' => 0, 'px' => 0, 'py' => 0);
+    $island['present']['item'] = isset($island['present']['item']) ? $island['present']['item'] : 0;
+    $island['present']['px'] = isset($island['present']['px']) ? $island['present']['px'] : 0;
+    $island['present']['py'] = isset($island['present']['py']) ? $island['present']['py'] : 0;
+
+    $island['ship'] = (isset($island['ship']) && is_array($island['ship'])) ? $island['ship'] : array();
+    $shipKeys = array('passenger', 'fishingboat', 'tansaku', 'senkan', 'viking');
+    foreach($shipKeys as $shipKey) {
+      $island['ship'][$shipKey] = isset($island['ship'][$shipKey]) ? $island['ship'][$shipKey] : 0;
+    }
+  }
+
+  //---------------------------------------------------
   // ターン進行モード
   //---------------------------------------------------
   function turnMain(&$hako, $data) {
@@ -3792,16 +3816,9 @@ class Turn {
     // 導出値
     $name = $island['name'];
     $id = $island['id'];
+    $this->normalizeIslandDefaults($island);
     $land = $island['land'];
     $landValue = $island['landValue'];
-    $island['propaganda'] = isset($island['propaganda']) ? $island['propaganda'] : 0;
-    $island['riot'] = isset($island['riot']) ? $island['riot'] : 0;
-    $island['monstersend'] = isset($island['monstersend']) ? $island['monstersend'] : 0;
-    $island['present'] = (isset($island['present']) && is_array($island['present'])) ? $island['present'] : array('item' => 0, 'px' => 0, 'py' => 0);
-    $island['present']['item'] = isset($island['present']['item']) ? $island['present']['item'] : 0;
-    $island['present']['px'] = isset($island['present']['px']) ? $island['present']['px'] : 0;
-    $island['present']['py'] = isset($island['present']['py']) ? $island['present']['py'] : 0;
-    $island['prepare2'] = isset($island['prepare2']) ? $island['prepare2'] : 0;
     $Syukaku_cap = 11;
 
     // 増える人口のタネ値
@@ -4409,8 +4426,9 @@ class Turn {
         $mName    = $monsSpec['name'];
 
         if((Turn::countAroundValue($island, $x, $y, $init->landProcity, $init->ProcityRank[3], 7)+
-		    Turn::countAround($island, $x, $y, $init->landFBase, 7)) && ($monsSpec['kind'] != 0)) {
+		    Turn::countAround($land, $x, $y, $init->landFBase, 7)) && ($monsSpec['kind'] != 0)) {
 
+          $tPoint = "($x,$y)";
           $this->log->BariaAttack($id, $name, $lName, "($x,$y)", $mName, $tPoint);
           // 対象の怪獣が倒れて荒地になる
           $land[$x][$y] = $init->landWaste;
@@ -4420,7 +4438,7 @@ class Turn {
           $value = $init->monsterValue[$monsSpec['kind']];
           if($value > 0) {
             $island['money'] += $value;
-            $this->log->msMonMoney($target, $mName, $value);
+            $this->log->msMonMoney($id, $mName, $value);
  
 	  		$nest_item = array ("id" => $id, "account" => "4000", "amount" => $value);
 			array_push($island['nest'],$nest_item);
@@ -4577,7 +4595,9 @@ class Turn {
         //座標が船の時
         if(!isset($shipMove[$x][$y]) || $shipMove[$x][$y] != 1){
           //船がまだ動いていない時
-		if ($island['oil'] >= $init->shipMentenanceOil[$landValue[$x][$y]-2]){
+          $shipOilKey = $landValue[$x][$y] - 2;
+          $shipOilCost = isset($init->shipMentenanceOil[$shipOilKey]) ? $init->shipMentenanceOil[$shipOilKey] : 0;
+		if ($island['oil'] >= $shipOilCost){
             //石油の残りが消費量を超えているとき
           if($island['ship']['viking'] > 0 && $landValue[$x][$y] != 255){
 		  //海賊船がいて対象が海賊船でないとき
@@ -4624,7 +4644,7 @@ class Turn {
 				  if($land[$sx][$sy] == $init->landZorasu){
 
 				      $monsSpec['hp'] = floor($landValue[$sx][$sy]/10);
-					  $tname = $this->landName($land[$x][$y],$land[$lv]);
+					  $tname = $this->landName($land[$sx][$sy], $landValue[$sx][$sy]);
 
 				  }else{
 	                  $monsSpec = Util::monsterSpec($landValue[$sx][$sy]);
@@ -4633,7 +4653,8 @@ class Turn {
 	                  $tname = $monsSpec['name'];
 				  }
 
-                  $this->log->senkanAttack($id, $name, $lName, "($x,$y)", $tname, $tPoint);
+                  $tPoint = "($sx,$sy)";
+	                  $this->log->senkanAttack($id, $name, $lName, "($x,$y)", $tname, $tPoint);
 
                   if($monsSpec['hp'] > 1){
 				  	if($land[$sx][$sy] == $init->landZorasu){
@@ -4644,7 +4665,7 @@ class Turn {
                   } else {
 				   if($land[$sx][$sy] == $init->landZorasu){
 
-                    $land[$sx][$sy] = $init->Sea;
+                    $land[$sx][$sy] = $init->landSea;
 					$value = 0;
 
 				   }else{
@@ -4742,16 +4763,9 @@ class Turn {
     // 導出値
     $name = $island['name'];
     $id = $island['id'];
+    $this->normalizeIslandDefaults($island);
     $land = $island['land'];
     $landValue = $island['landValue'];
-    $island['propaganda'] = isset($island['propaganda']) ? $island['propaganda'] : 0;
-    $island['riot'] = isset($island['riot']) ? $island['riot'] : 0;
-    $island['monstersend'] = isset($island['monstersend']) ? $island['monstersend'] : 0;
-    $island['present'] = (isset($island['present']) && is_array($island['present'])) ? $island['present'] : array('item' => 0, 'px' => 0, 'py' => 0);
-    $island['present']['item'] = isset($island['present']['item']) ? $island['present']['item'] : 0;
-    $island['present']['px'] = isset($island['present']['px']) ? $island['present']['px'] : 0;
-    $island['present']['py'] = isset($island['present']['py']) ? $island['present']['py'] : 0;
-    $island['prepare2'] = isset($island['prepare2']) ? $island['prepare2'] : 0;
 	$hapiness = $island['hapiness'];
 
 	//投稿回数を回復
@@ -5852,6 +5866,7 @@ class Turn {
   function income(&$island) {
     global $init;
 
+	$this->normalizeIslandDefaults($island);
 	$island['nest'] = array();
 
     $pop = $island['pop'];
@@ -6190,6 +6205,7 @@ if($island['ffactory']> 0){
     // estimate(&$island) のように使用
 
     global $init;
+    $this->normalizeIslandDefaults($island);
     $land = $island['land'];
     $landValue = $island['landValue'];
 
