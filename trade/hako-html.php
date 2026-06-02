@@ -1071,6 +1071,7 @@ END;
 	  $hapiness = $island['hapiness'];
 	  $cmente	  = $island['cmente'];
 	  $banum	= $island['banum'];
+	  $pname = $island['name'];
 	  $indnum	= $island['indnum'];
 	  $soclv = $island['soclv'];
 	  $wiki_link = $island['wiki_link'];
@@ -1175,6 +1176,7 @@ END;
         $Tokka = "農{$bfarm}% 工{$bfactory}% 商{$bmarket}% UP";
 
     }
+	  $happiad = "";
 	  if($hapiness > 81) {
         $happiad .= "<IMG SRC=\"happy1.png\"";
       } elseif($hapiness > 61) {
@@ -1438,6 +1440,8 @@ END;
   //---------------------------------------------------
    function regTInputOW($hako,$island, $data) {
     global $init;
+		$kinds = "";
+		$num = "";
 	for($i = 0; $i < 12; $i++){
 		$j = $i +71;
 		$kinds .='<option value="'.$j.'">'.$init->comName[$j].'</option>\n';
@@ -1511,6 +1515,7 @@ END;
 		$max = 1;
 	}
 
+    $nu = 0;
     for($i = 0; $i < $init->regTMax; $i++) {
 		if(!empty($regT[$i])){
 			$nu++;
@@ -2636,12 +2641,14 @@ class HtmlJS extends HtmlMap {
 
     // 船リストセット
     //$set_ships = implode("," , $init->shipName);
+    $set_ships = "";
     for($i = 0; $i < count($init->shipName); $i++) {
         $set_ships .= "'".$init->shipName[$i]."',";
     }
 
     // 衛星リストセット
     //$set_eisei = implode("," , $init->EiseiName);
+    $set_eisei = "";
     for($i = 0; $i < count($init->EiseiName); $i++) {
         $set_eisei .= "'".$init->EiseiName[$i]."',";
     }
@@ -2968,7 +2975,7 @@ function plchg() {
             if(c[3] == 0){arg = 10;}
             kind = '{$init->tagName_}' + "ウラン鉱調査" + '{$init->_tagComName}';
           }
-          arg = "（成功率" + arg + "％{$init->unitVein}）";
+          arg = "（成功率" + arg + "％）";
           strn2 = point + "で" + kind + arg;
         }
     }else if(c[0] == $init->comBase){ // ミサイル基地
@@ -3410,7 +3417,7 @@ END;
       print "<option value=\"$i\">$j</option>\n";
     }
 
-    if ($data['MENUOPEN'] == 'on') {
+    if (!empty($data['MENUOPEN']) && $data['MENUOPEN'] == 'on') {
       $open = "CHECKED";
     }else{
       $open = "";
@@ -3798,46 +3805,46 @@ print HTML::tplengine('./templates/banners.html',$param);
 
 //---------------------------------------------------------------------------------------------------------------------------------
 class HtmlSetted extends HTML {
-  function setSkin() {
+  public static function setSkin() {
     global $init;
     print "{$init->tagBig_}スタイルシートを設定しました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
   }
-  function setImg() {
+  public static function setImg() {
     global $init;
     print "{$init->tagBig_}画像のローカル設定をしました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
   }
-  function comment() {
+  public static function comment() {
     global $init;
     print "{$init->tagBig_}コメントを更新しました{$init->spanend}<hr>";
   }
-  function News() {
+  public static function News() {
     global $init;
     print "{$init->tagBig_}ニュースを投稿しました{$init->spanend}<hr>";
   }
-  function Capital($msg) {
+  public static function Capital($msg) {
     global $init;
     print "{$init->tagBig_}{$msg}を更新しました{$init->spanend}<hr>";
   }
-  function change() {
+  public static function change() {
     global $init;
     print "{$init->tagBig_}変更完了しました{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
   }
-  function lbbsDelete() {
+  public static function lbbsDelete() {
     global $init;
     print "{$init->tagBig_}記帳内容を削除しました{$init->spanend}<hr>";
   }
-  function lbbsAdd() {
+  public static function lbbsAdd() {
     global $init;
     print "{$init->tagBig_}記帳を行いました{$init->spanend}<hr>";
   }
   // コマンド削除
-  function commandDelete() {
+  public static function commandDelete() {
     global $init;
     print "{$init->tagBig_}コマンドを削除しました{$init->spanend}<hr>\n";
   }
 
   // コマンド登録
-  function commandAdd() {
+  public static function commandAdd() {
     global $init;
     print "{$init->tagBig_}コマンドを登録しました{$init->spanend}<hr>\n";
   }
