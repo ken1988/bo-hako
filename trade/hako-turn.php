@@ -1451,7 +1451,7 @@ class Turn {
          ($landKind == $init->landPort) ||
          ($landKind == $init->landMountain) ||
 		 ($landKind == $init->landnMountain) ||
-         ($landKind >= 50 && $landkind < 55) ||
+         ($landKind >= 50 && $landKind < 55) ||
          ($landKind == $init->landMonster) ||
          ($landKind == $init->landSleeper) ||
          ($landKind == $init->landZorasu)) {
@@ -1639,7 +1639,7 @@ class Turn {
       // 目的の場所を海にする。山なら荒地に。浅瀬なら海に。
       if(($landKind == $init->landMountain) ||
 	  	 ($landKind == $init->landnMountain) ||
-         ($landKind >= 50 && $landkind < 55)) {
+         ($landKind >= 50 && $landKind < 55)) {
         $land[$x][$y] = $init->landWaste;
         $landValue[$x][$y] = 0;
       } elseif($landKind == $init->landSea) {
@@ -4912,7 +4912,7 @@ class Turn {
     }
 
     // 地震判定
-    if ((Util::random(1000) < (($island['prepare2'] + 1) * $init->disEarthquake) - (int)($island['eisei'][1] / 15))
+    if ((Util::random(1000) < (($island['prepare2'] + 1) * $init->disEarthquake) - (int)((int)$island['eisei'][1] / 15))
         || ($island['present']['item'] == 1)) {
       // 地震発生
       $this->log->earthquake($id, $name);
@@ -4930,12 +4930,12 @@ class Turn {
            (($landKind == $init->landHatuden) && ($lv < 100)) ||
            ($landKind == $init->landHaribote) ||
            ($landKind == $init->landSeaCity) ||
-		   ($landkind == $init->landSeeCity) ||
+		   ($landKind == $init->landSeeCity) ||
            ($landKind == $init->landSFactory) ||
            ($landKind == $init->landMFactory) ||
            ($landKind == $init->landFFactory) ||
 		   (($landKind == $init->landBigtown) && ($lv >= 100)) ||
-		   (($landkind == $init->landSeeCity) && ($lv >= 100)) ||
+		   (($landKind == $init->landSeeCity) && ($lv >= 100)) ||
            (($landKind == $init->landNewtown) && ($lv >= 100)) ||
            (($landKind == $init->landIndCity) && ($lv >= 100)) ||
 		   (($landKind == $init->landCapital) && ($lv >= 1000))) {
@@ -5058,7 +5058,7 @@ class Turn {
     }
 
     // 津波判定
-    if ((Util::random(1000) < $init->disTsunami - (int)($island['eisei'][1] / 15))
+    if ((Util::random(1000) < $init->disTsunami - (int)((int)$island['eisei'][1] / 15))
         || ($island['present']['item'] == 2)) {
       // 津波発生
       $this->log->tsunami($id, $name);
@@ -5291,7 +5291,7 @@ class Turn {
     }
 
     // 台風判定
-    if ((Util::random(1000) < ($init->disTyphoon - (int)($island['eisei'][0] / 10))) && (($island['tenki'] == 2) || ($island['tenki'] == 3))
+    if ((Util::random(1000) < ($init->disTyphoon - (int)((int)$island['eisei'][0] / 10))) && (($island['tenki'] == 2) || ($island['tenki'] == 3))
         || ($island['present']['item'] == 5)) {
       // 台風発生
       $this->log->typhoon($id, $name);
@@ -5329,7 +5329,7 @@ class Turn {
     }
 
     // 巨大隕石判定
-    if (((Util::random(1000) < ($init->disHugeMeteo - (int)($island['eisei'][2] / 50))))
+    if (((Util::random(1000) < ($init->disHugeMeteo - (int)((int)$island['eisei'][2] / 50))))
         || ($island['present']['item'] == 6)) {
 
       // 落下
@@ -5352,7 +5352,7 @@ class Turn {
     }
 
     // 隕石判定
-    if ((Util::random(1000) < ($init->disMeteo - (int)($island['eisei'][2] / 40)))
+    if ((Util::random(1000) < ($init->disMeteo - (int)((int)$island['eisei'][2] / 40)))
         || ($island['present']['item'] == 7)) {
       $first = 1;
       while((Util::random(2) == 0) || ($first == 1)) {

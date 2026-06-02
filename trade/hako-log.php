@@ -121,7 +121,7 @@ class Log extends LogIO {
   // お土産
   function Miyage($id, $name, $lName, $point, $str) {
     global $init;
-    $this->out("<A href=\"{$GLOBALS['THIS_FILE']}?Sight={$id}\">{$init->tagName_}{$name}</A>{$point}{$init->_tagName}の<strong>{$lName}側のお土産屋さん</strong>から<strong>{$value}{$str}</strong>もの収入がありました。",$id);
+    $this->out("<A href=\"{$GLOBALS['THIS_FILE']}?Sight={$id}\">{$init->tagName_}{$name}</A>{$point}{$init->_tagName}の<strong>{$lName}側のお土産屋さん</strong>から<strong>{$str}</strong>もの収入がありました。",$id);
   }
   // 収穫
   function Syukaku($id, $name, $lName, $point, $str) {
