@@ -540,6 +540,10 @@ class Util {
   public static function slideBack(&$command, $number = 0) {
     global $init;
     // それぞれずらす
+    $number = (int)$number;
+    if($number < 0) {
+      $number = 0;
+    }
     if($number == count($command) - 1)
       return;
 
