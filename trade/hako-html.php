@@ -2620,7 +2620,7 @@ class HtmlJS extends HtmlMap {
           }
           $All_listCom++;
         }
-        if($l_kind < $ff+1) { next; }
+        if($l_kind < $ff+1) { continue; }
       }
       $bai = strlen($set_listcom);
       $set_listcom = substr($set_listcom, 0, $bai - 2);
