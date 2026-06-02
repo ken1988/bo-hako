@@ -1,0 +1,24 @@
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined array key 6 in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 2560
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $set_ships in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 2640
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $set_eisei in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 2646
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined property: Init::$unitVein in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 2971
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $happiad in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1179
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $pname in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1207
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $pname in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1207
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined array key "MENUOPEN" in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 3413
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $kinds in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1443
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $num in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1445
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Warning:  Undefined variable $nu in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1516
+[03-Jun-2026 06:01:27 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Non-static method LogIO::logFilePrint() cannot be called statically in /home/violetcougar33/www/wordpress/trade/hako-html.php:1839
+Stack trace:
+#0 /home/violetcougar33/www/wordpress/trade/hako-html.php(1000): HtmlMap->islandRecent()
+#1 /home/violetcougar33/www/wordpress/trade/hako-main.php(1078): HtmlMap->owner()
+#2 /home/violetcougar33/www/wordpress/trade/hako-main.php(1221): Main->execute()
+#3 {main}
+  thrown in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 1839
+[03-Jun-2026 06:01:48 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Non-static method HtmlSetted::commandAdd() cannot be called statically in /home/violetcougar33/www/wordpress/trade/hako-turn.php:933
+Stack trace:
+#0 /home/violetcougar33/www/wordpress/trade/hako-main.php(1083): MakeJS->commandMain()
+#1 /home/violetcougar33/www/wordpress/trade/hako-main.php(1221): Main->execute()
+#2 {main}
+  thrown in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 933
