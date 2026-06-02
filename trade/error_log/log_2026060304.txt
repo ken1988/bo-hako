@@ -1,0 +1,10 @@
+[03-Jun-2026 05:43:00 Asia/Tokyo] PHP Warning:  Undefined variable $PHP_SELF in /home/violetcougar33/www/wordpress/trade/wns.php on line 39
+[03-Jun-2026 05:43:00 Asia/Tokyo] PHP Warning:  Undefined property: AtomCreator10::$cssStyleSheet in /home/violetcougar33/www/wordpress/trade/feedcreator/include/feedcreator.class.php on line 720
+[03-Jun-2026 05:50:40 Asia/Tokyo] PHP Warning:  Undefined variable $nsize in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3975
+[03-Jun-2026 05:50:53 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Undefined constant "next" in /home/violetcougar33/www/wordpress/trade/hako-html.php:2623
+Stack trace:
+#0 /home/violetcougar33/www/wordpress/trade/hako-html.php(964): HtmlJS->tempOwer()
+#1 /home/violetcougar33/www/wordpress/trade/hako-main.php(1078): HtmlMap->owner()
+#2 /home/violetcougar33/www/wordpress/trade/hako-main.php(1221): Main->execute()
+#3 {main}
+  thrown in /home/violetcougar33/www/wordpress/trade/hako-html.php on line 2623

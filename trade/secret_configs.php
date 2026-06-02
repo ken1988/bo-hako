@@ -2,7 +2,7 @@
 
 class Secret_Init {
   // マスターパスワード
-  var $masterPassword	= "";
-  var $specialPassword	= "";
+  var $masterPassword	= "63810";
+  var $specialPassword	= "63810";
 }
 ?>
