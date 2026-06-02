@@ -5,10 +5,12 @@ hako-ally.php v0.1
 =================================================================*/
 
 //-----------------------------------------------------------------
-define("READ_LINE", 1024);
-$GAME_TOP = $init->baseDir . "/hako-main.php";
-$THIS_FILE = $init->baseDir . "/hako-ally.php";
-$BACK_TO_TOP = "<a href=\"{$GAME_TOP}?\">{$init->tagBig_}ゲームへ戻る{$init->_tagBig}</a>、<A HREF=\"{$THIS_FILE}?\">{$init->tagBig_}同盟トップへ戻る{$init->_tagBig}</A>";
+if(!defined("READ_LINE")) { define("READ_LINE", 1024); }
+if(isset($init) && is_object($init)) {
+  $GAME_TOP = $init->baseDir . "/hako-main.php";
+  $THIS_FILE = $init->baseDir . "/hako-ally.php";
+  $BACK_TO_TOP = "<a href=\"{$GAME_TOP}?\">{$init->tagBig_}ゲームへ戻る{$init->_tagBig}</a>、<A HREF=\"{$THIS_FILE}?\">{$init->tagBig_}同盟トップへ戻る{$init->_tagBig}</A>";
+}
 //-----------------------------------------------------------------
 
 //=================================================================

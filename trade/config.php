@@ -497,12 +497,14 @@ class Init {
   var $bgCommandCell = 'class="CommandCell"'; // 開発計画入力済み計画
 
   var $spanend = '</span>';
+  var $spanend2 = '</span>';
   var $tplcss;
   /********************
       地形番号
    ********************/
 
   var $landSea		=  0; // 海
+  var $landsea		=  0; // PHP 8 warning対策: landSeaの旧表記互換
   var $landWaste	=  1; // 荒地
   var $landPlains	=  2; // 平地
   var $landTown		=  3; // 町系
@@ -512,6 +514,9 @@ class Init {
   var $landOil		=  7; // 海底油田
   var $landFarm		=  8; // 農場
   var $landSfarm	=  9; // 海底農場→廃止予定
+  var $landSeaSide  =  9; // PHP 8 warning対策: 旧表記互換
+  var $landSsyoubou = 27; // PHP 8 warning対策: 旧表記互換
+  var $landlandSea  =  0; // PHP 8 warning対策: 旧表記互換
   var $landNursery  = 10; // 養殖場
   var $landMarket	= 11; // 市場
   var $landFactory	= 12; // 工場
@@ -664,6 +669,9 @@ class Init {
   var $comAutoDelete	= 93; // 全コマンド消去
 
   var $comName;
+  var $comPower = -1; // 廃止済みコマンドの互換値
+  var $comSfarm = -1; // 廃止済みコマンドの互換値
+  var $comExplosive = -1; // 廃止済みコマンドの互換値
   var $comCost;
   var $comSCost;
 
@@ -683,8 +691,16 @@ class Init {
   // コメントなどに、予\定のように\が勝手に追加される
   var $stripslashes;
 
+  var $allyUse = false;
+  var $unitMonster = "匹";
+  var $disTenki = 0;
+
   function setVariable() {
     $this->pointNumber = $this->islandSize * $this->islandSize;
+    $this->landsea = $this->landSea;
+    $this->landSeaSide = $this->landSfarm;
+    $this->landSsyoubou = $this->landSdefence;
+    $this->landlandSea = $this->landSea;
 
     $this->comList	= array(
       $this->comPrepare,

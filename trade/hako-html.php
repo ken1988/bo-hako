@@ -143,7 +143,9 @@ END;
 		$param = array_merge($param,$init->tplcss);
 		//テンプレートエンジン部分
 	    $html = file_get_contents($tpl);
-	    $html = preg_replace('/{(.+?)}/e', '$param[$1]', $html);
+	    $html = preg_replace_callback('/{(.+?)}/', function($matches) use ($param) {
+        return isset($param[$matches[1]]) ? $param[$matches[1]] : '';
+      }, $html);
 	    return $html;
 	}
 }
@@ -1373,6 +1375,7 @@ END;
     $land      = $island['land'];
     $landValue = $island['landValue'];
     $command   = $island['command'];
+    $comStr    = array();
 	$invest    = $island['invest'];
 	$Cname     = $island['Cname'];
 	$ctype	   = $island['capital'];
@@ -1398,10 +1401,12 @@ END;
       if($y % 2 == 0) { print "<img class=\"subchip\" src=\"land00.gif\" width=\"{$subsize}\" height=\"{$landsize}\" alt=\"{$y}\">"; }
 
       for($x = 0; $x < $init->islandSize; $x++) {
-	  	if($land[$x][$y] == $init->landFBase){
+		$target = '';
+		if($land[$x][$y] == $init->landFBase && isset($hako->idToName[$landValue[$x][$y]])){
 			$target = $hako->idToName[$landValue[$x][$y]];
 		}
-        $hako->landString($land[$x][$y], $landValue[$x][$y], $x, $y, $mode, $comStr[$x][$y], $invest, $Cname,$ctype,$target);
+        $commandText = isset($comStr[$x][$y]) ? $comStr[$x][$y] : '';
+        $hako->landString($land[$x][$y], $landValue[$x][$y], $x, $y, $mode, $commandText, $invest, $Cname,$ctype,$target);
       }
 
       if($y % 2 == 1) { print "<img name=\" class=\"subchip\" src=\"land00.gif\" width=\"{$subsize}\" height=\"{$landsize}\" alt=\"{$y}\">"; }
