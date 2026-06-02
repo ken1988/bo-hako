@@ -53,7 +53,7 @@ class Main {
   var $urllist = array();
   var $menulist = array();
 
-  function Main() {
+  function __construct() {
     $this->urllist = array( ini_get('safe_mode') ? '/hako-mente-safemode.php' : '/hako-mente.php', '/hako-axes.php', '/hako-present.php', '/hako-edit.php');
     $this->menulist = array('データ管理','アクセスログ閲覧','プレゼント','マップエディタ');
   }
