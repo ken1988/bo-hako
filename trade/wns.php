@@ -36,7 +36,7 @@ function UpdateRSS($newID){
 	$rss->title = "フリューゲル共同通信";
 	$rss->description = "貿易版箱庭諸国の最新ニュースをお届けします";
 	$rss->link = "https://tanstafl.sakura.ne.jp/";
-	$rss->syndicationURL = "https://tanstafl.sakura.ne.jp/".$PHP_SELF;
+	$rss->syndicationURL = "https://tanstafl.sakura.ne.jp/" . ($_SERVER['PHP_SELF'] ?? '');
 	
 	$newall = $this->LatestRSS();
 	

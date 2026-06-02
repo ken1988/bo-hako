@@ -50,11 +50,11 @@ v1.7	07-18-04
 	added a switch to select an external stylesheet (thanks to Pascal Van Hecke)
 	changed default content-type to application/xml
 	added character encoding setting
-	fixed numerous smaller bugs (thanks to Söòen Fuhrmann of golem.de)
+	fixed numerous smaller bugs (thanks to SÃ¶Ã²en Fuhrmann of golem.de)
 	improved changing ATOM versions handling (thanks to August Trometer)
-	improved the UniversalFeedCreator's useCached method (thanks to Söòen Fuhrmann of golem.de)
-	added charset output in HTTP headers (thanks to Söòen Fuhrmann of golem.de)
-	added Slashdot namespace to RSS 1.0 (thanks to Söòen Fuhrmann of golem.de)
+	improved the UniversalFeedCreator's useCached method (thanks to SÃ¶Ã²en Fuhrmann of golem.de)
+	added charset output in HTTP headers (thanks to SÃ¶Ã²en Fuhrmann of golem.de)
+	added Slashdot namespace to RSS 1.0 (thanks to SÃ¶Ã²en Fuhrmann of golem.de)
 
 v1.6	05-10-04
 	added stylesheet to RSS 1.0 feeds
@@ -72,7 +72,7 @@ v1.6 beta	02-28-04
 	considered beta due to some internal changes
 
 v1.5.1	01-27-04
-	fixed some RSS 1.0 glitches (thanks to Stéðhane Vanpoperynghe)
+	fixed some RSS 1.0 glitches (thanks to StÃ©Ã°hane Vanpoperynghe)
 	fixed some inconsistencies between documentation and code (thanks to Timothy Martin)
 
 v1.5	01-06-04
@@ -603,6 +603,12 @@ class FeedCreator extends HtmlDescribable {
 	* Ignored in the output when empty.
 	*/
 	var $xslStyleSheet = "";
+
+	/**
+	* The url of the external css stylesheet used to format the naked feed.
+	* Ignored in the output when empty.
+	*/
+	var $cssStyleSheet = "";
 	
 	
 	/**

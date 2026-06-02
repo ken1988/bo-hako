@@ -3910,6 +3910,11 @@ class Turn {
 		// 観光都市
 		// 現代都市
 		// 首都
+        $nsize = 0;
+        if($landKind == $init->landCapital){
+          //首都用
+          $nsize = ($island['capital']-1)*2;
+        }
         if($addpop < 0) {
           // 不足
           $lv -= Util::random(-$addpop) + 1;
@@ -3921,14 +3926,7 @@ class Turn {
             continue 2;
           }
 		} else {
-		  $nsize = 0;
           // 成長
-		  if($landKind == $init->landCapital){
-		  //首都用
-		  	$nsize = ($island['capital']-1)*2;
-		  }else{
-		  	$nsize = 0;
-		  }
 		  if($landKind == $init->landTown){
 		  	//大都市成長カウント用
 		  	$townCount = Turn::countAround($land, $x, $y, $init->landBigtown, 7);
