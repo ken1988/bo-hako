@@ -11,15 +11,15 @@ var $items = array("newsID"=>'',"nationID"=>'',"category"=>'',"text"=>'',"date"=
 function Updater($datas){
 	$this->items = array_merge($this->items,$datas);
 	$this->items['date'] = date("Y-m-d\TH:i:sO");
-	$newID = WNSsys::WriteXML($this->items);
-	WNSsys::UpdateRSS($newID);
+	$newID = $this->WriteXML($this->items);
+	$this->UpdateRSS($newID);
 }
 function WriteXML($newdata){
 	$xml = new SimpleXMLElement($this->xmlpath,NULL,TRUE);
 	$fp = fopen($this->xmlpath, 'a');
 	Util::lockw($fp);//追記処理中はロック
 //追記処理
-	$newdata['newsID'] = WNSsys::XMLcounter($xml);
+	$newdata['newsID'] = $this->XMLcounter($xml);
 	$addnews = $xml->addChild('item');
 	foreach($newdata as $key => $val){
 		$addnews->addChild($key,$val);
@@ -38,7 +38,7 @@ function UpdateRSS($newID){
 	$rss->link = "https://tanstafl.sakura.ne.jp/";
 	$rss->syndicationURL = "https://tanstafl.sakura.ne.jp/".$PHP_SELF;
 	
-	$newall = WNSsys::LatestRSS();
+	$newall = $this->LatestRSS();
 	
 	foreach($newall as $eachdats){
 			$item = new FeedItem();
@@ -56,7 +56,7 @@ function UpdateRSS($newID){
 	
 function LatestRSS(){
 	$alldats = simplexml_load_file($this->xmlpath);
-	$newID = WNSsys::XMLcounter($alldats);
+	$newID = $this->XMLcounter($alldats);
 	$count = 1;
 	foreach($alldats as $key => $eachdats){
 		if($newID < $count+16){
@@ -78,7 +78,7 @@ function XMLcounter($xml){
 
 function MakeHTML($request,$basepath){
 //閲覧用にリスト形式のニュースを出力
-		$newall = WNSsys::LatestRSS();
+		$newall = $this->LatestRSS();
 		$count = 0;
 		$html = "<ul id=\"latestnews\">\n";
 			$path = $basepath.substr($this->rsspath,1);

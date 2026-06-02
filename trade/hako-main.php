@@ -703,6 +703,7 @@ class LogIO {
       Util::lockr($fp);
 
       $line = array();
+      $count = 0;
       while($l = chop(fgets($fp, READ_LINE))) {
         array_push($line, $l);
         $count++;
