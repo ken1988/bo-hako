@@ -105,6 +105,11 @@ class HakoIO {
     $news_link    = chop(fgets($fp, READ_LINE));
     
     $this->idToName[$id] = $name;
+    $land = array();
+    $landValue = array();
+    $command = array();
+    $lbbs = array();
+    $regT = array();
 
     if(($num == -1) || ($num == $id)) {
       $fp_i = fopen("{$init->dirName}/island.{$id}", "r");

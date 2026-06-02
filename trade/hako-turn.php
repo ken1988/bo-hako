@@ -3841,7 +3841,7 @@ class Turn {
 	  	($x == 21)||
 	  	(($x == 0)&&($y % 2 == 1))){
 	  	$lv = 254;
-	  	$land[$x][$y] = $init->landsea;
+		$land[$x][$y] = $init->landSea;
 		$landValue[$x][$y] = $lv;
 	  }
 
@@ -3924,7 +3924,7 @@ class Turn {
         $landValue[$x][$y] = $lv;
         break;
 
-	  case $init->landsea:
+	  case $init->landSea:
 	  	//海異常修正
 	  	  if(($lv >= 6)&&($lv < 254)){
 		  	$lv = 0;
@@ -5887,7 +5887,7 @@ class Turn {
       // 燃料があるときだけ(負荷軽減)
       // 初期条件
       $bfarm = $bfactory = $bmarket = 100;
-      $wfarm = $wfactory = $wmarket = $pgoods = 0;
+      $wfarm = $wfactory = $wmarket = $pgoods = $pfactory = $sgoods = $smoney = 0;
 
       if ($pfarm + $factory + $market != 0) {
         // 特化判定
@@ -6218,7 +6218,11 @@ if($island['ffactory']> 0){
 	$cmente = 0;
 	$polit = 0;
 	$bport = 0;
-	$fsocst = $island['fsocst'];
+	$secpol = 0;
+	$m0 = 0;
+	$m11 = 0;
+	$kasan = 0;
+	$fsocst = isset($island['fsocst']) ? $island['fsocst'] : false;
     $passenger = $fishingboat = $tansaku = $senkan = $viking = 0;
     // 数える
     for($y = 0; $y < $init->islandSize; $y++) {
@@ -6559,7 +6563,7 @@ if($island['ffactory']> 0){
 		$hapiness += ceil($island['soclv']*0.2);
 	}
 	//減少は0.1ずつなので使うときは小数点切り上げ（ceil）を使う
-	$hapiness += $island['percat'];//食肉指数を幸福度に加算
+	$hapiness += isset($island['percat']) ? $island['percat'] : 0;//食肉指数を幸福度に加算
 	if ($m10 >= 1){
 		//宗教施設1つにつき幸福度＋3（最大12）
 		$hapiness += min($m10*3, 12);

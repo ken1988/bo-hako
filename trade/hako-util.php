@@ -94,6 +94,7 @@ class Util {
   // 数字を見やすくする
   //---------------------------------------------------
   public static function Rewriter($amount){
+      $amounts = "";
       $amount = strrev($amount);
 	  $len = strlen($amount);
 	  $lens = floor($len/4);

@@ -14,11 +14,11 @@ require 'hako-file.php';
 require 'hako-html.php';
 require 'hako-turn.php';
 require 'hako-util.php';
-require 'hako-ally.php';
 require 'wns.php';
 $init = new Init;
+require 'hako-ally.php';
 
-define("READ_LINE", 1024);
+if(!defined("READ_LINE")) { define("READ_LINE", 1024); }
 $THIS_FILE =  $init->baseDir . "/hako-main.php";
 $BACK_TO_TOP = "<A HREF=\"{$THIS_FILE}?\">{$init->tagBig_}トップへ戻る{$init->_tagBig}</A>";
 $_TURN; // ターン数
@@ -115,6 +115,7 @@ class Hako extends HakoIO {
     global $init;
     $point = "({$x},{$y})";
     $naviExp = "''";
+    $naviText = "";
 
     if($x < $init->islandSize / 2)
       $naviPos = 0;
@@ -848,47 +849,47 @@ class Cgi {
     $time = time() + 30 * 86400; // 現在 + 30日有効
 
     // Cookieの設定 & POSTで入力されたデータで、Cookieから取得したデータを更新
-    if($this->dataSet['ISLANDID'] && $this->mode == "owner") {
+    if(!empty($this->dataSet['ISLANDID']) && $this->mode == "owner") {
       setcookie("OWNISLANDID",$this->dataSet['ISLANDID'], $time);
       $this->dataSet['defaultID'] = $this->dataSet['ISLANDID'];
     }
-    if($this->dataSet['PASSWORD']) {
+    if(!empty($this->dataSet['PASSWORD'])) {
       setcookie("OWNISLANDPASSWORD",$this->dataSet['PASSWORD'], $time);
       $this->dataSet['defaultPassword'] = $this->dataSet['PASSWORD'];
     }
-    if($this->dataSet['TARGETID']) {
+    if(!empty($this->dataSet['TARGETID'])) {
       setcookie("TARGETISLANDID",$this->dataSet['TARGETID'], $time);
       $this->dataSet['defaultTarget'] = $this->dataSet['TARGETID'];
     }
-    if($this->dataSet['LBBSNAME']) {
+    if(!empty($this->dataSet['LBBSNAME'])) {
       setcookie("LBBSNAME",$this->dataSet['LBBSNAME'], $time);
       $this->dataSet['defaultName'] = $this->dataSet['LBBSNAME'];
     }
-    if($this->dataSet['LBBSCOLOR']) {
+    if(!empty($this->dataSet['LBBSCOLOR'])) {
       setcookie("LBBSCOLOR",$this->dataSet['LBBSCOLOR'], $time);
       $this->dataSet['defaultColor'] = $this->dataSet['LBBSCOLOR'];
     }
-    if($this->dataSet['POINTX']) {
+    if(!empty($this->dataSet['POINTX'])) {
       setcookie("POINTX",$this->dataSet['POINTX'], $time);
       $this->dataSet['defaultX'] = $this->dataSet['POINTX'];
     }
-    if($this->dataSet['POINTY']) {
+    if(!empty($this->dataSet['POINTY'])) {
       setcookie("POINTY",$this->dataSet['POINTY'], $time);
       $this->dataSet['defaultY'] = $this->dataSet['POINTY'];
     }
-    if($this->dataSet['COMMAND']) {
+    if(!empty($this->dataSet['COMMAND'])) {
       setcookie("COMMAND",$this->dataSet['COMMAND'], $time);
       $this->dataSet['defaultKind'] = $this->dataSet['COMMAND'];
     }
-    if($this->dataSet['DEVELOPEMODE']) {
+    if(!empty($this->dataSet['DEVELOPEMODE'])) {
       setcookie("DEVELOPEMODE",$this->dataSet['DEVELOPEMODE'], $time);
       $this->dataSet['defaultDevelopeMode'] = $this->dataSet['DEVELOPEMODE'];
     }
-    if($this->dataSet['SKIN']) {
+    if(!empty($this->dataSet['SKIN'])) {
       setcookie("SKIN",$this->dataSet['SKIN'], $time);
       $this->dataSet['defaultSkin'] = $this->dataSet['SKIN'];
     }
-    if($this->dataSet['IMG']) {
+    if(!empty($this->dataSet['IMG'])) {
       setcookie("IMG",$this->dataSet['IMG'], $time);
       $this->dataSet['defaultImg'] = $this->dataSet['IMG'];
     }
@@ -899,7 +900,35 @@ class Cgi {
   function parseInputData() {
     global $init;
 
-    $this->mode = $_POST['mode'];
+    $this->mode = isset($_POST['mode']) ? $_POST['mode'] : '';
+    $this->dataSet = array_merge(array(
+      'mode' => '',
+      'ISLANDID' => '',
+      'PASSWORD' => '',
+      'TARGETID' => '',
+      'LBBSNAME' => '',
+      'LBBSCOLOR' => '',
+      'POINTX' => '',
+      'POINTY' => '',
+      'COMMAND' => '',
+      'DEVELOPEMODE' => '',
+      'SKIN' => '',
+      'IMG' => '',
+      'ISLANDNAME' => '',
+      'MESSAGE' => '',
+      'LBBSMESSAGE' => '',
+      'defaultID' => 0,
+      'defaultTarget' => 0,
+      'defaultPassword' => '',
+      'defaultName' => '',
+      'defaultColor' => '',
+      'defaultX' => 0,
+      'defaultY' => 0,
+      'defaultKind' => 0,
+      'defaultDevelopeMode' => '',
+      'defaultSkin' => '',
+      'defaultImg' => ''
+    ), isset($this->dataSet) && is_array($this->dataSet) ? $this->dataSet : array());
     if(!empty($_POST)) {
       foreach($_POST as $name => $value) {
         $value = str_replace(",", "", $value);
@@ -932,31 +961,32 @@ class Cgi {
       $this->dataSet['ISLANDID'] = $_GET['target'];
     }
 	$this->dataSet['mobile'] = false;
-	$is_iphone = strpos( $_SERVER['HTTP_USER_AGENT'],'iPhone');
-	$is_android = strpos($_SERVER['HTTP_USER_AGENT'],'Android');
+	$userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+	$is_iphone = strpos($userAgent, 'iPhone');
+	$is_android = strpos($userAgent, 'Android');
 	if(($is_iphone || $is_android) == true){
 		$this->dataSet['mobile'] = true;
 	}
 
-    if($_GET['mode'] == "conf") {
+    if(isset($_GET['mode']) && $_GET['mode'] == "conf") {
       $this->mode = "conf";
     }
-    if($_GET['mode'] == "New") {
+    if(isset($_GET['mode']) && $_GET['mode'] == "New") {
       $this->mode = "New";
     }
-    if($_GET['mode'] == "log") {
+    if(isset($_GET['mode']) && $_GET['mode'] == "log") {
       $this->mode = "log";
     }
-	if($_GET['mode'] == "wstat"){
+	if(isset($_GET['mode']) && $_GET['mode'] == "wstat"){
       $this->mode = "wstat";
 	}
-	if($_GET['mode'] == "nest"){
+	if(isset($_GET['mode']) && $_GET['mode'] == "nest"){
       $this->mode = "nest";
 	}
-	if($_GET['mode'] == "report"){
+	if(isset($_GET['mode']) && $_GET['mode'] == "report"){
 		$this->mode = "report";
 	}
-	if($_GET['mode'] == "ally"){
+	if(isset($_GET['mode']) && $_GET['mode'] == "ally"){
       $this->mode = "ally";
 	}
 
