@@ -1,0 +1,585 @@
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6048
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6049
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6053
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6065
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $island in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1001
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1001
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1001
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $island in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1002
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1002
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1002
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $island in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1006
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1006
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1006
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key -1 in /home/violetcougar33/www/wordpress/trade/hako-util.php on line 547
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $value in /home/violetcougar33/www/wordpress/trade/hako-log.php on line 124
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 2 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 13 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 13 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 9 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 10 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 0 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 18 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 1 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 1 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 2 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 1 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 19 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4407
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4407
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 19 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 20 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 20 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 20 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 19 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 18 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key 19 in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 6695
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sx in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $sy in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4243
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4711
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 3817
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $kind in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4148
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $point in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4175
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined variable $shipMove in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4584
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4768
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "prepare2" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4898
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4899
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4899
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5045
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5045
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5103
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5103
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "monstersend" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5108
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "monstersend" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5225
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5229
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5229
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5278
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5278
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5316
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5316
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5339
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5339
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "present" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5454
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Trying to access array offset on null in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5454
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "riot" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 5537
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "dead" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 1040
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "propaganda" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4768
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Warning:  Undefined array key "prepare2" in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4898
+[03-Jun-2026 02:20:51 Asia/Tokyo] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string / int in /home/violetcougar33/www/wordpress/trade/hako-turn.php:4898
+Stack trace:
+#0 /home/violetcougar33/www/wordpress/trade/hako-turn.php(1037): Turn->doIslandProcess()
+#1 /home/violetcougar33/www/wordpress/trade/hako-main.php(1071): Turn->turnMain()
+#2 /home/violetcougar33/www/wordpress/trade/hako-main.php(1220): Main->execute()
+#3 {main}
+  thrown in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 4898
