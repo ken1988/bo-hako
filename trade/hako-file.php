@@ -225,10 +225,10 @@ class HakoIO {
 	  'polit'	 => (int)$polit,
 	  'soclv'	 => (int)$soclv,
 	  'bport'	=> (int)$bport,
-	  'milpop'  => $milpop,
+	  'milpop'  => (int)$milpop,
 	  'navy'	=> $navy,
-	  'sfarmy'  => $sfarmy,
-	  'civwar'  => $civwar,
+	  'sfarmy'  => (int)$sfarmy,
+	  'civwar'  => (int)$civwar,
 	  'wiki_link' => $wiki_link,
 	  'trade_link' => $trade_link,
 	  'news_link' =>  $news_link
