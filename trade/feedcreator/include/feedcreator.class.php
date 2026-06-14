@@ -1252,6 +1252,10 @@ class PIECreator01 extends FeedCreator {
  */
  class AtomCreator10 extends FeedCreator {
  
+	function __construct() {
+		$this->AtomCreator10();
+	}
+
 	function AtomCreator10() {
 		$this->contentType = "application/atom+xml";
 		$this->encoding = "utf-8";

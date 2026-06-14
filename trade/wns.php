@@ -32,6 +32,7 @@ function WriteXML($newdata){
 function UpdateRSS($newID){
 	//ニュースをRSSファイルに書き出す
 	$rss = new UniversalFeedCreator();
+	$rss->encoding = "UTF-8";
 	$rss->useCached();
 	$rss->title = "フリューゲル共同通信";
 	$rss->description = "貿易版箱庭諸国の最新ニュースをお届けします";
