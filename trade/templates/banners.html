@@ -53,22 +53,114 @@
 		</div>
 
 		<div id='Banner'>
-		<h2>国旗番号入力</h2>
-		<form action="{GLTH}" method="post">
-		国旗番号<input type="text" name="Number" size="5" maxlength="3" value="{num}"><br>
+		<h2>国旗設定</h2>
+		<p>現在の国旗ファイルID：<input type="text" name="Number" size="10" maxlength="20" value="{num}" readonly>
+		（旧IDは数字のみ、新IDは bn- で始まります）</p>
+		<form action="{GLTH}" method="post" enctype="multipart/form-data" id="FlagUploadForm">
+		<div id="FlagDropArea" style="border:2px dashed #999;padding:12px;text-align:center;cursor:pointer;">
+		国旗画像をここへドラッグ＆ドロップ、またはクリックして選択<br>
+		<input type="file" name="FLAGFILE" id="FlagFile" accept="image/png,image/jpeg" style="margin-top:8px;">
+		<div id="FlagFileInfo" style="margin-top:8px;">未選択</div>
+		<img id="FlagPreview" src="" alt="国旗プレビュー" style="display:none;margin-top:8px;max-width:180px;max-height:120px;">
+		</div>
+		<input type="hidden" name="MAX_FILE_SIZE" value="65536">
 		<input type="hidden" name="PASSWORD" value="{PAS}">
-		<input type="hidden" name="mode" value="Cname">
-		<input type="hidden" name="type" value="Banner">
+		<input type="hidden" name="mode" value="flagUpload">
 		<input type="hidden" name="DEVELOPEMODE" value="{mode}">
 		<input type="hidden" name="ISLANDID" value="{id}">
-		<input type="submit" value="国旗番号確定">
+		<input type="submit" value="国旗画像アップロード">
 		</form>
-		<a href="/trade/img/up/">国旗ファイルはここからアップロード</a>
-		<p>サイズは任意。ただし表示サイズは45×30ピクセル固定<br>
-		ファイルサイズは4KB以下<br>
-		ファイル形式はPNGのみ<br>
-		手順：アップロード⇒ファイル番号をこのページで入力<br>
-		<b>ファイル番号は半角英数字</b></p>
+		<p>アップロード後のファイルIDは <b>bn-{id}</b> に自動設定されます。<br>
+		アップロード可能形式は PNG/JPEG、容量は64KB以下、画像サイズは最大1200×800ピクセルです。<br>
+		保存時に45×30ピクセルのPNGへ変換します。<br>
+		互換性維持のため、データファイルに記載済みの旧ファイルIDもそのまま表示できますが、ユーザーによる直接書き換えはできません。</p>
+		<script>
+		(function() {
+		  var dropArea = document.getElementById('FlagDropArea');
+		  var fileInput = document.getElementById('FlagFile');
+		  var fileInfo = document.getElementById('FlagFileInfo');
+		  var preview = document.getElementById('FlagPreview');
+		  var form = document.getElementById('FlagUploadForm');
+		  var maxBytes = 65536;
+		  var maxWidth = 1200;
+		  var maxHeight = 800;
+		  var currentFileValid = false;
+		  if (!dropArea || !fileInput) return;
+
+		  function rejectFile(message) {
+		    currentFileValid = false;
+		    fileInfo.textContent = message;
+		    preview.removeAttribute('src');
+		    preview.style.display = 'none';
+		  }
+
+		  function showFile(file) {
+		    currentFileValid = false;
+		    if (!file) return;
+		    if (file.size > maxBytes) {
+		      rejectFile('ファイルサイズは64KB以下にしてください。');
+		      return;
+		    }
+		    if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
+		      rejectFile('PNGまたはJPEGを選択してください。');
+		      return;
+		    }
+		    fileInfo.textContent = file.name + ' (' + Math.ceil(file.size / 1024) + 'KB)';
+		    if (window.FileReader) {
+		      var reader = new FileReader();
+		      reader.onload = function(e) {
+		        var image = new Image();
+		        image.onload = function() {
+		          if (image.width > maxWidth || image.height > maxHeight) {
+		            rejectFile('画像サイズは最大1200×800ピクセルです。');
+		            return;
+		          }
+		          currentFileValid = true;
+		          preview.src = e.target.result;
+		          preview.style.display = 'inline-block';
+		        };
+		        image.onerror = function() {
+		          rejectFile('画像ファイルを読み取れません。');
+		        };
+		        image.src = e.target.result;
+		      };
+		      reader.readAsDataURL(file);
+		    } else {
+		      currentFileValid = true;
+		    }
+		  }
+
+		  dropArea.addEventListener('click', function(e) {
+		    if (e.target !== fileInput) fileInput.click();
+		  });
+		  dropArea.addEventListener('dragover', function(e) {
+		    e.preventDefault();
+		    dropArea.style.backgroundColor = '#eef';
+		  });
+		  dropArea.addEventListener('dragleave', function() {
+		    dropArea.style.backgroundColor = '';
+		  });
+		  dropArea.addEventListener('drop', function(e) {
+		    e.preventDefault();
+		    dropArea.style.backgroundColor = '';
+		    if (e.dataTransfer.files.length) {
+		      fileInput.files = e.dataTransfer.files;
+		      showFile(e.dataTransfer.files[0]);
+		    }
+		  });
+		  fileInput.addEventListener('change', function() {
+		    showFile(fileInput.files[0]);
+		  });
+		  if (form) {
+		    form.addEventListener('submit', function(e) {
+		      if (!fileInput.files.length || !currentFileValid) {
+		        e.preventDefault();
+		        alert('アップロード可能な国旗画像を選択してください。');
+		      }
+		    });
+		  }
+		})();
+		</script>
 		</div>
 		
 		<div id='Wiki_link'>

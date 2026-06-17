@@ -507,7 +507,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		}
 		$owner =  "<br>{$init->tagTH_}元首：{$owner}{$init->_tagTH}";
 		$bannerad = "img/up/log";
-		if (file_exists($bannerad.'/'.$banum.'.png')){
+		if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerad.'/'.$banum.'.png')){
 			$bannerad = 'up/log/'.$banum.'.png';
 			$bannerad = "<IMG SRC=\"{$bannerad}\" width=\"45\" height=\"30\"align=\"left\" title=\"{$pname}旗\" ALT=\"{$pname}旗\">";
 		}else{
@@ -1204,7 +1204,7 @@ END;
 	$socad .="<IMG SRC=\"socsec.png\" width=\"20\" height=\"20\" title=\"社会保障指数：{$soclv}\" ALT=\"社会保障指数：{$soclv}\"> {$soclv}";
 
 	$bannerad = "img/up/log";
-	if (file_exists($bannerad.'/'.$banum.'.png')){
+	if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerad.'/'.$banum.'.png')){
 		$bannerad = 'up/log/'.$banum.'.png';
 		$bannerad = "<IMG align = \"center\" SRC=\"{$bannerad}\" width=\"45\" height=\"30\"align=\"left\" title=\"{$pname}旗\" ALT=\"{$pname}旗\">";
 	}else{
@@ -2157,7 +2157,7 @@ $param['PAS'] =   $data['PASSWORD'];
 $param['id']  = $island['id'];
 $param['news_point']  = $island['news_point'];
 $param['CNAM'] =  $island['Cname'];
-$param['num'] =  $island['banum'];
+$param['num'] =  htmlspecialchars($island['banum']);
 $param['wiki_link'] =  $island['wiki_link'];
 $param['trade_link'] =  $island['trade_link'];
 $param['news_link'] =  $island['news_link'];
@@ -3533,7 +3533,7 @@ $param['PAS'] =   $data['PASSWORD'];
 $param['id']  = $island['id'];
 $param['news_point']  = $island['news_point'];
 $param['CNAM'] =  $island['Cname'];
-$param['num'] =  $island['banum'];
+$param['num'] =  htmlspecialchars($island['banum']);
 $param['wiki_link'] =  $island['wiki_link'];
 $param['trade_link'] =  $island['trade_link'];
 $param['news_link'] =  $island['news_link'];
@@ -3921,6 +3921,12 @@ class HakoError {
   public static function changeNothing() {
     global $init;
     print "{$init->tagBig_}名前、パスワードともに空欄です{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
+    HTML::footer();
+    exit;
+  }
+  public static function flagUploadError($message) {
+    global $init;
+    print "{$init->tagBig_}" . htmlspecialchars($message) . "{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
     HTML::footer();
     exit;
   }
