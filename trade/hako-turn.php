@@ -246,6 +246,10 @@ class Make {
   //---------------------------------------------------
   function commentMain($hako, $data) {
     $id  = $data['ISLANDID'];
+    if(!preg_match('/^[0-9]+$/', $id) || !isset($hako->idToNumber[$id])) {
+      HakoError::wrongID();
+      return;
+    }
     $num = $hako->idToNumber[$id];
     $island = $hako->islands[$num];
     $name = $island['name'];
@@ -370,10 +374,9 @@ class Make {
 	    break;
 	    
     	case "Banner":
-   		//国旗番号を更新
-	    $island['banum'] = htmlspecialchars($data['Number']);
-		$msg = "国旗";
-	    break;
+		//国旗番号の直接更新は廃止
+	    HakoError::flagUploadError('国旗ファイルIDは直接変更できません。国旗画像アップロード機能を利用してください。');
+	    return;
 
     	case "Wiki_Link":
 	    //Wikiリンクを更新
@@ -412,6 +415,118 @@ class Make {
     }
     $html->owner($hako, $data);
 	}
+
+  //---------------------------------------------------
+  // 国旗画像アップロード
+  //---------------------------------------------------
+  function flagUpload($hako, $data) {
+    $id  = $data['ISLANDID'];
+    if(!preg_match('/^[0-9]+$/', $id) || !isset($hako->idToNumber[$id])) {
+      HakoError::wrongID();
+      return;
+    }
+    $num = $hako->idToNumber[$id];
+    $island = $hako->islands[$num];
+
+    if(!Util::checkPassword($island['password'], $data['PASSWORD'])) {
+      HakoError::wrongPassword();
+      return;
+    }
+
+    if(!isset($_FILES['FLAGFILE']) || !is_array($_FILES['FLAGFILE'])) {
+      HakoError::flagUploadError('国旗画像が選択されていません。');
+      return;
+    }
+
+    $file = $_FILES['FLAGFILE'];
+    if($file['error'] != UPLOAD_ERR_OK) {
+      HakoError::flagUploadError('国旗画像のアップロードに失敗しました。');
+      return;
+    }
+
+    $maxBytes = 65536;
+    if($file['size'] <= 0 || $file['size'] > $maxBytes) {
+      HakoError::flagUploadError('国旗画像は64KB以下にしてください。');
+      return;
+    }
+
+    $imageInfo = @getimagesize($file['tmp_name']);
+    if($imageInfo === false) {
+      HakoError::flagUploadError('画像ファイルを読み取れません。');
+      return;
+    }
+
+    $width = $imageInfo[0];
+    $height = $imageInfo[1];
+    $type = $imageInfo[2];
+    if($width < 1 || $height < 1 || $width > 1200 || $height > 800) {
+      HakoError::flagUploadError('国旗画像のサイズは最大1200×800ピクセルです。');
+      return;
+    }
+
+    if($type != IMAGETYPE_PNG && $type != IMAGETYPE_JPEG) {
+      HakoError::flagUploadError('アップロードできる国旗画像はPNGまたはJPEGです。');
+      return;
+    }
+
+    if(!function_exists('imagecreatetruecolor')) {
+      HakoError::flagUploadError('画像変換機能が利用できません。');
+      return;
+    }
+
+    if($type == IMAGETYPE_PNG) {
+      $src = @imagecreatefrompng($file['tmp_name']);
+    } else {
+      $src = @imagecreatefromjpeg($file['tmp_name']);
+    }
+    if(!$src) {
+      HakoError::flagUploadError('国旗画像を変換できません。');
+      return;
+    }
+
+    $dstWidth = 45;
+    $dstHeight = 30;
+    $dst = imagecreatetruecolor($dstWidth, $dstHeight);
+    imagealphablending($dst, false);
+    imagesavealpha($dst, true);
+    $transparent = imagecolorallocatealpha($dst, 255, 255, 255, 127);
+    imagefilledrectangle($dst, 0, 0, $dstWidth, $dstHeight, $transparent);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $dstWidth, $dstHeight, $width, $height);
+
+    $flagId = 'bn-' . $id;
+    $uploadDir = dirname(__FILE__) . '/img/up/log';
+    if(!is_dir($uploadDir) || !is_writable($uploadDir)) {
+      imagedestroy($src);
+      imagedestroy($dst);
+      HakoError::flagUploadError('国旗画像の保存先に書き込めません。');
+      return;
+    }
+
+    $savePath = $uploadDir . '/' . $flagId . '.png';
+    if(!imagepng($dst, $savePath)) {
+      imagedestroy($src);
+      imagedestroy($dst);
+      HakoError::flagUploadError('国旗画像を保存できません。');
+      return;
+    }
+    chmod($savePath, 0604);
+    imagedestroy($src);
+    imagedestroy($dst);
+
+    $island['banum'] = $flagId;
+    $hako->islands[$num] = $island;
+    $hako->writeIslandsFile();
+
+    HtmlSetted::Capital('国旗');
+
+    if($data['DEVELOPEMODE'] == "cgi") {
+      $html = new HtmlMap;
+    } else {
+      $html = new HtmlJS;
+    }
+    $html->owner($hako, $data);
+  }
+
   //---------------------------------------------------
   // ローカル掲示板モード
   //---------------------------------------------------

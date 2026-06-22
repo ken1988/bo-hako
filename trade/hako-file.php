@@ -219,7 +219,7 @@ class HakoIO {
 	  'capital'  => (int)$capital,
 	  'Cname'    => $Cname,
 	  'edinv'    => (int)$edinv,
-	  'banum'	 => (int)$banum,
+	  'banum'	 => trim($banum),
 	  'cmente'	 => (int)$cmente,
 	  'indnum'	 => (int)$indnum,
 	  'polit'	 => (int)$polit,

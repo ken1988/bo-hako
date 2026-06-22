@@ -1106,6 +1106,12 @@ class Main {
       $html->footer();
       break;
 
+    case "flagUpload":
+      $html->header($cgi->dataSet);
+      $com->flagUpload($hako, $cgi->dataSet);
+      $html->footer();
+      break;
+
     case "print":
       $html->header($cgi->dataSet);
       $html->visitor($hako, $cgi->dataSet);
