@@ -248,7 +248,6 @@ if ($hako->islandNumber != 0) {
   }
   print " [" . $islandListStart . " - " . $islandListSentinel . "位 ]";
 }
-if($data['mobile'] != true){
 echo $wns->MakeHTML(10,$init->baseDir);
 
 
@@ -264,9 +263,6 @@ echo $wns->MakeHTML(10,$init->baseDir);
 </tr>
 END;
 
-}else{
-	echo $wns->MakeHTML(5,$init->baseDir);
-}
 if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
   for ($i = 1; $i <= $hako->islandNumber ; $i += $init->islandListRange) {
     $j = $i + $init->islandListRange - 1;
@@ -532,12 +528,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		$httool = "<div class=\"tooltip\" id=\"t{$id}\"><p id=\"comm\">{$comment}</p></div>";
 
 		$scapital = $init->Captext[$capital];
-		if(!empty($data['mobile'])){
-			$param['banner'] = $bannerad;
-			$param['name'] = $name;
-			$param['id'] = $id;
-			print HTML::tplengine('./templates/mobile/nation.html',$param);
-		  }else{
+
       if($init->moneyMode) {
         $mTmp1 = Util::aboutMoney($island['food'],'food');
         $mTmp2 = Util::aboutMoney($island['goods'],'goods');
@@ -626,7 +617,6 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 	  print "<td {$init->bgInfoCell}>{$prize}</td>\n";
       print "<td {$init->bgCommentCell} colspan=\"10\"><IMG SRC=\"radio.png\" width=\"20\" height=\"20\" title=\"報道\" ALT=\"報道\">{$news}</td>\n";
 	  print "</tr>\n";
-	  }
     }
     print "</table>\n</div>\n";
     print "<hr>\n";
