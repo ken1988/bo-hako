@@ -42,9 +42,6 @@ class HTML {
 	$param['title'] =$init->title;
 	$param['baseDir'] = $init->baseDir;
 
-	if(!empty($data['mobile'])){
-		print HTML::tplengine('./templates/mobile/head.html',$param);
-	}else{
 		$param['urlTopPage'] = $init->urlTopPage;
 		$param['t_title'] = $GLOBALS['THIS_FILE'];
 		$param['urlManual'] = $init->urlManual;
@@ -53,7 +50,6 @@ class HTML {
 		$param['urlSlack'] = $init->urlSlack;
 		$param['chart'] = "{'packages':['corechart']}";
 		print HTML::tplengine('./templates/head.html',$param);
-	}
   }
   //---------------------------------------------------
   // HTML フッタ出力
@@ -81,11 +77,7 @@ class HTML {
     }
 
 	$param['perform'] = $tex ?? '';
-	if(!empty($data['mobile'])){
-		print HTML::tplengine('./templates/mobile/footer.html',$param);
-	}else{
 		print HTML::tplengine('./templates/footer.html',$param);
-	}
   }
   //---------------------------------------------------
   // 最終更新時刻 ＋ 次ターン更新時刻出力
@@ -2499,9 +2491,6 @@ class HtmlJS extends HtmlMap {
 	$param['title'] =$init->title;
 	$param['baseDir'] = $init->baseDir;
 
-	if(!empty($data['mobile'])){
-		print HTML::tplengine('./templates/mobile/head.html',$param);
-	}else{
 		$param['bimg'] = $bimg;
 		$param['css'] = $css;
 		$param['title'] =$init->title;
@@ -2514,7 +2503,6 @@ class HtmlJS extends HtmlMap {
 		$param['urlBbs'] = $init->urlBbs;
 		$param['chart'] = "google.charts.load('current', {packages: ['corechart']});";
 		print HTML::tplengine('./templates/head.html',$param);
-	}
   }
   //---------------------------------------------------
   // 開発画面
