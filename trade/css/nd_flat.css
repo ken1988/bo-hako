@@ -5,8 +5,17 @@
  * Existing HTML structure is intentionally preserved.  This stylesheet keeps
  * the warm orange / red-brown palette used by Autumn.css and replaces image
  * based backgrounds with flat colors, borders, shadows, and spacing.
+ *
+ * 修正ガイド:
+ * - 色味を変える場合は、まず下の :root にある --nd-color-* を調整してください。
+ * - 角丸や影の強さを変える場合は、--nd-radius-* / --nd-shadow-* を調整してください。
+ * - 各画面固有の見た目は「SECTION: ...」コメントを目印に探してください。
+ * - 既存HTMLの class / id を前提にしているため、セレクタ名は安易に変更しないでください。
  */
 
+/* SECTION: Theme tokens
+ * テーマ全体の基準値です。配色・角丸・影の調整は原則ここだけで完結させます。
+ */
 :root {
   --nd-color-primary: #f97316;
   --nd-color-primary-dark: #c2410c;
@@ -27,6 +36,10 @@
   --nd-shadow-md: 0 6px 18px rgba(124, 45, 18, 0.14);
 }
 
+/* SECTION: Base document styles
+ * body / link / table / form など、ページ全体に効く基本設定です。
+ * 既存HTMLがテーブル主体なので、table/th/td の変更は画面全体に影響します。
+ */
 html {
   background: var(--nd-color-surface-muted);
 }
@@ -144,6 +157,11 @@ button:hover {
   background: var(--nd-color-primary-dark);
 }
 
+/* SECTION: Global header navigation
+ * templates/head.html の #LinkHeader に対応します。
+ * アイコン画像は既存の <img> を継続利用し、ボタン背景画像は使わない設計です。
+ * メニュー幅や折り返しを変える場合は ul の gap / li a の padding を調整してください。
+ */
 #LinkHeader {
   margin: 8px 8px 0;
 }
@@ -187,6 +205,9 @@ button:hover {
   margin-right: 5px;
 }
 
+/* SECTION: Footer
+ * templates/footer.html / mobile/footer.html の #LinkFoot と .global-footer に対応します。
+ */
 #LinkFoot,
 .global-footer {
   clear: both;
@@ -199,6 +220,10 @@ button:hover {
   box-shadow: var(--nd-shadow-sm);
 }
 
+/* SECTION: Headings
+ * h1 / h2 / ターン表示などの見出し類です。
+ * Autumn.css の装飾画像・固定配置をやめ、余白と左ボーダーで階層を表現します。
+ */
 h1 {
   display: inline-block;
   margin: 24px 16px 28px;
@@ -272,6 +297,10 @@ h2.Turn {
   display: none;
 }
 
+/* SECTION: Login / registration panel
+ * トップページのログイン・登録枠です。
+ * 背景画像(Loginback.png)を使わず、カード型のフラットな枠にしています。
+ */
 #Loginbox {
   width: min(420px, calc(100% - 16px));
   min-height: 130px;
@@ -305,12 +334,19 @@ h2.Turn {
   overflow-x: auto;
 }
 
+/* SECTION: Log areas
+ * 履歴・最近の出来事・カップ表示など、横に長いログの折り返し制御です。
+ */
 #HistoryLog,
 #RecentlyLog,
 #HakoniwaCup {
   white-space: nowrap;
 }
 
+/* SECTION: Map navigation popup
+ * 島マップのマウスオーバーで表示される #NaviView 一式です。
+ * 位置は JS 側で制御されるため、position:absolute は維持してください。
+ */
 #NaviView {
   z-index: 1;
   display: none;
@@ -341,6 +377,10 @@ h2.Turn {
   margin-left: 15px;
 }
 
+/* SECTION: Island map
+ * #islandMap と地形チップのサイズです。
+ * PC時は 32px チップ、下部の media query では mobile 由来の 16px チップを継承します。
+ */
 #islandMap {
   width: min(100%, 730px);
   margin-right: auto;
@@ -366,6 +406,9 @@ h2.Turn {
   height: 32px;
 }
 
+/* SECTION: Detail tables
+ * 島情報・コメント欄・ローカルBBSなどの詳細テーブルです。
+ */
 #islandInfo table,
 #CommentBox table,
 #localBBS table {
@@ -382,6 +425,10 @@ h2.Turn {
   text-align: left;
 }
 
+/* SECTION: Semantic text colors
+ * PHPが出力する既存クラスの色指定です。
+ * ゲーム上の意味を持つ色なので、変更時は可読性と意味の対応を確認してください。
+ */
 .islName,
 .islName2,
 .capName,
@@ -425,6 +472,10 @@ h2.Turn {
 .monsm { color: #8b4513; }
 .normal { color: #000000; }
 
+/* SECTION: Cell background colors
+ * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
+ * 現行のオレンジ系階調をフラットな面色として継承しています。
+ */
 .TitleCell { background-color: #fb923c; }
 .NumberCella { background-color: #ffedd5; }
 .NumberCellb { background-color: #fed7aa; }
@@ -443,6 +494,10 @@ h2.Turn {
 .RankingCell { background-color: #dbeafe; }
 .PopupCell { background-color: #ecfeff; }
 
+/* SECTION: Nation preview indicator menu
+ * 国一覧の prevnat / IndD 周辺です。
+ * Autumn.css では data_back.png / data_OVER.png を使っていた部分を、カード型UIに置き換えます。
+ */
 td.prevnat {
   width: 700px;
   height: auto;
@@ -485,6 +540,9 @@ td.prevnat {
   display: none;
 }
 
+/* SECTION: Command inputs and autocomplete
+ * コマンド入力済み/未入力の表示、jQuery UI autocomplete の候補表示です。
+ */
 .datacel {
   width: 700px;
   height: 50px;
@@ -519,6 +577,10 @@ td.prevnat {
   display: none;
 }
 
+/* SECTION: Inline tooltips
+ * 国一覧のコメント・産業・資源などで使われる tooltip / databox 周辺です。
+ * 背景画像(datas_back_l/r.png)を使わず、白いパネルとして表示します。
+ */
 div.tooltip {
   width: auto;
   min-height: 50px;
@@ -564,6 +626,9 @@ div.tooltip span {
   margin: 30px 0 40px 50px;
 }
 
+/* SECTION: Alerts and monster labels
+ * 新着表示や怪獣関連など、注意喚起用の赤色テキストです。
+ */
 .new,
 .monster {
   color: var(--nd-color-danger);
@@ -574,6 +639,10 @@ div.tooltip span {
   font-size: 12px;
 }
 
+/* SECTION: Mobile nation block
+ * templates/mobile/nation.html の .block 一式です。
+ * PC用テンプレート統合前でも、モバイル専用HTMLがフラット表示になるよう維持しています。
+ */
 .block {
   min-height: 54px;
   height: auto;
@@ -603,6 +672,9 @@ div.tooltip span {
   margin: 4px 10px 4px 0;
 }
 
+/* SECTION: Touch-friendly form sizing
+ * android.css から継承したモバイル操作向けの高さ調整です。
+ */
 #login select,
 #login input {
   min-height: 36px;
@@ -612,6 +684,10 @@ div.tooltip span {
   min-height: 48px;
 }
 
+/* SECTION: Responsive adjustments
+ * 画面幅760px以下向けの調整です。
+ * スマートフォンでのタップ領域・地図チップ・テーブル密度を調整します。
+ */
 @media (max-width: 760px) {
   body {
     font-size: 13px;
