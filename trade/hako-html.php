@@ -3098,8 +3098,12 @@ function outp() {
 function ps(x, y) {
   document.InputPlan.POINTX.options[x].selected = true;
   document.InputPlan.POINTY.options[y].selected = true;
-  if(!(document.InputPlan.MENUOPEN.checked))
+  if(!(document.InputPlan.MENUOPEN.checked)) {
     moveLAYER("menu",mx+10,my-10);
+    if(document.getElementById) {
+      document.getElementById("menu").style.display = "block";
+    }
+  }
 }
 
 
@@ -3179,8 +3183,8 @@ function SelectList(theForm) {
 function moveLAYER(layName,x,y){
   if(document.getElementById){            //NN6,IE5
     el = document.getElementById(layName);
-    el.style.left = x;
-    el.style.top  = y;
+    el.style.left = x + "px";
+    el.style.top  = y + "px";
   } else if(document.layers){                             //NN4
     msgLay = document.layers[layName];
     msgLay.moveTo(x,y);
@@ -3191,7 +3195,11 @@ function moveLAYER(layName,x,y){
   }
 }
 function menuclose() {
-  moveLAYER("menu",-500,-500);
+  if(document.getElementById) {
+    document.getElementById("menu").style.display = "none";
+  } else {
+    moveLAYER("menu",-500,-500);
+  }
 }
 
 function Mmove(e){

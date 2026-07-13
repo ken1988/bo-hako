@@ -163,19 +163,17 @@ $(function(){
 		   }
 	});
 	
-    $("#islandMap table").mouseover(function(){
-    	if($("#NaviView").css("display")!="block"){
-		$("#NaviView").show();
+	$("#islandMap table").mouseover(function(){
+		if($("#NaviView").css("display")!="block"){
+			$("#NaviView").show();
 		}
 	}).mouseout(function(){
-    	$("#NaviView").hide();
-    }).click(function(){
-    	$("#menu").show();
-    }).mousemove(function(e){
-    	$("#NaviView").css({
-    	"top":e.pageY+10+"px",
-    	"left":e.pageX+10+"px"
-    	});
+		$("#NaviView").hide();
+	}).mousemove(function(e){
+		$("#NaviView").css({
+			"top":e.pageY+10+"px",
+			"left":e.pageX+10+"px"
+		});
 	});
 	
 	$("li.IndD").mouseover(function(){
