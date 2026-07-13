@@ -3,7 +3,7 @@
 .tickercontainer { /* the outer div with the black border */
 border: 1px solid #000;
 background: #fff; 
-width: 800px; 
+width: 95%; 
 height: 27px; 
 margin: 0; 
 padding: 0;
@@ -15,12 +15,12 @@ white-space: nowrap;
 position: relative;
 left: 10px;
 top: 8px;
-width: 790px;
+width: 94%;
 overflow: hidden;
 }
 ul.newsticker { /* that's your list */
 position: relative;
-left: 750px;
+left: 94%;
 font: bold 12px Verdana;
 list-style-type: none;
 margin: 0px;

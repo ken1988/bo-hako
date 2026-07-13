@@ -302,8 +302,8 @@ h2.Turn {
  * 背景画像(Loginback.png)を使わず、カード型のフラットな枠にしています。
  */
 #Loginbox {
-  width: min(420px, calc(100% - 16px));
-  min-height: 130px;
+  width: min(500px, calc(100% - 16px));
+  min-height: 200px;
   margin: 12px 8px;
   padding: 12px;
   background: var(--nd-color-surface-strong);
@@ -320,17 +320,17 @@ h2.Turn {
 
 #login {
   float: left;
-  width: 58%;
+  width: 60%;
 }
 
 #Register {
   float: right;
-  width: 38%;
+  width: 40%;
 }
 
 #IslandView {
   clear: both;
-  width: min(100%, 960px);
+  width: min(100%, 1080px);
   overflow-x: auto;
 }
 
@@ -382,7 +382,7 @@ h2.Turn {
  * PC時は 32px チップ、下部の media query では mobile 由来の 16px チップを継承します。
  */
 #islandMap {
-  width: min(100%, 730px);
+  width: min(100%, 750px);
   margin-right: auto;
   margin-left: auto;
   overflow-x: auto;
@@ -390,8 +390,8 @@ h2.Turn {
 }
 
 #islandMap table {
-  width: 730px;
-  height: 730px;
+  width: 750px;
+  height: 750px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -499,7 +499,7 @@ h2.Turn {
  * Autumn.css では data_back.png / data_OVER.png を使っていた部分を、カード型UIに置き換えます。
  */
 td.prevnat {
-  width: 700px;
+  width: 750px;
   height: auto;
   min-height: 57px;
   margin: 0;
@@ -544,7 +544,7 @@ td.prevnat {
  * コマンド入力済み/未入力の表示、jQuery UI autocomplete の候補表示です。
  */
 .datacel {
-  width: 700px;
+  width: 750px;
   height: 50px;
 }
 
