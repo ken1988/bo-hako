@@ -758,7 +758,7 @@ div.tooltip span {
   body {
     width: 100%;
     max-width: none;
-    overflow-x: hidden;
+    overflow-x: auto;
     font-size: 13px;
     line-height: 1.5;
   }
@@ -846,26 +846,49 @@ div.tooltip span {
     width: 100%;
     padding-right: 4px;
     padding-left: 4px;
-    overflow-x: visible;
+    overflow-x: auto;
   }
 
-  #WorldTotal,
-  #IslandList,
   #islandInfo table,
   #CommentBox table,
   #localBBS table {
     width: 100%;
     max-width: none;
-    table-layout: fixed;
   }
 
-  #WorldTotal th,
-  #WorldTotal td,
-  #IslandList th,
-  #IslandList td {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: normal;
+  #WorldTotal {
+    width: max-content;
+    min-width: 680px;
+  }
+
+  #IslandList {
+    width: max-content;
+    min-width: 720px;
+  }
+
+  #islandMain,
+  .owner-workspace-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #islandMain table,
+  .owner-workspace-scroll > table {
+    width: max-content;
+    min-width: 100%;
+    table-layout: auto;
+  }
+
+  #IslandView,
+  #islandMain,
+  .owner-workspace-scroll,
+  #TradeBox,
+  #BalanceOut,
+  #toyBox {
+    scrollbar-width: thin;
   }
 
   .mapchip {
@@ -899,7 +922,9 @@ div.tooltip span {
     width: 100%;
     padding: 0 6px;
     max-width: none;
-    overflow-x: visible;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   #TradeBox table,
@@ -907,7 +932,7 @@ div.tooltip span {
   #toyBox table {
     width: 100%;
     max-width: none;
-    table-layout: fixed;
+    table-layout: auto;
   }
 
   #TradeBox th,
@@ -916,8 +941,7 @@ div.tooltip span {
   #BalanceOut td,
   #toyBox th,
   #toyBox td {
-    min-width: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   #TradeBox input,

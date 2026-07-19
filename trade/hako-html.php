@@ -1863,7 +1863,7 @@ function targetopen() {
 END;
     $this->islandInfo($island, $number, 1);
     print <<<END
-<div align="center">
+<div align="center" class="owner-workspace-scroll">
 <table border="1">
 <tr>
 <td {$init->bgInputCell}>
@@ -3369,7 +3369,7 @@ $click_com2<hr>
 </TABLE>
 </form>
 </div>
-<div align="center">
+<div align="center" class="owner-workspace-scroll">
 <table border="1">
 <tr valign="top">
 <td $init->bgInputCell>
