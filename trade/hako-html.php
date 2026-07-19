@@ -212,7 +212,7 @@ END;
 
 <div ID="IslandView">
 <h2>諸国の状況</h2>
-<table border="1">
+<table ID="WorldTotal" border="1">
 <tr>
 <th {$init->bgTitleCell}>{$init->tagTH_}総人口{$init->_tagTH}</th>
 <th {$init->bgTitleCell}>{$init->tagTH_}総農業人口{$init->_tagTH}</th>
@@ -232,22 +232,11 @@ END;
 <td {$init->bgInfoCell}>$allshell{$init->unitShell}</td>
 
 </tr>
-</table><a href="{$GLOBALS['THIS_FILE']}?mode=wstat">[世界統計]</a>
+</table>
+<a href="{$GLOBALS['THIS_FILE']}?mode=wstat">[世界統計]</a>
 <a href="{$GLOBALS['THIS_FILE']}?mode=nest">[収支レポート]</a>
 END;
 
-if ($hako->islandNumber != 0) {
-  $islandListStart = $data['islandListStart'];
-  if ($init->islandListRange == 0) {
-    $islandListSentinel = $hako->islandNumber;
-  } else {
-    $islandListSentinel = $islandListStart + $init->islandListRange - 1;
-    if ($islandListSentinel > $hako->islandNumber) {
-      $islandListSentinel = $hako->islandNumber;
-    }
-  }
-  print " [" . $islandListStart . " - " . $islandListSentinel . "位 ]";
-}
 echo $wns->MakeHTML(10,$init->baseDir);
 
 
@@ -256,7 +245,7 @@ echo $wns->MakeHTML(10,$init->baseDir);
 <p>
 国の名前をクリックすると、<strong>観光</strong>することができます。
 </p>
-<table border="1">
+<table ID="IslandList" border="1">
 <tr>
 <th {$init->bgTitleCell}>{$init->tagTH_}順位{$init->_tagTH}</th>
 <th {$init->bgTitleCell} colspan="14">{$init->tagTH_}国情報{$init->_tagTH}</th>
@@ -273,7 +262,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
       if ( $i != $islandListStart ) {
         print "<a href=\"" . $GLOBALS['THIS_FILE'] . "?islandListStart=" . $i ."\">";
       }
-        print " [ ". $i . " - " . $j . " ]";
+        print " [ ". $i . " - " . $j . "位 ]";
         if ($i != $islandListStart) {
           print "</a>";
         }
