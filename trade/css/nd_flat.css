@@ -41,10 +41,14 @@
  * 既存HTMLがテーブル主体なので、table/th/td の変更は画面全体に影響します。
  */
 html {
+  width: 100%;
+  min-width: 0;
   background: var(--nd-color-surface-muted);
 }
 
 body {
+  width: 100%;
+  min-width: 0;
   margin: 0;
   color: var(--nd-color-text);
   background: linear-gradient(180deg, #fffaf5 0%, #fff7ed 100%);
@@ -53,7 +57,9 @@ body {
   line-height: 1.6;
 }
 
-body > * {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -328,9 +334,33 @@ h2.Turn {
   width: 40%;
 }
 
+.register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 7px 14px;
+  color: #ffffff;
+  background: var(--nd-color-primary);
+  border: 1px solid var(--nd-color-primary-dark);
+  border-radius: var(--nd-radius-sm);
+  box-shadow: var(--nd-shadow-sm);
+  font-weight: 700;
+}
+
+.register-button:visited,
+.register-button:hover {
+  color: #ffffff;
+  background: var(--nd-color-primary-dark);
+}
+
 #IslandView {
   clear: both;
-  width: min(99%, 1080px);
+  box-sizing: border-box;
+  width: min(100%, 1080px);
+  padding-right: 8px;
+  padding-left: 8px;
   overflow-x: auto;
 }
 
@@ -396,12 +426,21 @@ h2.Turn {
   margin-left: auto;
 }
 
+#islandMap td {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+
 .mapchip {
+  display: inline-block;
   width: 32px;
   height: 32px;
 }
 
 .subchip {
+  display: inline-block;
   width: 16px;
   height: 32px;
 }
@@ -424,6 +463,31 @@ h2.Turn {
 
 #localBBS center {
   text-align: left;
+}
+
+/* SECTION: Owner screen lower panels
+ * 定期輸送・収支・コメント編集はPCでは2列、狭い画面では1列に並べます。
+ */
+#TradeBox,
+#BalanceOut,
+#toyBox {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding: 0 8px;
+}
+
+#TradeBox table,
+#BalanceOut table,
+#toyBox table {
+  max-width: 100%;
+}
+
+#toyBox textarea,
+#toyBox input[type="text"],
+#TradeBox input[type="text"],
+#TradeBox select {
+  max-width: 100%;
 }
 
 /* SECTION: Semantic text colors
@@ -690,20 +754,42 @@ div.tooltip span {
  * スマートフォンでのタップ領域・地図チップ・テーブル密度を調整します。
  */
 @media (max-width: 760px) {
+  html,
   body {
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
     font-size: 13px;
     line-height: 1.5;
   }
 
+  body > div,
+  body > center,
+  body > form,
+  body > table {
+    width: 100%;
+    max-width: none;
+  }
+
   #LinkHeader {
-    margin: 6px;
+    width: 100%;
+    margin: 0;
+    padding: 6px;
   }
 
   #LinkHeader ul {
+    width: 100%;
     gap: 4px;
   }
 
+  #LinkHeader li {
+    flex: 1 1 calc(50% - 4px);
+  }
+
   #LinkHeader li a {
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
     min-height: 38px;
     padding: 6px 9px;
   }
@@ -729,8 +815,8 @@ div.tooltip span {
   }
 
   #Loginbox {
-    width: calc(100% - 12px);
-    margin: 8px 6px;
+    width: 100%;
+    margin: 8px 0;
   }
 
   #login,
@@ -756,6 +842,55 @@ div.tooltip span {
     height: 370px;
   }
 
+  #IslandView {
+    width: 100%;
+    padding-right: 4px;
+    padding-left: 4px;
+    overflow-x: auto;
+  }
+
+  #islandInfo table,
+  #CommentBox table,
+  #localBBS table {
+    width: 100%;
+    max-width: none;
+  }
+
+  #WorldTotal {
+    width: max-content;
+    min-width: 680px;
+  }
+
+  #IslandList {
+    width: max-content;
+    min-width: 720px;
+  }
+
+  #islandMain,
+  .owner-workspace-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #islandMain table,
+  .owner-workspace-scroll > table {
+    width: max-content;
+    min-width: 100%;
+    table-layout: auto;
+  }
+
+  #IslandView,
+  #islandMain,
+  .owner-workspace-scroll,
+  #TradeBox,
+  #BalanceOut,
+  #toyBox {
+    scrollbar-width: thin;
+  }
+
   .mapchip {
     width: 16px;
     height: 16px;
@@ -778,5 +913,52 @@ div.tooltip span {
   .visualize {
     margin-right: 8px;
     margin-left: 8px;
+  }
+
+  #TradeBox,
+  #BalanceOut,
+  #toyBox {
+    float: none;
+    width: 100%;
+    padding: 0 6px;
+    max-width: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #TradeBox table,
+  #BalanceOut table,
+  #toyBox table {
+    width: 100%;
+    max-width: none;
+    table-layout: auto;
+  }
+
+  #TradeBox th,
+  #TradeBox td,
+  #BalanceOut th,
+  #BalanceOut td,
+  #toyBox th,
+  #toyBox td {
+    overflow-wrap: break-word;
+  }
+
+  #TradeBox input,
+  #TradeBox select,
+  #TradeBox textarea,
+  #BalanceOut input,
+  #BalanceOut select,
+  #BalanceOut textarea,
+  #toyBox input,
+  #toyBox select,
+  #toyBox textarea {
+    max-width: 100%;
+  }
+
+  body .tickercontainer,
+  body .tickercontainer .mask {
+    width: 100%;
+    max-width: 100%;
   }
 }
