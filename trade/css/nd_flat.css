@@ -41,10 +41,14 @@
  * 既存HTMLがテーブル主体なので、table/th/td の変更は画面全体に影響します。
  */
 html {
+  width: 100%;
+  min-width: 0;
   background: var(--nd-color-surface-muted);
 }
 
 body {
+  width: 100%;
+  min-width: 0;
   margin: 0;
   color: var(--nd-color-text);
   background: linear-gradient(180deg, #fffaf5 0%, #fff7ed 100%);
@@ -53,7 +57,9 @@ body {
   line-height: 1.6;
 }
 
-body > * {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -748,9 +754,21 @@ div.tooltip span {
  * スマートフォンでのタップ領域・地図チップ・テーブル密度を調整します。
  */
 @media (max-width: 760px) {
+  html,
   body {
+    width: 100%;
+    max-width: none;
+    overflow-x: hidden;
     font-size: 13px;
     line-height: 1.5;
+  }
+
+  body > div,
+  body > center,
+  body > form,
+  body > table {
+    width: 100%;
+    max-width: none;
   }
 
   #LinkHeader {
@@ -828,13 +846,26 @@ div.tooltip span {
     width: 100%;
     padding-right: 4px;
     padding-left: 4px;
+    overflow-x: visible;
   }
 
   #WorldTotal,
+  #IslandList,
   #islandInfo table,
   #CommentBox table,
   #localBBS table {
     width: 100%;
+    max-width: none;
+    table-layout: fixed;
+  }
+
+  #WorldTotal th,
+  #WorldTotal td,
+  #IslandList th,
+  #IslandList td {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .mapchip {
@@ -867,14 +898,43 @@ div.tooltip span {
     float: none;
     width: 100%;
     padding: 0 6px;
-    overflow-x: auto;
+    max-width: none;
+    overflow-x: visible;
   }
 
   #TradeBox table,
   #BalanceOut table,
   #toyBox table {
-    display: block;
     width: 100%;
-    overflow-x: auto;
+    max-width: none;
+    table-layout: fixed;
+  }
+
+  #TradeBox th,
+  #TradeBox td,
+  #BalanceOut th,
+  #BalanceOut td,
+  #toyBox th,
+  #toyBox td {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #TradeBox input,
+  #TradeBox select,
+  #TradeBox textarea,
+  #BalanceOut input,
+  #BalanceOut select,
+  #BalanceOut textarea,
+  #toyBox input,
+  #toyBox select,
+  #toyBox textarea {
+    max-width: 100%;
+  }
+
+  body .tickercontainer,
+  body .tickercontainer .mask {
+    width: 100%;
+    max-width: 100%;
   }
 }

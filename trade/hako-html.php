@@ -205,7 +205,8 @@ END;
 		</form>
 	</div>
 	<div ID="Register">
-		<a class="register-button" href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/">新規登録</a>
+		新規登録
+		<a class="register-button" href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/">新規登録へ進む</a>
 	</div>
 </div>
 
