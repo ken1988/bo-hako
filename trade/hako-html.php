@@ -237,6 +237,17 @@ END;
 <a href="{$GLOBALS['THIS_FILE']}?mode=nest">[収支レポート]</a>
 END;
 
+if ($hako->islandNumber != 0) {
+  $islandListStart = $data['islandListStart'];
+  if ($init->islandListRange == 0) {
+    $islandListSentinel = $hako->islandNumber;
+  } else {
+    $islandListSentinel = $islandListStart + $init->islandListRange - 1;
+    if ($islandListSentinel > $hako->islandNumber) {
+      $islandListSentinel = $hako->islandNumber;
+    }
+  }
+}
 echo $wns->MakeHTML(10,$init->baseDir);
 
 
