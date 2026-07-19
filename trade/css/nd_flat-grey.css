@@ -1,0 +1,963 @@
+@charset "UTF-8";
+
+/*
+ * ND Flat Grey theme
+ * This variant applies a neutral slate grey palette while preserving the HTML structure,
+ * flat layout, borders, shadows, and spacing established by nd_flat.css.
+ *
+ * 修正ガイド:
+ * - 色味を変える場合は、まず下の :root にある --nd-color-* を調整してください。
+ * - 角丸や影の強さを変える場合は、--nd-radius-* / --nd-shadow-* を調整してください。
+ * - 各画面固有の見た目は「SECTION: ...」コメントを目印に探してください。
+ * - 既存HTMLの class / id を前提にしているため、セレクタ名は安易に変更しないでください。
+ */
+
+/* SECTION: Theme tokens
+ * テーマ全体の基準値です。配色・角丸・影の調整は原則ここだけで完結させます。
+ */
+:root {
+  --nd-color-primary: #475569;
+  --nd-color-primary-dark: #334155;
+  --nd-color-primary-soft: #e2e8f0;
+  --nd-color-accent: #64748b;
+  --nd-color-text: #1e293b;
+  --nd-color-muted: #475569;
+  --nd-color-border: #cbd5e1;
+  --nd-color-border-strong: #94a3b8;
+  --nd-color-surface: #f8fafc;
+  --nd-color-surface-strong: #ffffff;
+  --nd-color-surface-muted: #f1f5f9;
+  --nd-color-danger: #dc2626;
+  --nd-radius-sm: 4px;
+  --nd-radius-md: 8px;
+  --nd-radius-lg: 12px;
+  --nd-shadow-sm: 0 1px 2px rgba(30, 41, 59, 0.12);
+  --nd-shadow-md: 0 6px 18px rgba(30, 41, 59, 0.14);
+}
+
+/* SECTION: Base document styles
+ * body / link / table / form など、ページ全体に効く基本設定です。
+ * 既存HTMLがテーブル主体なので、table/th/td の変更は画面全体に影響します。
+ */
+html {
+  width: 100%;
+  min-width: 0;
+  background: var(--nd-color-surface-muted);
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: var(--nd-color-text);
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--nd-color-primary-dark);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+a:visited {
+  color: #475569;
+}
+
+a:active,
+a:hover {
+  color: #334155;
+  background-color: var(--nd-color-primary-soft);
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+hr {
+  height: 1px;
+  margin: 16px 0;
+  border: 0;
+  background: var(--nd-color-border);
+}
+
+table {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  empty-cells: show;
+}
+
+th,
+td {
+  color: var(--nd-color-text);
+  border: 1px solid var(--nd-color-border);
+  padding: 5px 7px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+th {
+  color: var(--nd-color-text);
+  background: var(--nd-color-primary-soft);
+  border-color: var(--nd-color-border-strong);
+  font-weight: 700;
+}
+
+td.M {
+  padding-top: 12px;
+  border: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  box-sizing: border-box;
+  color: var(--nd-color-text);
+  border: 1px solid var(--nd-color-border-strong);
+  border-radius: var(--nd-radius-sm);
+  background: var(--nd-color-surface-strong);
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  padding: 5px 7px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+option:focus {
+  outline: 2px solid rgba(71, 85, 105, 0.28);
+  outline-offset: 1px;
+  background-color: #f1f5f9;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  cursor: pointer;
+  color: #ffffff;
+  border-color: var(--nd-color-primary-dark);
+  background: var(--nd-color-primary);
+  font-weight: 700;
+  box-shadow: var(--nd-shadow-sm);
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background: var(--nd-color-primary-dark);
+}
+
+/* SECTION: Global header navigation
+ * templates/head.html の #LinkHeader に対応します。
+ * アイコン画像は既存の <img> を継続利用し、ボタン背景画像は使わない設計です。
+ * メニュー幅や折り返しを変える場合は ul の gap / li a の padding を調整してください。
+ */
+#LinkHeader {
+  margin: 8px 8px 0;
+}
+
+#LinkHeader ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#LinkHeader li {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+
+#LinkHeader li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 10px;
+  color: #ffffff;
+  background: var(--nd-color-primary);
+  border-radius: 10px;
+  box-shadow: var(--nd-shadow-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#LinkHeader li a:hover {
+  color: #ffffff;
+  background: var(--nd-color-primary-dark);
+}
+
+#LinkHeader li img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+/* SECTION: Footer
+ * templates/footer.html / mobile/footer.html の #LinkFoot と .global-footer に対応します。
+ */
+#LinkFoot,
+.global-footer {
+  clear: both;
+  width: min(720px, calc(100% - 32px));
+  margin: 16px auto;
+  padding: 12px 14px;
+  background: var(--nd-color-surface-strong);
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-md);
+  box-shadow: var(--nd-shadow-sm);
+}
+
+/* SECTION: Headings
+ * h1 / h2 / ターン表示などの見出し類です。
+ * Autumn.css の装飾画像・固定配置をやめ、余白と左ボーダーで階層を表現します。
+ */
+h1 {
+  display: inline-block;
+  margin: 24px 16px 28px;
+  padding: 0 0 8px;
+  color: var(--nd-color-text);
+  border: 0;
+  border-bottom: 4px solid var(--nd-color-primary);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 5vw, 48px);
+  font-style: normal;
+  line-height: 1.15;
+}
+
+#islandInfo .big,
+#CommentBox .big,
+#localBBS .big,
+#RecentlyLog .big,
+h2 {
+  display: block;
+  width: auto;
+  max-width: 760px;
+  margin: 20px 8px 12px;
+  padding: 8px 12px;
+  color: var(--nd-color-text);
+  background: var(--nd-color-primary-soft);
+  border: 0;
+  border-left: 5px solid var(--nd-color-primary);
+  border-radius: 0 var(--nd-radius-md) var(--nd-radius-md) 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: none;
+}
+
+h2.lastModified {
+  width: auto;
+  max-width: none;
+  margin: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: var(--nd-color-surface-strong);
+  border-left-color: var(--nd-color-border-strong);
+}
+
+h2.Turn {
+  position: static;
+  width: fit-content;
+  min-width: 240px;
+  height: auto;
+  margin: 16px 8px;
+  border: 0;
+  border-left: 5px solid var(--nd-color-primary);
+  background: var(--nd-color-surface-strong);
+}
+
+#nexttime {
+  position: static;
+  margin: -8px 8px 16px;
+  padding: 0;
+}
+
+.big {
+  font-size: 24px;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear hr {
+  display: none;
+}
+
+/* SECTION: Login / registration panel
+ * トップページのログイン・登録枠です。
+ * 背景画像(Loginback.png)を使わず、カード型のフラットな枠にしています。
+ */
+#Loginbox {
+  width: min(500px, calc(100% - 16px));
+  min-height: 250px;
+  margin: 12px 8px;
+  padding: 12px;
+  background: var(--nd-color-surface-strong);
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-lg);
+  box-shadow: var(--nd-shadow-md);
+}
+
+#login,
+#Register {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#login {
+  float: left;
+  width: 60%;
+}
+
+#Register {
+  float: right;
+  width: 40%;
+}
+
+.register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 7px 14px;
+  color: #ffffff;
+  background: var(--nd-color-primary);
+  border: 1px solid var(--nd-color-primary-dark);
+  border-radius: var(--nd-radius-sm);
+  box-shadow: var(--nd-shadow-sm);
+  font-weight: 700;
+}
+
+.register-button:visited,
+.register-button:hover {
+  color: #ffffff;
+  background: var(--nd-color-primary-dark);
+}
+
+#IslandView {
+  clear: both;
+  box-sizing: border-box;
+  width: min(100%, 1080px);
+  padding-right: 8px;
+  padding-left: 8px;
+  overflow-x: auto;
+}
+
+/* SECTION: Log areas
+ * 履歴・最近の出来事・カップ表示など、横に長いログの折り返し制御です。
+ */
+#HistoryLog,
+#RecentlyLog,
+#HakoniwaCup {
+  white-space: nowrap;
+}
+
+/* SECTION: Map navigation popup
+ * 島マップのマウスオーバーで表示される #NaviView 一式です。
+ * 位置は JS 側で制御されるため、position:absolute は維持してください。
+ */
+#NaviView {
+  z-index: 1;
+  display: none;
+  position: absolute;
+  min-width: 310px;
+  width: auto;
+  padding: 10px;
+  color: var(--nd-color-text);
+  background: rgba(248, 250, 252, 0.96);
+  border: 1px solid var(--nd-color-border-strong);
+  border-radius: var(--nd-radius-md);
+  box-shadow: var(--nd-shadow-md);
+  text-align: left;
+}
+
+#NaviTitle {
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--nd-color-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.NaviImg {
+  margin: 6px;
+}
+
+.NaviText {
+  margin-left: 15px;
+}
+
+/* SECTION: Island map
+ * #islandMap と地形チップのサイズです。
+ * PC時は 32px チップ、下部の media query では mobile 由来の 16px チップを継承します。
+ */
+#islandMap {
+  width: min(100%, 750px);
+  margin-right: auto;
+  margin-left: auto;
+  overflow-x: auto;
+  text-align: center;
+}
+
+#islandMap table {
+  width: 750px;
+  height: 750px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#islandMap td {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.mapchip {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.subchip {
+  display: inline-block;
+  width: 16px;
+  height: 32px;
+}
+
+/* SECTION: Detail tables
+ * 島情報・コメント欄・ローカルBBSなどの詳細テーブルです。
+ */
+#islandInfo table,
+#CommentBox table,
+#localBBS table {
+  width: 98%;
+  margin:auto;
+}
+
+#islandInfo th,
+#CommentBox th,
+#localBBS th {
+  background-color: var(--nd-color-primary-soft);
+}
+
+#localBBS center {
+  text-align: left;
+}
+
+/* SECTION: Owner screen lower panels
+ * 定期輸送・収支・コメント編集はPCでは2列、狭い画面では1列に並べます。
+ */
+#TradeBox,
+#BalanceOut,
+#toyBox {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding: 0 8px;
+}
+
+#TradeBox table,
+#BalanceOut table,
+#toyBox table {
+  max-width: 100%;
+}
+
+#toyBox textarea,
+#toyBox input[type="text"],
+#TradeBox input[type="text"],
+#TradeBox select {
+  max-width: 100%;
+}
+
+/* SECTION: Semantic text colors
+ * PHPが出力する既存クラスの色指定です。
+ * ゲーム上の意味を持つ色なので、変更時は可読性と意味の対応を確認してください。
+ */
+.islName,
+.islName2,
+.capName,
+.number,
+.head,
+.headToTo,
+.command,
+.disaster,
+.lbbsSS,
+.lbbsOW,
+.money,
+.food,
+.HCwin,
+.HClose,
+.attention,
+.bumon {
+  font-weight: 700;
+}
+
+.islName { color: #a06040; }
+.islName2 { color: #808080; }
+.capName { color: #990000; }
+.number { color: #800000; }
+.head { color: #800000; }
+.headToTo { color: #e9967a; }
+.command { color: #d08000; }
+.disaster,
+.attention { color: var(--nd-color-danger); }
+.lbbsST { color: #808080; }
+.money { color: #b7791f; }
+.food { color: #8b4513; }
+.HCwin { color: #2563eb; }
+.HClose { color: #a06040; }
+.bumon { color: #ffffff; }
+.point { color: #cd853f; }
+.unemploy1 { color: #cd853f; }
+.unemploy2 { color: var(--nd-color-danger); }
+.shuto { color: #8b4513; }
+.house { color: #fa8072; }
+.eisei { color: #cd853f; }
+.monsm { color: #8b4513; }
+.normal { color: #000000; }
+
+/* SECTION: Cell background colors
+ * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
+ * グレー系の階調をフラットな面色として継承しています。
+ */
+.TitleCell { background-color: #64748b; }
+.NumberCella { background-color: #e2e8f0; }
+.NumberCellb { background-color: #cbd5e1; }
+.NumberCellc { background-color: #94a3b8; }
+.NumberCelld { background-color: #64748b; }
+.NameCell { background-color: #e2e8f0; }
+.InfoCell { background-color: #f1f5f9; text-align: right; }
+.TenkiCell { background-color: #f1f5f9; text-align: center; }
+.ItemCell { background-color: #f1f5f9; text-align: left; }
+.CommentCell { background-color: #ffffff; text-align: left; }
+.InputCell { background-color: #cbd5e1; }
+.MapCell,
+.CommandCell { background-color: #ffffff; }
+.PoinCell { background-color: #e2e8f0; }
+.TotoCell { background-color: #ffffff; }
+.RankingCell { background-color: #dbeafe; }
+.PopupCell { background-color: #ecfeff; }
+
+/* SECTION: Nation preview indicator menu
+ * 国一覧の prevnat / IndD 周辺です。
+ * Autumn.css では data_back.png / data_OVER.png を使っていた部分を、カード型UIに置き換えます。
+ */
+td.prevnat {
+  width: 750px;
+  height: auto;
+  min-height: 57px;
+  margin: 0;
+  padding: 4px;
+  background: var(--nd-color-primary-soft);
+}
+
+.prevnat ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prevnat li {
+  float: none;
+  display: block;
+  width: 48px;
+  min-height: 56px;
+  padding: 4px 2px;
+  color: var(--nd-color-text);
+  background: var(--nd-color-surface-strong);
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-sm);
+  text-align: center;
+  text-decoration: none;
+}
+
+.prevnat li:hover {
+  background: #e2e8f0;
+  border-color: var(--nd-color-primary);
+}
+
+.databox {
+  display: none;
+}
+
+/* SECTION: Command inputs and autocomplete
+ * コマンド入力済み/未入力の表示、jQuery UI autocomplete の候補表示です。
+ */
+.datacel {
+  width: 750px;
+  height: 50px;
+}
+
+.ui-autocomplete {
+  max-height: 160px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid var(--nd-color-border-strong);
+  border-radius: var(--nd-radius-sm);
+  box-shadow: var(--nd-shadow-md);
+}
+
+.commandjs1,
+.commandjs2 {
+  width: 100%;
+  border-width: 0;
+  background-color: #ffffff;
+}
+
+.commandjs1 {
+  color: #8b4513;
+}
+
+.commandjs2 {
+  color: var(--nd-color-danger);
+}
+
+#menu {
+  position: absolute;
+  display: none;
+}
+
+/* SECTION: Inline tooltips
+ * 国一覧のコメント・産業・資源などで使われる tooltip / databox 周辺です。
+ * 背景画像(datas_back_l/r.png)を使わず、白いパネルとして表示します。
+ */
+div.tooltip {
+  width: auto;
+  min-height: 50px;
+  padding: 8px 12px;
+  background: var(--nd-color-surface-strong);
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-md);
+  box-shadow: var(--nd-shadow-sm);
+}
+
+div.tooltip table {
+  margin: 0;
+  padding: 0;
+}
+
+div.tooltip td {
+  margin: 0;
+  padding: 0;
+}
+
+div.tooltip p {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+#comm {
+  line-height: 1.2;
+}
+
+div.tooltip img {
+  vertical-align: top;
+}
+
+div.tooltip span {
+  margin: 0;
+  padding: 0 3px 0 0;
+  border: 1px solid var(--nd-color-danger);
+}
+
+.visualize {
+  margin: 30px 0 40px 50px;
+}
+
+/* SECTION: Alerts and monster labels
+ * 新着表示や怪獣関連など、注意喚起用の赤色テキストです。
+ */
+.new,
+.monster {
+  color: var(--nd-color-danger);
+  background-color: transparent;
+}
+
+.monster {
+  font-size: 12px;
+}
+
+/* SECTION: Mobile nation block
+ * templates/mobile/nation.html の .block 一式です。
+ * PC用テンプレート統合前でも、モバイル専用HTMLがフラット表示になるよう維持しています。
+ */
+.block {
+  min-height: 54px;
+  height: auto;
+  margin: 0 8px 6px;
+  padding: 8px 10px;
+  background: var(--nd-color-surface-strong);
+  border: 1px solid var(--nd-color-border);
+  border-left: 5px solid var(--nd-color-primary);
+  border-radius: var(--nd-radius-md);
+  box-shadow: var(--nd-shadow-sm);
+}
+
+.block p {
+  margin: 2px 0 0;
+  padding-left: 0;
+  color: var(--nd-color-muted);
+}
+
+.block-heading {
+  margin: 0;
+  padding-left: 0;
+  font-size: 17px;
+}
+
+.image-left {
+  float: left;
+  margin: 4px 10px 4px 0;
+}
+
+/* SECTION: Touch-friendly form sizing
+ * android.css から継承したモバイル操作向けの高さ調整です。
+ */
+#login select,
+#login input {
+  min-height: 36px;
+}
+
+#login_button {
+  min-height: 48px;
+}
+
+/* SECTION: Responsive adjustments
+ * 画面幅760px以下向けの調整です。
+ * スマートフォンでのタップ領域・地図チップ・テーブル密度を調整します。
+ */
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  body > div,
+  body > center,
+  body > form,
+  body > table {
+    width: 100%;
+    max-width: none;
+  }
+
+  #LinkHeader {
+    width: 100%;
+    margin: 0;
+    padding: 6px;
+  }
+
+  #LinkHeader ul {
+    width: 100%;
+    gap: 4px;
+  }
+
+  #LinkHeader li {
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  #LinkHeader li a {
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    min-height: 38px;
+    padding: 6px 9px;
+  }
+
+  th,
+  td {
+    padding: 4px 5px;
+    font-size: 12px;
+  }
+
+  h1 {
+    margin: 16px 8px 20px;
+  }
+
+  #islandInfo .big,
+  #CommentBox .big,
+  #localBBS .big,
+  #RecentlyLog .big,
+  h2 {
+    margin-right: 6px;
+    margin-left: 6px;
+    font-size: 17px;
+  }
+
+  #Loginbox {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  #login,
+  #Register {
+    float: none;
+    width: 100%;
+    padding: 6px 0;
+  }
+
+  #login select,
+  #login input,
+  #Register input,
+  #login_button {
+    min-height: 44px;
+  }
+
+  #islandMap {
+    width: 100%;
+  }
+
+  #islandMap table {
+    width: 370px;
+    height: 370px;
+  }
+
+  #IslandView {
+    width: 100%;
+    padding-right: 4px;
+    padding-left: 4px;
+    overflow-x: auto;
+  }
+
+  #islandInfo table,
+  #CommentBox table,
+  #localBBS table {
+    width: 100%;
+    max-width: none;
+  }
+
+  #WorldTotal {
+    width: max-content;
+    min-width: 680px;
+  }
+
+  #IslandList {
+    width: max-content;
+    min-width: 720px;
+  }
+
+  #islandMain,
+  .owner-workspace-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #islandMain table,
+  .owner-workspace-scroll > table {
+    width: max-content;
+    min-width: 100%;
+    table-layout: auto;
+  }
+
+  #IslandView,
+  #islandMain,
+  .owner-workspace-scroll,
+  #TradeBox,
+  #BalanceOut,
+  #toyBox {
+    scrollbar-width: thin;
+  }
+
+  .mapchip {
+    width: 16px;
+    height: 16px;
+  }
+
+  .subchip {
+    width: 8px;
+    height: 16px;
+  }
+
+  td.prevnat,
+  .datacel {
+    width: auto;
+  }
+
+  .prevnat li {
+    width: 44px;
+  }
+
+  .visualize {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  #TradeBox,
+  #BalanceOut,
+  #toyBox {
+    float: none;
+    width: 100%;
+    padding: 0 6px;
+    max-width: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #TradeBox table,
+  #BalanceOut table,
+  #toyBox table {
+    width: 100%;
+    max-width: none;
+    table-layout: auto;
+  }
+
+  #TradeBox th,
+  #TradeBox td,
+  #BalanceOut th,
+  #BalanceOut td,
+  #toyBox th,
+  #toyBox td {
+    overflow-wrap: break-word;
+  }
+
+  #TradeBox input,
+  #TradeBox select,
+  #TradeBox textarea,
+  #BalanceOut input,
+  #BalanceOut select,
+  #BalanceOut textarea,
+  #toyBox input,
+  #toyBox select,
+  #toyBox textarea {
+    max-width: 100%;
+  }
+
+  body .tickercontainer,
+  body .tickercontainer .mask {
+    width: 100%;
+    max-width: 100%;
+  }
+}
