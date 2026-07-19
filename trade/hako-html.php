@@ -206,7 +206,7 @@ END;
 	</div>
 	<div ID="Register">
 		新規登録
-		<a href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/"><img src="regist.png"></a>
+		<a class="register-button" href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/">新規登録へ進む</a>
 	</div>
 </div>
 
@@ -963,12 +963,12 @@ class HtmlMap extends HTML {
     for($i=0; $i<$ax; $i++) fputs($fp,$log[$i]);
     fclose($fp);
 
-      print "<div id=\"TradeBox\" style=\"float:left; width:50%\">\n";
+      print "<div id=\"TradeBox\">\n";
 	  $this->regTHead($island);
       $this->regTInputOW($hako,$island, $data);
       $this->regTContents($hako, $island);
       print "</div>\n";
-      print "<div id=\"BalanceOut\" style=\"float:left; width:50%\">\n";
+      print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
       print "</div>\n";
 
@@ -1380,16 +1380,9 @@ END;
         }
       }
     }
-	if($mobile ==  true){
-		$landsize = 16;
-	}else{
-		$landsize = 32;
-	}
-	$subsize = $landsize / 2;
-	
     print "<div id=\"islandMap\" align=\"center\"><table border=\"1\"><tr><td>\n";
     for($y = 0; $y < $init->islandSize; $y++) {
-      if($y % 2 == 0) { print "<img class=\"subchip\" src=\"land00.gif\" width=\"{$subsize}\" height=\"{$landsize}\" alt=\"{$y}\">"; }
+      if($y % 2 == 0) { print "<img class=\"subchip\" src=\"land00.gif\" alt=\"{$y}\">"; }
 
       for($x = 0; $x < $init->islandSize; $x++) {
 		$target = '';
@@ -1400,7 +1393,7 @@ END;
         $hako->landString($land[$x][$y], $landValue[$x][$y], $x, $y, $mode, $commandText, $invest, $Cname,$ctype,$target);
       }
 
-      if($y % 2 == 1) { print "<img name=\" class=\"subchip\" src=\"land00.gif\" width=\"{$subsize}\" height=\"{$landsize}\" alt=\"{$y}\">"; }
+      if($y % 2 == 1) { print "<img class=\"subchip\" src=\"land00.gif\" alt=\"{$y}\">"; }
 
       print "<br>";
     }
