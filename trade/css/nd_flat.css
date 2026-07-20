@@ -288,7 +288,7 @@ h2.Turn {
 #nexttime {
   position: static;
   margin: -8px 8px 16px;
-  padding: 0;
+  padding: 10px;
 }
 
 .big {
@@ -455,7 +455,6 @@ h2.Turn {
   margin:auto;
 }
 
-#islandInfo th,
 #CommentBox th,
 #localBBS th {
   background-color: var(--nd-color-primary-soft);
@@ -541,22 +540,30 @@ h2.Turn {
  * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
  * 現行のオレンジ系階調をフラットな面色として継承しています。
  */
-.TitleCell,
-.NumberCella,
-.NumberCellb,
-.NumberCellc,
-.NumberCelld {
+.TitleCell{
   color: #ffffff;
   background-color: var(--nd-color-primary-dark);
 }
 
-.TitleCell .head,
+.NumberCella,
+.NumberCellb,
+.NumberCellc,
+.NumberCelld {
+  color: var(--nd-color-text);
+  background-color: var(--nd-color-primary-soft);
+}
+
+.TitleCell .head{
+  color: #ffffff;
+}
+
 .NumberCella .number,
 .NumberCellb .number,
 .NumberCellc .number,
 .NumberCelld .number {
-  color: #ffffff;
+  color: var(--nd-color-text);
 }
+
 .NameCell { background-color: #ffedd5; }
 .InfoCell { background-color: #fff7ed; text-align: right; }
 .TenkiCell { background-color: #fff7ed; text-align: center; }

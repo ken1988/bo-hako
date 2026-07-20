@@ -114,7 +114,7 @@ END;
  document.form.watch.value ='次のターンまで' + hour + '時間 ' + min + '分' + sec + '秒';
  setTimeout("watch()", 999); // 1000msec = 1sec
 }
-document.write('<FORM name=form><INPUT style="background-color: orange;" name=watch size=33></FORM>');
+document.write('<FORM name="form" id="nexttime"><INPUT name="watch" size=33></FORM>');
 watch();
 
 //-->
@@ -205,8 +205,7 @@ END;
 		</form>
 	</div>
 	<div ID="Register">
-		新規登録
-		<a class="register-button" href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/">新規登録へ進む</a>
+		<a class="register-button" href="https://tanstaafl.tokyo/%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab/">新規登録</a>
 	</div>
 </div>
 
@@ -1531,7 +1530,7 @@ END;
 	      	$nallow = "<IMG SRC=\"cancel.png\" ALT=\"不可\">";
 	      }
 
-	      print "<tr><th>{$init->tagNumber_}{$j}{$init->_tagNumber}</th>";
+	      print "<tr><th>{$j}</th>";
 		  print "<td>{$nallow}</td><td>{$target}へ{$value}{$unit}を{$kind}する</td><td>{$turn}</td><td>{$cancel}{$nacanl}</td></tr>\n";
 	    }
 	}
