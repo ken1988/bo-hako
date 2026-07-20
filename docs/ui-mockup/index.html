@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>次期箱庭諸国 UI モック</title>
+  <link rel="stylesheet" href="mockup.css">
+</head>
+<body>
+  <header class="appbar">
+    <div class="brand"><span class="brand-mark">箱</span><span>次期箱庭諸国</span></div>
+    <nav aria-label="メインメニュー"><a class="active" href="#">所有国</a><a href="#">世界</a><a href="#">外交</a><a href="#">ログ</a></nav>
+    <div class="account"><button aria-label="通知">● <span>2</span></button><button>大和国 ▾</button></div>
+  </header>
+  <main>
+    <section class="headline">
+      <div><p class="eyebrow">大和国 DASHBOARD</p><h1>おかえりなさい、国主さん</h1><p>ターン 628 ・ 次回更新まで <strong>01:42:18</strong></p></div>
+      <button class="primary">＋ コマンドを追加</button>
+    </section>
+    <aside class="alert"><strong>⚠ 食料備蓄が低下しています</strong><span>現在の消費量では約 3 ターンで不足する見込みです。</span><button>対策を見る</button></aside>
+    <section class="metrics" aria-label="主要指標">
+      <article><span>人口</span><strong>1,248,300 人</strong><small class="up">↗ +12,400 / T</small></article>
+      <article><span>資金</span><strong>8,420 億円</strong><small class="up">↗ +320 億 / T</small></article>
+      <article><span>食料</span><strong>186,000 トン</strong><small class="down">↘ −62,000 / T</small><i><b style="width:24%"></b></i></article>
+      <article><span>計画</span><strong>7 / 20 件</strong><small>次のターンに 3 件実行</small></article>
+    </section>
+    <section class="workspace">
+      <aside class="panel nation"><header><h2>国勢サマリー</h2><button>詳細</button></header><dl><div><dt>支持率</dt><dd>安定 <b>78%</b></dd></div><div><dt>歳入 / 歳出</dt><dd class="up">+ 320 億円</dd></div><div><dt>外交関係</dt><dd>同盟 3 ・ 友好 8</dd></div><div><dt>防災</dt><dd>警戒レベル 1</dd></div></dl><h3>最近の出来事</h3><ol><li><time>12:40</time> 東部農場が豊作です</li><li><time>11:20</time> 相模国から友好提案</li><li><time>昨日</time> 工場の増設が完了</li></ol></aside>
+      <section class="panel map-panel"><header><div><p class="eyebrow">MAP</p><h2>大和国 全景</h2></div><div class="map-tools"><button>−</button><span>100%</span><button>＋</button></div></header><div class="map" aria-label="島のマップ">
+        <div class="island-grid">
+          <span class="sea"></span><span class="sea"></span><span class="land farm"></span><span class="land farm"></span><span class="sea"></span><span class="sea"></span>
+          <span class="sea"></span><span class="land forest"></span><span class="land city"></span><span class="land city"></span><span class="land farm"></span><span class="sea"></span>
+          <span class="land forest"></span><span class="land city"></span><span class="land capital">城</span><span class="land city selected"></span><span class="land factory"></span><span class="sea"></span>
+          <span class="sea"></span><span class="land forest"></span><span class="land city"></span><span class="land factory"></span><span class="land farm"></span><span class="sea"></span>
+          <span class="sea"></span><span class="sea"></span><span class="land forest"></span><span class="land farm"></span><span class="sea"></span><span class="sea"></span>
+        </div>
+      </div><footer><span><b>選択中</b> ( 8, 6 ) ニュータウン Lv.3</span><button>この地点で計画</button></footer></section>
+      <aside class="panel commands"><header><h2>コマンド計画</h2><span class="pill">7 / 20</span></header><label class="search">⌕ <input placeholder="コマンドを検索"></label><div class="chips"><button class="active">開発</button><button>産業</button><button>防衛</button></div><button class="command"><span>🏘️</span><b>ニュータウン建設<small>1,200 億円</small></b><em>＋</em></button><button class="command"><span>🌲</span><b>植林<small>300 億円</small></b><em>＋</em></button><h3>次ターンの計画</h3><ol class="queue"><li><b>1</b><span>農場整備<small>( 6, 5 )・500 億円</small></span><button>⋮</button></li><li><b>2</b><span>工場増設<small>( 9, 7 )・800 億円</small></span><button>⋮</button></li><li><b>3</b><span>食料輸入<small>50,000 トン</small></span><button>⋮</button></li></ol></aside>
+    </section>
+  </main>
+  <nav class="mobile-nav" aria-label="モバイルメニュー"><a class="active">⌂<span>概要</span></a><a>▦<span>マップ</span></a><a>☷<span>計画</span></a><a>◷<span>ログ</span></a></nav>
+</body>
+</html>
