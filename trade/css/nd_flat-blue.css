@@ -540,18 +540,22 @@ h2.Turn {
  * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
  * ブルー系の階調をフラットな面色として継承しています。
  */
-.TitleCell {
+.TitleCell,
+.NumberCella,
+.NumberCellb,
+.NumberCellc,
+.NumberCelld {
   color: #ffffff;
-  background-color: #3b82f6;
+  background-color: var(--nd-color-primary-dark);
 }
 
-.TitleCell .head {
+.TitleCell .head,
+.NumberCella .number,
+.NumberCellb .number,
+.NumberCellc .number,
+.NumberCelld .number {
   color: #ffffff;
 }
-.NumberCella { background-color: #dbeafe; }
-.NumberCellb { background-color: #bfdbfe; }
-.NumberCellc { background-color: #93c5fd; }
-.NumberCelld { background-color: #3b82f6; }
 .NameCell { background-color: #dbeafe; }
 .InfoCell { background-color: #eff6ff; text-align: right; }
 .TenkiCell { background-color: #eff6ff; text-align: center; }
@@ -564,6 +568,16 @@ h2.Turn {
 .TotoCell { background-color: #ffffff; }
 .RankingCell { background-color: #dbeafe; }
 .PopupCell { background-color: #ecfeff; }
+
+/* 開発画面の各テーブル見出しを国一覧と同じ濃色で統一します。 */
+.owner-workspace-scroll th,
+#TradeBox th,
+#BalanceOut th,
+#toyBox th {
+  color: #ffffff;
+  background: var(--nd-color-primary-dark);
+  border-color: var(--nd-color-primary-dark);
+}
 
 /* SECTION: Nation preview indicator menu
  * 国一覧の prevnat / IndD 周辺です。
