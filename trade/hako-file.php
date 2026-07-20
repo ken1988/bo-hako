@@ -23,6 +23,69 @@ class HakoIO {
   var $idToAllyNumber;
 
   //---------------------------------------------------
+  // 国データの空欄を、用途に応じた初期値で補完する
+  //---------------------------------------------------
+  function normalizeIslandData($island) {
+    $textFields = array(
+      'name', 'owner', 'prize', 'comment', 'password', 'Cname',
+      'banum', 'wiki_link', 'trade_link', 'news_link'
+    );
+    $numericFields = array(
+      'id', 'starturn', 'absent', 'comment_turn', 'news', 'news_point',
+      'point', 'pots', 'money', 'lot', 'gold', 'food', 'rice', 'pop',
+      'peop', 'spop', 'area', 'goods', 'alcohol', 'wood', 'stone',
+      'steel', 'silver', 'material', 'oil', 'fuel', 'explosive', 'shell',
+      'farm', 'factory', 'market', 'service', 'mfactory', 'sfactory',
+      'ffactory', 'mountain', 'mining', 'hatuden', 'monster', 'taiji',
+      'rena', 'fire', 'tenki', 'freeze', 'port', 'hapiness', 'siji',
+      'invest', 'capital', 'edinv', 'cmente', 'indnum', 'polit', 'soclv',
+      'bport', 'milpop', 'navy', 'sfarmy', 'civwar'
+    );
+
+    foreach($textFields as $field) {
+      if(!isset($island[$field])) $island[$field] = '';
+    }
+    foreach($numericFields as $field) {
+      if(!isset($island[$field]) || trim((string)$island[$field]) === '') {
+        $island[$field] = 0;
+      }
+    }
+
+    $shipTypes = array('passenger', 'fishingboat', 'tansaku', 'senkan', 'viking');
+    if(!isset($island['ship']) || !is_array($island['ship'])) $island['ship'] = array();
+    foreach($shipTypes as $shipType) {
+      if(!isset($island['ship'][$shipType]) || trim((string)$island['ship'][$shipType]) === '') {
+        $island['ship'][$shipType] = 0;
+      }
+    }
+
+    if(!isset($island['eisei']) || !is_array($island['eisei'])) $island['eisei'] = array();
+    for($i = 0; $i < 6; $i++) {
+      if(!isset($island['eisei'][$i]) || trim((string)$island['eisei'][$i]) === '') {
+        $island['eisei'][$i] = 0;
+      }
+    }
+
+    foreach(array('land', 'landValue', 'command', 'lbbs', 'regT') as $field) {
+      if(!isset($island[$field]) || !is_array($island[$field])) $island[$field] = array();
+    }
+
+    return $island;
+  }
+
+  //---------------------------------------------------
+  // CSV 形式の1行を読み、足りない項目は空欄として補う
+  //---------------------------------------------------
+  function readIslandValues($fp, $count) {
+    return array_pad(explode(',', $this->readIslandLine($fp)), $count, '');
+  }
+
+  function readIslandLine($fp) {
+    $line = fgets($fp, READ_LINE);
+    return ($line === false) ? '' : chop($line);
+  }
+
+  //---------------------------------------------------
   // 全島データを読み込む
   // 'mode'が変わる可能性があるので$cgiを参照で受け取る
   //---------------------------------------------------
@@ -66,43 +129,28 @@ class HakoIO {
   //---------------------------------------------------
   function readIsland($fp, $num) {
     global $init;
-    $name     = chop(fgets($fp, READ_LINE));
-    list($name, $owner, $monster, $port, $passenger, $fishingboat, $tansaku, $senkan, $viking) = explode(",", $name);
-    $id       = chop(fgets($fp, READ_LINE));
-    list($id, $starturn) = explode(",", $id);
-    $prize    = chop(fgets($fp, READ_LINE));
-    $absent   = chop(fgets($fp, READ_LINE));
-    $comment  = chop(fgets($fp, READ_LINE));
-    list($comment, $comment_turn, $news, $news_point) = explode(",", $comment);
-    $password = chop(fgets($fp, READ_LINE));
-    $point    = chop(fgets($fp, READ_LINE));
-    list($point, $pots) = explode(",", $point);
-    $eisei    = chop(fgets($fp, READ_LINE));
-    list($eisei0, $eisei1, $eisei2, $eisei3, $eisei4, $eisei5) = explode(",", $eisei);
-    $money    = chop(fgets($fp, READ_LINE));
-    list($money, $lot, $gold) = explode(",", $money);
-    $food     = chop(fgets($fp, READ_LINE));
-    list($food, $rice) = explode(",", $food);
-    $pop      = chop(fgets($fp, READ_LINE));
-    list($pop, $peop, $spop) = explode(",", $pop);
-    $area     = chop(fgets($fp, READ_LINE));
-    $resource = chop(fgets($fp, READ_LINE));
-    list($goods, $alcohol, $wood, $stone, $steel) = explode(",", $resource);
-    $resource2 = chop(fgets($fp, READ_LINE));
-    list($silver, $material, $oil, $fuel, $explosive, $shell) = explode(",", $resource2);
-    $office   = chop(fgets($fp, READ_LINE));
-    list($farm, $market, $hatuden, $service, $milpop, $navy,$sfarmy) = explode(",", $office);
-    $factory  = chop(fgets($fp, READ_LINE));
-    list($factory, $mfactory, $sfactory, $ffactory) = explode(",", $factory);
-    $mountain   = chop(fgets($fp, READ_LINE));
-    list($mountain, $mining) = explode(",", $mountain);
-    $power    = chop(fgets($fp, READ_LINE));
-    list($taiji, $rena, $fire) = explode(",", $power);
-    $tenki    = chop(fgets($fp, READ_LINE));
-	list($tenki, $freeze, $hapiness, $siji, $invest, $capital, $Cname, $edinv,$banum,$cmente,$indnum,$polit,$soclv,$bport,$civwar) = explode(",", $tenki);
-    $wiki_link    = chop(fgets($fp, READ_LINE));
-    $trade_link    = chop(fgets($fp, READ_LINE));
-    $news_link    = chop(fgets($fp, READ_LINE));
+    list($name, $owner, $monster, $port, $passenger, $fishingboat, $tansaku, $senkan, $viking) = $this->readIslandValues($fp, 9);
+    list($id, $starturn) = $this->readIslandValues($fp, 2);
+    $prize    = $this->readIslandLine($fp);
+    $absent   = $this->readIslandLine($fp);
+    list($comment, $comment_turn, $news, $news_point) = $this->readIslandValues($fp, 4);
+    $password = $this->readIslandLine($fp);
+    list($point, $pots) = $this->readIslandValues($fp, 2);
+    list($eisei0, $eisei1, $eisei2, $eisei3, $eisei4, $eisei5) = $this->readIslandValues($fp, 6);
+    list($money, $lot, $gold) = $this->readIslandValues($fp, 3);
+    list($food, $rice) = $this->readIslandValues($fp, 2);
+    list($pop, $peop, $spop) = $this->readIslandValues($fp, 3);
+    $area     = $this->readIslandLine($fp);
+    list($goods, $alcohol, $wood, $stone, $steel) = $this->readIslandValues($fp, 5);
+    list($silver, $material, $oil, $fuel, $explosive, $shell) = $this->readIslandValues($fp, 6);
+    list($farm, $market, $hatuden, $service, $milpop, $navy, $sfarmy) = $this->readIslandValues($fp, 7);
+    list($factory, $mfactory, $sfactory, $ffactory) = $this->readIslandValues($fp, 4);
+    list($mountain, $mining) = $this->readIslandValues($fp, 2);
+    list($taiji, $rena, $fire) = $this->readIslandValues($fp, 3);
+	list($tenki, $freeze, $hapiness, $siji, $invest, $capital, $Cname, $edinv, $banum, $cmente, $indnum, $polit, $soclv, $bport, $civwar) = $this->readIslandValues($fp, 15);
+    $wiki_link    = $this->readIslandLine($fp);
+    $trade_link   = $this->readIslandLine($fp);
+    $news_link    = $this->readIslandLine($fp);
     
     $this->idToName[$id] = $name;
     $land = array();
@@ -155,7 +203,7 @@ class HakoIO {
       Util::unlock($fp_i);
       fclose($fp_i);
     }
-    return array(
+    return $this->normalizeIslandData(array(
       'name'     => $name,
       'owner'    => $owner,
       'id'       => $id,
@@ -232,7 +280,7 @@ class HakoIO {
 	  'wiki_link' => $wiki_link,
 	  'trade_link' => $trade_link,
 	  'news_link' =>  $news_link
-      );
+      ));
   }
   //---------------------------------------------------
   // 地形を書き込む
@@ -530,6 +578,7 @@ class HakoIO {
   //---------------------------------------------------
   function writeIsland($fp, $num, $island) {
     global $init;
+    $island = $this->normalizeIslandData($island);
     $ships = $island['ship']['passenger'].",".$island['ship']['fishingboat'].",".$island['ship']['tansaku'].",".$island['ship']['senkan'].",".$island['ship']['viking'];
     $eiseis = $island['eisei']['0'].",".$island['eisei']['1'].",".$island['eisei']['2'].",".$island['eisei']['3'].",".$island['eisei']['4'].",".$island['eisei']['5'];
     fputs($fp, $island['name'] . "," . $island['owner'] . "," . $island['monster'] . "," . $island['port'] . "," . $ships . "\n");
