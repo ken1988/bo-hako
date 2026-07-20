@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /*
- * ND Flat theme
- * Existing HTML structure is intentionally preserved.  This stylesheet keeps
- * the warm orange / red-brown palette used by Autumn.css and replaces image
- * based backgrounds with flat colors, borders, shadows, and spacing.
+ * ND Flat Blue theme
+ * This variant applies a calm blue / navy palette while preserving the HTML structure,
+ * flat layout, borders, shadows, and spacing established by nd_flat.css.
  *
  * 修正ガイド:
  * - 色味を変える場合は、まず下の :root にある --nd-color-* を調整してください。
@@ -17,23 +16,23 @@
  * テーマ全体の基準値です。配色・角丸・影の調整は原則ここだけで完結させます。
  */
 :root {
-  --nd-color-primary: #f97316;
-  --nd-color-primary-dark: #c2410c;
-  --nd-color-primary-soft: #ffedd5;
-  --nd-color-accent: #fb923c;
-  --nd-color-text: #7c2d12;
-  --nd-color-muted: #9a3412;
-  --nd-color-border: #fed7aa;
-  --nd-color-border-strong: #fdba74;
-  --nd-color-surface: #fffaf5;
+  --nd-color-primary: #2563eb;
+  --nd-color-primary-dark: #1e40af;
+  --nd-color-primary-soft: #dbeafe;
+  --nd-color-accent: #3b82f6;
+  --nd-color-text: #172554;
+  --nd-color-muted: #475569;
+  --nd-color-border: #bfdbfe;
+  --nd-color-border-strong: #93c5fd;
+  --nd-color-surface: #f8fbff;
   --nd-color-surface-strong: #ffffff;
-  --nd-color-surface-muted: #fff7ed;
+  --nd-color-surface-muted: #eff6ff;
   --nd-color-danger: #dc2626;
   --nd-radius-sm: 4px;
   --nd-radius-md: 8px;
   --nd-radius-lg: 12px;
-  --nd-shadow-sm: 0 1px 2px rgba(124, 45, 18, 0.12);
-  --nd-shadow-md: 0 6px 18px rgba(124, 45, 18, 0.14);
+  --nd-shadow-sm: 0 1px 2px rgba(30, 64, 175, 0.12);
+  --nd-shadow-md: 0 6px 18px rgba(30, 64, 175, 0.14);
 }
 
 /* SECTION: Base document styles
@@ -51,7 +50,7 @@ body {
   min-width: 0;
   margin: 0;
   color: var(--nd-color-text);
-  background: linear-gradient(180deg, #fffaf5 0%, #fff7ed 100%);
+  background: linear-gradient(180deg, #f8fbff 0%, #eff6ff 100%);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: 14px;
   line-height: 1.6;
@@ -70,12 +69,12 @@ a {
 }
 
 a:visited {
-  color: #b45309;
+  color: #1d4ed8;
 }
 
 a:active,
 a:hover {
-  color: #9a3412;
+  color: #1e3a8a;
   background-color: var(--nd-color-primary-soft);
 }
 
@@ -141,9 +140,9 @@ input:focus,
 select:focus,
 textarea:focus,
 option:focus {
-  outline: 2px solid rgba(249, 115, 22, 0.28);
+  outline: 2px solid rgba(37, 99, 235, 0.28);
   outline-offset: 1px;
-  background-color: #fff7ed;
+  background-color: #eff6ff;
 }
 
 input[type="submit"],
@@ -385,7 +384,7 @@ h2.Turn {
   width: auto;
   padding: 10px;
   color: var(--nd-color-text);
-  background: rgba(255, 250, 245, 0.96);
+  background: rgba(248, 251, 255, 0.96);
   border: 1px solid var(--nd-color-border-strong);
   border-radius: var(--nd-radius-md);
   box-shadow: var(--nd-shadow-md);
@@ -539,7 +538,7 @@ h2.Turn {
 
 /* SECTION: Cell background colors
  * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
- * 現行のオレンジ系階調をフラットな面色として継承しています。
+ * ブルー系の階調をフラットな面色として継承しています。
  */
 .TitleCell,
 .NumberCella,
@@ -557,15 +556,15 @@ h2.Turn {
 .NumberCelld .number {
   color: #ffffff;
 }
-.NameCell { background-color: #ffedd5; }
-.InfoCell { background-color: #fff7ed; text-align: right; }
-.TenkiCell { background-color: #fff7ed; text-align: center; }
-.ItemCell { background-color: #fff7ed; text-align: left; }
+.NameCell { background-color: #dbeafe; }
+.InfoCell { background-color: #eff6ff; text-align: right; }
+.TenkiCell { background-color: #eff6ff; text-align: center; }
+.ItemCell { background-color: #eff6ff; text-align: left; }
 .CommentCell { background-color: #ffffff; text-align: left; }
-.InputCell { background-color: #fed7aa; }
+.InputCell { background-color: #bfdbfe; }
 .MapCell,
 .CommandCell { background-color: #ffffff; }
-.PoinCell { background-color: #ffedd5; }
+.PoinCell { background-color: #dbeafe; }
 .TotoCell { background-color: #ffffff; }
 .RankingCell { background-color: #dbeafe; }
 .PopupCell { background-color: #ecfeff; }
@@ -618,7 +617,7 @@ td.prevnat {
 }
 
 .prevnat li:hover {
-  background: #ffedd5;
+  background: #dbeafe;
   border-color: var(--nd-color-primary);
 }
 
