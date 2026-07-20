@@ -540,7 +540,14 @@ h2.Turn {
  * config.php / hako-html.php 側から出力される *Cell クラスの背景色です。
  * グレー系の階調をフラットな面色として継承しています。
  */
-.TitleCell { background-color: #64748b; }
+.TitleCell {
+  color: #ffffff;
+  background-color: #64748b;
+}
+
+.TitleCell .head {
+  color: #ffffff;
+}
 .NumberCella { background-color: #e2e8f0; }
 .NumberCellb { background-color: #cbd5e1; }
 .NumberCellc { background-color: #94a3b8; }
