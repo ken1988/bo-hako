@@ -10,6 +10,29 @@ function Navi(position, img, title, pos, text, exp) {
 }
 //======================================================================
 $(function(){
+	// モバイルではグローバルメニューを必要なときだけ開く。
+	var $globalMenuToggle = $('.global-menu-toggle');
+	var $globalMenu = $('#global-menu');
+
+	$globalMenuToggle.on('click', function() {
+		var isOpen = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', String(!isOpen));
+		$globalMenu.toggleClass('is-open', !isOpen);
+	});
+
+	$(document).on('keydown', function(event) {
+		if (event.key === 'Escape' && $globalMenuToggle.attr('aria-expanded') === 'true') {
+			$globalMenuToggle.attr('aria-expanded', 'false').trigger('focus');
+			$globalMenu.removeClass('is-open');
+		}
+	});
+
+	$(window).on('resize', function() {
+		if (window.matchMedia('(min-width: 701px)').matches) {
+			$globalMenuToggle.attr('aria-expanded', 'false');
+			$globalMenu.removeClass('is-open');
+		}
+	});
 
 	$('#new_reg').exValidation();
 	

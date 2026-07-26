@@ -172,6 +172,10 @@ button:hover {
   margin: 8px 8px 0;
 }
 
+.global-menu-toggle {
+  display: none;
+}
+
 #LinkHeader ul {
   display: flex;
   flex-wrap: wrap;
@@ -209,6 +213,71 @@ button:hover {
   width: 16px;
   height: 16px;
   margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+  #LinkHeader {
+    position: relative;
+    min-height: 42px;
+  }
+
+  .global-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 7px 12px;
+    border-radius: 10px;
+  }
+
+  .global-menu-icon,
+  .global-menu-icon::before,
+  .global-menu-icon::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+  }
+
+  .global-menu-icon {
+    position: relative;
+  }
+
+  .global-menu-icon::before,
+  .global-menu-icon::after {
+    position: absolute;
+    left: 0;
+    content: "";
+  }
+
+  .global-menu-icon::before { top: -6px; }
+  .global-menu-icon::after { top: 6px; }
+
+  #LinkHeader #global-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 4px);
+    left: 0;
+    width: min(320px, calc(100vw - 16px));
+    padding: 8px;
+    background: var(--nd-color-surface-strong);
+    border: 1px solid var(--nd-color-border);
+    border-radius: var(--nd-radius-md);
+    box-shadow: var(--nd-shadow-md);
+  }
+
+  #LinkHeader #global-menu.is-open {
+    display: grid;
+    gap: 6px;
+  }
+
+  #LinkHeader li a {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+  }
 }
 
 /* SECTION: Footer
