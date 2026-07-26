@@ -586,7 +586,9 @@ class Hako extends HakoIO {
 
     if($mode == 1 || $mode == 2) {
       print "<a href=\"javascript: void(0);\" onclick=\"ps($x,$y)\">";
-      $naviText = "{$comStr}\\n{$naviText}";
+      if($comStr !== '') {
+        $naviText = "{$comStr}\\n{$naviText}";
+      }
     }
     print "<img class=\"mapchip\" src=\"{$image}\" alt=\"{$point} {$naviTitle} {$comStr}\" onMouseOver=\"Navi({$naviPos},'{$image}', '{$naviTitle}', '{$point}', '{$naviText}', {$naviExp});\">";
 
