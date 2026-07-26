@@ -677,19 +677,19 @@ class HakoIO {
     
     mkdir("{$init->dirName}", $init->dirMode);
 
-    // ログファイルだけ戻す
+    // ログ・履歴・統計はバックアップにも残し、現役側に引き継ぐ
     for($i = 0; $i <= $init->logMax; $i++) {
       if(is_file("{$init->dirName}.bak0/hakojima.log{$i}")){
-        rename("{$init->dirName}.bak0/hakojima.log{$i}", "{$init->dirName}/hakojima.log{$i}");
+        copy("{$init->dirName}.bak0/hakojima.log{$i}", "{$init->dirName}/hakojima.log{$i}");
        }
     }
     if(is_file("{$init->dirName}.bak0/hakojima.his")){
-      rename("{$init->dirName}.bak0/hakojima.his", "{$init->dirName}/hakojima.his");
+      copy("{$init->dirName}.bak0/hakojima.his", "{$init->dirName}/hakojima.his");
     }
       
   //統計ファイルを戻す
    if(is_file("{$init->dirName}.bak0/statistic.xml")){
-      rename("{$init->dirName}.bak0/statistic.xml", "{$init->dirName}/statistic.xml");
+      copy("{$init->dirName}.bak0/statistic.xml", "{$init->dirName}/statistic.xml");
 	  }
 	}
   //---------------------------------------------------
