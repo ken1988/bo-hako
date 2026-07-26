@@ -1130,7 +1130,7 @@ div.tooltip span {
 }
 /* SECTION: Owner screen cards and tabs */
 .owner-page {
-  width: min(100%, 1200px);
+  width: min(100%);
   margin: 0 auto;
   padding: 0 12px 24px;
 }
