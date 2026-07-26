@@ -128,6 +128,7 @@ button {
   border-radius: var(--nd-radius-sm);
   background: var(--nd-color-surface-strong);
   font: inherit;
+  padding: 3px;
 }
 
 input,
