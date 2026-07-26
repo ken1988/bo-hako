@@ -908,16 +908,7 @@ class HtmlMap extends HTML {
       HakoError::wrongPassword();
       return;
     }
-    $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
-    print <<<END
-<main id="owner-page" class="owner-page">
-<nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
-<a href="{$ownerPage}#owner-daily-communication">日常操作</a>
-<a href="{$ownerPage}#owner-national-settings">国家設定</a>
-<a href="{$ownerPage}#owner-related-links">関連リンク</a>
-<a href="{$ownerPage}#owner-display-settings">表示設定</a>
-</nav>
-END;
+    print "<main id=\"owner-page\" class=\"owner-page\">\n";
     $this->tempOwer($hako, $data, $number);
 
     //ＩＰ情報取得
@@ -969,6 +960,21 @@ END;
     }
     $this->islandRecent($island, 1);
     print "</main>\n";
+  }
+
+  //---------------------------------------------------
+  // 開発画面の分類タブ
+  //---------------------------------------------------
+  function ownerSectionNavigation() {
+    $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
+    print <<<END
+<nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
+<a href="{$ownerPage}#owner-daily-communication">最新情報・貿易</a>
+<a href="{$ownerPage}#owner-national-settings">国家設定</a>
+<a href="{$ownerPage}#owner-related-links">関連リンク</a>
+<a href="{$ownerPage}#owner-display-settings">表示設定</a>
+</nav>
+END;
   }
 
   //---------------------------------------------------
@@ -2116,6 +2122,8 @@ END;
 </div>
 <hr>
 END;
+    // マップとコマンドの直後、ニュースなどの設定項目より前にタブを置く。
+    $this->ownerSectionNavigation();
 $param['GLTH'] = $GLOBALS['THIS_FILE'];
 $param['comment'] =str_replace( "<br />","\n",$island['comment']);
 $param['PAS'] =   $data['PASSWORD'];
@@ -3497,6 +3505,8 @@ END;
 </div>
 <div>
 END;
+    // マップとコマンドの直後、ニュースなどの設定項目より前にタブを置く。
+    $this->ownerSectionNavigation();
 $param['GLTH'] = $GLOBALS['THIS_FILE'];
 $param['comment'] =str_replace( "<br />","\n",$island['comment']);
 $param['PAS'] =   $data['PASSWORD'];
