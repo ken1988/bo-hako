@@ -1,0 +1,22 @@
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Warning:  Only the first byte will be assigned to the string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 111
+[26-Jul-2026 22:24:43 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Cannot assign an empty string to a string offset in /home/violetcougar33/www/wordpress/trade/hako-turn.php:117
+Stack trace:
+#0 /home/violetcougar33/www/wordpress/trade/hako-turn.php(62): Make->makeNewIsland()
+#1 /home/violetcougar33/www/wordpress/trade/hako-main.php(1089): Make->newIsland()
+#2 /home/violetcougar33/www/wordpress/trade/hako-main.php(1227): Main->execute()
+#3 {main}
+  thrown in /home/violetcougar33/www/wordpress/trade/hako-turn.php on line 117
