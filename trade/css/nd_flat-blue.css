@@ -452,12 +452,21 @@ h2.Turn {
   min-width: 310px;
   width: auto;
   padding: 10px;
+  /* #islandMap td uses zero-sized text to remove gaps between map chips. */
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--nd-color-text);
   background: rgba(248, 251, 255, 0.96);
   border: 1px solid var(--nd-color-border-strong);
   border-radius: var(--nd-radius-md);
   box-shadow: var(--nd-shadow-md);
   text-align: left;
+}
+
+#NaviView::after {
+  display: block;
+  clear: both;
+  content: "";
 }
 
 #NaviTitle {
@@ -468,11 +477,16 @@ h2.Turn {
 }
 
 .NaviImg {
+  float: left;
   margin: 6px;
 }
 
 .NaviText {
-  margin-left: 15px;
+  margin-left: 52px;
+}
+
+.NaviImg + .NaviText {
+  padding-top: 6px;
 }
 
 /* SECTION: Island map
@@ -942,6 +956,15 @@ div.tooltip span {
   #islandMap table {
     width: 370px;
     height: 370px;
+  }
+
+  #NaviView {
+    position: static;
+    box-sizing: border-box;
+    width: calc(100vw - 16px);
+    min-width: 0;
+    max-width: 100%;
+    margin: 8px auto 0;
   }
 
   #IslandView {
