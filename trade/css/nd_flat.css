@@ -1065,3 +1065,66 @@ div.tooltip span {
     max-width: 100%;
   }
 }
+
+/* SECTION: Owner screen section navigation
+ * 開発画面の各フォームを目的別に識別し、長い画面でも直接移動できるようにします。
+ * タブ化前の段階では全セクションを表示したままにします。
+ */
+.owner-section-nav {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 8px;
+  padding: 10px;
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-md);
+  background: var(--nd-color-surface-strong);
+  box-shadow: var(--nd-shadow-sm);
+}
+
+.owner-section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  color: #ffffff;
+  border: 1px solid var(--nd-color-primary-dark);
+  border-radius: 10px;
+  background: var(--nd-color-primary);
+  box-shadow: var(--nd-shadow-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.owner-section-nav a:hover,
+.owner-section-nav a:focus {
+  color: #ffffff;
+  background: var(--nd-color-primary-dark);
+}
+
+.owner-section {
+  scroll-margin-top: 12px;
+}
+
+.owner-section-title {
+  clear: both;
+  margin-top: 16px;
+}
+
+#owner-national-account-settings,
+#owner-display-settings {
+  clear: both;
+  margin: 0 8px 16px;
+}
+
+@media (max-width: 700px) {
+  .owner-section-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .owner-section-nav a {
+    flex: 0 0 auto;
+  }
+}

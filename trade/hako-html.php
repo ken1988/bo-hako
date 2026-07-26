@@ -683,47 +683,66 @@ END;
     print "<hr>\n";
   }
   //---------------------------------------------------
-  // 国の名前とパスワードの変更
+  // 国名の変更
   //---------------------------------------------------
-  function changeIslandInfo($island, $password) {
+  function changeIslandName($island, $password) {
     $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
-<div id="ChangeInfo">
-<h2>国の名前とパスワードの変更</h2>
+<div id="ChangeIslandName">
+<h2>国名の変更</h2>
 <p>
 (注意)名前の変更には500億Vaかかります。
 </p>
 <form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
 対象国：{$island['name']}<br>
-どんな名前に変えますか？(変更する場合のみ)<br>
+どんな名前に変えますか？<br>
 <input type="text" name="ISLANDNAME" size="32" maxlength="32"><br>
-新しいパスワードは？(変更する時のみ)<br>
-<input type="password" name="PASSWORD" size="32" maxlength="32"><br>
 <input type="hidden" name="ISLANDID" value="{$island['id']}">
 <input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="change">
-<input type="submit" value="変更する">
+<input type="submit" value="国名を変更する">
 </form>
 </div>
 
 END;
   }
   //---------------------------------------------------
-  // オーナー名の変更
+  // パスワードの変更
   //---------------------------------------------------
-  function changeOwnerName($island, $password) {
+  function changeIslandPassword($island, $password) {
+    $password = htmlspecialchars($password, ENT_QUOTES);
+    print <<<END
+<div id="ChangeIslandPassword">
+<h2>パスワードの変更</h2>
+<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
+対象国：{$island['name']}<br>
+新しいパスワードは？<br>
+<input type="password" name="PASSWORD" size="32" maxlength="32"><br>
+<input type="hidden" name="ISLANDID" value="{$island['id']}">
+<input type="hidden" name="OLDPASS" value="{$password}">
+<input type="hidden" name="mode" value="change">
+<input type="submit" value="パスワードを変更する">
+</form>
+</div>
+
+END;
+  }
+  //---------------------------------------------------
+  // 元首名の変更
+  //---------------------------------------------------
+  function changeHeadOfStateName($island, $password) {
     $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
 <div id="ChangeOwnerName">
-<h2>オーナー名の変更</h2>
+<h2>元首名の変更</h2>
 <form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
 対象国：{$island['name']}<br>
-新しいオーナー名は？<br>
+新しい元首名は？<br>
 <input type="text" name="OWNERNAME" size="32" maxlength="32"><br>
 <input type="hidden" name="ISLANDID" value="{$island['id']}">
 <input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="ChangeOwnerName">
-<input type="submit" value="変更する">
+<input type="submit" value="元首名を変更する">
 </form>
 </div>
 END;
@@ -925,6 +944,15 @@ class HtmlMap extends HTML {
       HakoError::wrongPassword();
       return;
     }
+    $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
+    print <<<END
+<nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
+<a href="{$ownerPage}#owner-daily-communication">日常操作</a>
+<a href="{$ownerPage}#owner-national-settings">国家設定</a>
+<a href="{$ownerPage}#owner-related-links">関連リンク</a>
+<a href="{$ownerPage}#owner-display-settings">表示設定</a>
+</nav>
+END;
     $this->tempOwer($hako, $data, $number);
 
     //ＩＰ情報取得
@@ -945,6 +973,7 @@ class HtmlMap extends HTML {
     for($i=0; $i<$ax; $i++) fputs($fp,$log[$i]);
     fclose($fp);
 
+      print "<section id=\"owner-daily-trade\" class=\"owner-section owner-section-daily\" aria-label=\"貿易予約\">\n";
       print "<div id=\"TradeBox\">\n";
 	  $this->regTHead($island);
       $this->regTInputOW($hako,$island, $data);
@@ -952,23 +981,20 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
-      // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
-      print "<div id=\"ownerSettings\" style=\"clear:both;\">\n";
-      $settings = new HtmlTop;
-      $settings->changeIslandInfo($island, $data['PASSWORD']);
-      $settings->changeOwnerName($island, $data['PASSWORD']);
-      $settings->setStyleSheet();
-      $settings->setLocalImage($data);
       print "</div>\n";
-      print "</div>\n";
+      print "</section>\n";
 
-    // 国ごとの設定と表示設定は、収支レポートの下に表示する。
-    print "<hr style=\"clear:both;\">\n";
+    // テンプレート外で生成される設定も、同じ4分類に所属させる。
     $settings = new HtmlTop;
-    $settings->changeIslandInfo($island, $data['PASSWORD']);
-    $settings->changeOwnerName($island, $data['PASSWORD']);
+    print "<section id=\"owner-national-account-settings\" class=\"owner-section owner-section-national\" aria-label=\"国名・元首名・パスワード設定\">\n";
+    $settings->changeIslandName($island, $data['PASSWORD']);
+    $settings->changeHeadOfStateName($island, $data['PASSWORD']);
+    $settings->changeIslandPassword($island, $data['PASSWORD']);
+    print "</section>\n";
+    print "<section id=\"owner-display-settings\" class=\"owner-section owner-section-display\" aria-label=\"表示設定\">\n";
     $settings->setStyleSheet();
     $settings->setLocalImage($data);
+    print "</section>\n";
 
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";
