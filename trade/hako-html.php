@@ -635,12 +635,7 @@ END;
   // 国の登録と設定
   //---------------------------------------------------
   function regist(&$hako, $data = "") {
-    global $init;
-    $this->changeIslandInfo($hako->islandList);
-    $this->changeOwnerName($hako->islandList);
-	$this->freezeNation($hako->islandList);
-    $this->setStyleSheet();
-    $this->setLocalImage($data);
+    $this->freezeNation($hako->islandList);
   }
   //---------------------------------------------------
   // 新しい国を探す
@@ -690,54 +685,43 @@ END;
   //---------------------------------------------------
   // 国の名前とパスワードの変更
   //---------------------------------------------------
-  function changeIslandInfo($islandList = "") {
-    global $init;
+  function changeIslandInfo($island, $password) {
+    $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
 <div id="ChangeInfo">
 <h2>国の名前とパスワードの変更</h2>
 <p>
 (注意)名前の変更には500億Vaかかります。
 </p>
-<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset=”UTF-8″>
-どの国ですか？<br>
-<select NAME="ISLANDID">
-$islandList
-</select>
-<br>
+<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
+対象国：{$island['name']}<br>
 どんな名前に変えますか？(変更する場合のみ)<br>
 <input type="text" name="ISLANDNAME" size="32" maxlength="32"><br>
-パスワードは？(必須)<br>
-<input type="password" name="OLDPASS" size="32" maxlength="32"><br>
 新しいパスワードは？(変更する時のみ)<br>
 <input type="password" name="PASSWORD" size="32" maxlength="32"><br>
-念のためパスワードをもう一回(変更する時のみ)<br>
-<input type="password" name="PASSWORD2" size="32" maxlength="32"><br>
+<input type="hidden" name="ISLANDID" value="{$island['id']}">
+<input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="change">
 <input type="submit" value="変更する">
 </form>
 </div>
-<hr>
 
 END;
   }
   //---------------------------------------------------
   // オーナー名の変更
   //---------------------------------------------------
-  function changeOwnerName($islandList = "") {
-    global $init;
+  function changeOwnerName($island, $password) {
+    $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
 <div id="ChangeOwnerName">
 <h2>オーナー名の変更</h2>
-<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset=”UTF-8″>
-どの国ですか？<br>
-<select name="ISLANDID">
-{$islandList}
-</select>
-<br>
+<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
+対象国：{$island['name']}<br>
 新しいオーナー名は？<br>
 <input type="text" name="OWNERNAME" size="32" maxlength="32"><br>
-パスワードは？<br>
-<input type="password" name="OLDPASS" size="32" maxlength="32"><br>
+<input type="hidden" name="ISLANDID" value="{$island['id']}">
+<input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="ChangeOwnerName">
 <input type="submit" value="変更する">
 </form>
@@ -794,7 +778,6 @@ $styleSheet
 <input type="submit" value="設定">
 </form>
 </div>
-<hr>
 
 END;
   }
@@ -832,7 +815,6 @@ END;
 </form>
 </td></tr></table>
 </div>
-<hr>
 
 END;
   }
@@ -970,6 +952,12 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
+      // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
+      $settings = new HtmlTop;
+      $settings->changeIslandInfo($island, $data['PASSWORD']);
+      $settings->changeOwnerName($island, $data['PASSWORD']);
+      $settings->setStyleSheet();
+      $settings->setLocalImage($data);
       print "</div>\n";
 
     if($init->useBbs) {
