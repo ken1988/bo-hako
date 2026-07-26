@@ -953,11 +953,13 @@ class HtmlMap extends HTML {
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
       // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
+      print "<div id=\"ownerSettings\" style=\"clear:both;\">\n";
       $settings = new HtmlTop;
       $settings->changeIslandInfo($island, $data['PASSWORD']);
       $settings->changeOwnerName($island, $data['PASSWORD']);
       $settings->setStyleSheet();
       $settings->setLocalImage($data);
+      print "</div>\n";
       print "</div>\n";
 
     // 国ごとの設定と表示設定は、収支レポートの下に表示する。
