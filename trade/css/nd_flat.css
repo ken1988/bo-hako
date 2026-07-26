@@ -453,6 +453,9 @@ h2.Turn {
   min-width: 310px;
   width: auto;
   padding: 10px;
+  /* #islandMap td uses zero-sized text to remove gaps between map chips. */
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--nd-color-text);
   background: rgba(255, 250, 245, 0.96);
   border: 1px solid var(--nd-color-border-strong);
@@ -469,11 +472,16 @@ h2.Turn {
 }
 
 .NaviImg {
+  float: left;
   margin: 6px;
 }
 
 .NaviText {
-  margin-left: 15px;
+  margin-left: 52px;
+}
+
+.NaviImg + .NaviText {
+  padding-top: 6px;
 }
 
 /* SECTION: Island map
