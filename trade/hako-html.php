@@ -925,6 +925,14 @@ class HtmlMap extends HTML {
       HakoError::wrongPassword();
       return;
     }
+    print <<<END
+<nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
+<a href="#owner-daily-communication">日常操作</a>
+<a href="#owner-national-settings">国家設定</a>
+<a href="#owner-related-links">関連リンク</a>
+<a href="#owner-display-settings">表示設定</a>
+</nav>
+END;
     $this->tempOwer($hako, $data, $number);
 
     //ＩＰ情報取得
@@ -945,6 +953,7 @@ class HtmlMap extends HTML {
     for($i=0; $i<$ax; $i++) fputs($fp,$log[$i]);
     fclose($fp);
 
+      print "<section id=\"owner-daily-trade\" class=\"owner-section owner-section-daily\" aria-label=\"貿易予約\">\n";
       print "<div id=\"TradeBox\">\n";
 	  $this->regTHead($island);
       $this->regTInputOW($hako,$island, $data);
@@ -952,17 +961,19 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
-      // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
-      print "<div id=\"ownerSettings\" style=\"clear:both;\">\n";
-      $settings = new HtmlTop;
-      $settings->changeIslandInfo($island, $data['PASSWORD']);
-      $settings->changeOwnerName($island, $data['PASSWORD']);
-      $settings->setStyleSheet();
-      $settings->setLocalImage($data);
       print "</div>\n";
-      print "</div>\n";
+      print "</section>\n";
 
-    print "<hr style=\"clear:both;\">\n";
+    // テンプレート外で生成される設定も、同じ4分類に所属させる。
+    $settings = new HtmlTop;
+    print "<section id=\"owner-national-account-settings\" class=\"owner-section owner-section-national\" aria-label=\"国名・オーナー設定\">\n";
+    $settings->changeIslandInfo($island, $data['PASSWORD']);
+    $settings->changeOwnerName($island, $data['PASSWORD']);
+    print "</section>\n";
+    print "<section id=\"owner-display-settings\" class=\"owner-section owner-section-display\" aria-label=\"表示設定\">\n";
+    $settings->setStyleSheet();
+    $settings->setLocalImage($data);
+    print "</section>\n";
 
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";

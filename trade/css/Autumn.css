@@ -398,3 +398,58 @@ div.tooltip span{
 	font-size	: 8pt;
 	color		: #f00;
 }
+
+/* 開発画面の分類ナビゲーション。タブ化前は全項目を表示したままにする。 */
+.owner-section-nav {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 8px;
+  padding: 10px;
+  border: 1px solid #ffcc66;
+  background: #fff8ee;
+}
+
+.owner-section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  color: #993300;
+  border: 1px solid #ff9933;
+  background: #ffefd5;
+  font-weight: bold;
+}
+
+.owner-section-nav a:hover,
+.owner-section-nav a:focus {
+  color: #ffffff;
+  background: #cc5500;
+}
+
+.owner-section {
+  scroll-margin-top: 12px;
+}
+
+.owner-section-title {
+  clear: both;
+  margin-top: 16px;
+}
+
+#owner-national-account-settings,
+#owner-display-settings {
+  clear: both;
+  margin: 0 8px 16px;
+}
+
+@media (max-width: 700px) {
+  .owner-section-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .owner-section-nav a {
+    flex: 0 0 auto;
+  }
+}
