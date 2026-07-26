@@ -957,6 +957,13 @@ class HtmlMap extends HTML {
 	  $this->BalanceOutput($hako,$island);
       print "</div>\n";
 
+    // 国ごとの設定と表示設定は、収支レポートの下に表示する。
+    print "<hr style=\"clear:both;\">\n";
+    $this->changeIslandInfo($island, $data['PASSWORD']);
+    $this->changeOwnerName($island, $data['PASSWORD']);
+    $this->setStyleSheet();
+    $this->setLocalImage($data);
+
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";
       $this->lbbsHead($island);
@@ -964,11 +971,6 @@ class HtmlMap extends HTML {
       $this->lbbsContents($hako, $island, 1);
       print "</div>\n";
     }
-    // 国ごとの設定と表示設定は、認証後の開発画面から変更する。
-    $this->changeIslandInfo($island, $data['PASSWORD']);
-    $this->changeOwnerName($island, $data['PASSWORD']);
-    $this->setStyleSheet();
-    $this->setLocalImage($data);
     $this->islandRecent($island, 1);
   }
 
