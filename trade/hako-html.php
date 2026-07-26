@@ -705,7 +705,6 @@ END;
 <input type="submit" value="変更する">
 </form>
 </div>
-<hr>
 
 END;
   }
@@ -779,7 +778,6 @@ $styleSheet
 <input type="submit" value="設定">
 </form>
 </div>
-<hr>
 
 END;
   }
@@ -817,7 +815,6 @@ END;
 </form>
 </td></tr></table>
 </div>
-<hr>
 
 END;
   }
@@ -955,6 +952,12 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
+      // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
+      $settings = new HtmlTop;
+      $settings->changeIslandInfo($island, $data['PASSWORD']);
+      $settings->changeOwnerName($island, $data['PASSWORD']);
+      $settings->setStyleSheet();
+      $settings->setLocalImage($data);
       print "</div>\n";
 
     // 国ごとの設定と表示設定は、収支レポートの下に表示する。
