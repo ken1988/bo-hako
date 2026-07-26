@@ -836,9 +836,6 @@ class Cgi {
         case "SKIN":
           $this->dataSet['defaultSkin'] = $value;
           break;
-        case "IMG":
-          $this->dataSet['defaultImg'] = $value;
-          break;
         }
       }
     }
@@ -890,10 +887,6 @@ class Cgi {
       setcookie("SKIN",$this->dataSet['SKIN'], $time);
       $this->dataSet['defaultSkin'] = $this->dataSet['SKIN'];
     }
-    if(!empty($this->dataSet['IMG'])) {
-      setcookie("IMG",$this->dataSet['IMG'], $time);
-      $this->dataSet['defaultImg'] = $this->dataSet['IMG'];
-    }
   }
   //---------------------------------------------------
   // POST、GETのデータを取得
@@ -914,7 +907,6 @@ class Cgi {
       'COMMAND' => '',
       'DEVELOPEMODE' => '',
       'SKIN' => '',
-      'IMG' => '',
       'ISLANDNAME' => '',
       'MESSAGE' => '',
       'LBBSMESSAGE' => '',
@@ -927,8 +919,7 @@ class Cgi {
       'defaultY' => 0,
       'defaultKind' => 0,
       'defaultDevelopeMode' => '',
-      'defaultSkin' => '',
-      'defaultImg' => ''
+      'defaultSkin' => ''
     ), isset($this->dataSet) && is_array($this->dataSet) ? $this->dataSet : array());
     if(!empty($_POST)) {
       foreach($_POST as $name => $value) {
@@ -941,17 +932,6 @@ class Cgi {
           $this->dataSet["{$name}"] = $value;
         }
       }
-    }
-    if(!empty($this->dataSet['IMGLINE'])) {
-      $neo = $this->dataSet['IMGLINE'];
-      if(strcmp($neo, 'delete') == 0) {
-        $neo = $init->imgDir;
-      } else {
-        $neo = str_replace("\\", "/", $neo);
-        $neo = preg_replace("/\/[\w\.]+\.gif/", "", $neo);
-        $neo = 'file:///' . $neo;
-      }
-      $this->dataSet['IMG'] = $neo;
     }
     if(!empty($_GET['Sight'])) {
       $this->mode = "print";
@@ -1155,13 +1135,6 @@ class Main {
       $html = new HtmlSetted;
       $html->header($cgi->dataSet);
       $html->setSkin();
-      $html->footer();
-      break;
-
-    case "imgset":
-      $html = new HtmlSetted;
-      $html->header($cgi->dataSet);
-      $html->setImg();
       $html->footer();
       break;
 

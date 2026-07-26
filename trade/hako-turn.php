@@ -391,10 +391,35 @@ class Make {
 	    $msg = "貿易情報へのリンク";
 	    break;
 	    
-    	case "News_Link":
-    	//報道機関リンクを更新
+	case "News_Link":
+	    //報道機関リンクを更新
 	    $island['news_link'] = htmlspecialchars($data['News_Link']);
-	    $msg = "貿易情報へのリンク";
+		$msg = "報道機関へのリンク";
+	    break;
+
+	case "Related_Links":
+	    // 関連リンクを個別または一括で更新
+	    $scope = isset($data['LINK_SCOPE']) ? $data['LINK_SCOPE'] : 'all';
+	    $linkFields = array(
+	      'Wiki_Link' => array('islandKey' => 'wiki_link', 'label' => '国情報へのリンク'),
+	      'Trade_Link' => array('islandKey' => 'trade_link', 'label' => '貿易情報へのリンク'),
+	      'News_Link' => array('islandKey' => 'news_link', 'label' => '報道機関へのリンク')
+	    );
+	    if($scope == 'all') {
+	      foreach($linkFields as $field => $definition) {
+	        $value = isset($data[$field]) ? $data[$field] : '';
+	        $island[$definition['islandKey']] = htmlspecialchars($value);
+	      }
+	      $msg = "関連リンク3件";
+	    } elseif(isset($linkFields[$scope])) {
+	      $definition = $linkFields[$scope];
+	      $value = isset($data[$scope]) ? $data[$scope] : '';
+	      $island[$definition['islandKey']] = htmlspecialchars($value);
+	      $msg = $definition['label'];
+	    } else {
+	      HakoError::problem();
+	      return;
+	    }
 	    break;
 
     }
