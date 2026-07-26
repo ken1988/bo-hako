@@ -494,8 +494,9 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		}
 		$owner =  "<br>{$init->tagTH_}元首：{$owner}{$init->_tagTH}";
 		$bannerad = "img/up/log";
-		if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerad.'/'.$banum.'.png')){
-			$bannerad = 'up/log/'.$banum.'.png';
+		$bannerPath = $bannerad.'/'.$banum.'.png';
+		if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerPath)){
+			$bannerad = 'up/log/'.$banum.'.png?v='.filemtime($bannerPath);
 			$bannerad = "<IMG SRC=\"{$bannerad}\" width=\"45\" height=\"30\"align=\"left\" title=\"{$pname}旗\" ALT=\"{$pname}旗\">";
 		}else{
 			$bannerad = "";
@@ -1185,8 +1186,9 @@ END;
 	$socad .="<IMG SRC=\"socsec.png\" width=\"20\" height=\"20\" title=\"社会保障指数：{$soclv}\" ALT=\"社会保障指数：{$soclv}\"> {$soclv}";
 
 	$bannerad = "img/up/log";
-	if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerad.'/'.$banum.'.png')){
-		$bannerad = 'up/log/'.$banum.'.png';
+	$bannerPath = $bannerad.'/'.$banum.'.png';
+	if (preg_match('/^[A-Za-z0-9_-]+$/', $banum) && file_exists($bannerPath)){
+		$bannerad = 'up/log/'.$banum.'.png?v='.filemtime($bannerPath);
 		$bannerad = "<IMG align = \"center\" SRC=\"{$bannerad}\" width=\"45\" height=\"30\"align=\"left\" title=\"{$pname}旗\" ALT=\"{$pname}旗\">";
 	}else{
 		$bannerad = "";

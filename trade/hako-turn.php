@@ -504,6 +504,7 @@ class Make {
     }
 
     $savePath = $uploadDir . '/' . $flagId . '.png';
+    $previousMtime = file_exists($savePath) ? filemtime($savePath) : 0;
     if(!imagepng($dst, $savePath)) {
       imagedestroy($src);
       imagedestroy($dst);
@@ -511,6 +512,11 @@ class Make {
       return;
     }
     chmod($savePath, 0604);
+    // The file name is reused on subsequent uploads, so give every saved
+    // version a distinct mtime for the cache-busting URL used by the views.
+    $cacheMtime = max(time(), $previousMtime + 1);
+    touch($savePath, $cacheMtime);
+    clearstatcache(true, $savePath);
     imagedestroy($src);
     imagedestroy($dst);
 
