@@ -32,7 +32,7 @@ class Init {
   var $cssDir		= "https://tanstaafl.tokyo/trade/css";
 
   // CSSリスト
-  var $cssList		= array('nd_flat.css','nd_flat-blue.css','nd_flat-grey.css','Autumn.css');
+  var $cssList		= array('nd_flat.css','nd_flat-blue.css','nd_flat-grey.css');
 
   //パスワードの暗号化 true: 暗号化、false: 暗号化しない
   var $cryptOn		= true;
