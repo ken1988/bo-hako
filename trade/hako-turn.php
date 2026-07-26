@@ -800,6 +800,7 @@ class Make {
     $num = $hako->idToNumber[$id];
     $island = $hako->islands[$num];
     $name = $island['name'];
+    $flag = 0;
 
     // パスワードチェック
     if(strcmp($data['OLDPASS'], $init->specialPassword) == 0) {
@@ -807,13 +808,6 @@ class Make {
       //$island['money'] = $init->maxMoney;
       //$island['food']  = $init->maxFood;
     } elseif(!Util::checkPassword($island['password'], $data['OLDPASS'])) {
-      // password間違い
-      HakoError::wrongPassword();
-      return;
-    }
-
-    // 確認用パスワード
-    if(strcmp($data['PASSWORD'], $data['PASSWORD2']) != 0) {
       // password間違い
       HakoError::wrongPassword();
       return;
@@ -856,7 +850,7 @@ class Make {
       $flag = 1;
     }
 
-    if(($flag == 0) && (strcmp($data['PASSWORD'], $data['PASSWORD2']) != 0)) {
+    if($flag == 0) {
       // どちらも変更されていない
       HakoError::changeNothing();
       return;
