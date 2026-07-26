@@ -73,7 +73,8 @@ class Make {
     $island['password'] = Util::encode($data['PASSWORD']);
     $island['tenki'] = 1;
 
-    Turn::estimate($island);
+    $turn = new Turn;
+    $turn->estimate($island);
     $hako->islands[$newNumber] = $island;
     $hako->writeIslandsFile($island['id']);
 
@@ -105,13 +106,13 @@ class Make {
         'arg'    => 0,
         );
     }
-    $lbbs = "";
+    $lbbs = array();
     // 初期掲示板生成
     for($i = 0; $i < $init->lbbsMax; $i++) {
       $lbbs[$i] = "0>>0>>";
     }
 
-    $regT = "";
+    $regT = array();
     // 初期定期輸送生成
     for($i = 0; $i < $init->regTMax; $i++) {
       $regT[$i] = "";
@@ -2590,7 +2591,7 @@ class Turn {
         break;
       }
 
-	  if(Turn::ChkCapLevel($init->comIndCity,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comIndCity,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2613,7 +2614,7 @@ class Turn {
         break;
       }
 
-	  if(Turn::ChkCapLevel($init->comBigtown,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comBigtown,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2664,7 +2665,7 @@ class Turn {
 		 break;
 
 	case $init->comPubinvest:
-	  if(Turn::ChkCapLevel($init->comPubinvest,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comPubinvest,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2688,7 +2689,7 @@ class Turn {
 	 break;
 
 	case $init->comEduinvest:
-	  if(Turn::ChkCapLevel($init->comEduinvest,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comEduinvest,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2714,7 +2715,7 @@ class Turn {
 	 break;
 
 	case $init->comSocPlan:
-	  if(Turn::ChkCapLevel($init->comSocPlan,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comSocPlan,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2733,7 +2734,7 @@ class Turn {
 
     case $init->comEisei:
       // 人工衛星打ち上げ
-	  if(Turn::ChkCapLevel($init->comEisei,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comEisei,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2771,7 +2772,7 @@ class Turn {
 
     case $init->comEiseimente:
       // 人工衛星修復
-	  if(Turn::ChkCapLevel($init->comEiseimente,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comEiseimente,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2792,7 +2793,7 @@ class Turn {
 
     case $init->comEiseiAtt:
       // 衛星破壊砲
-	  if(Turn::ChkCapLevel($init->comEiseiAtt,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comEiseiAtt,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2847,7 +2848,7 @@ class Turn {
 
     case $init->comEiseiLzr:
       // 衛星レーザー
-	  if(Turn::ChkCapLevel($init->comEiseiLzr,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comEiseiLzr,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -2963,7 +2964,7 @@ class Turn {
         $returnMode = 0;
         break;
       }
-	  if(Turn::ChkCapLevel($init->comMissileNM,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comMissileNM,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -3613,7 +3614,7 @@ class Turn {
 
     case $init->comSendMonster:
       // 揚陸艦派遣
-	  if(Turn::ChkCapLevel($init->comSendMonster,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comSendMonster,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -3667,7 +3668,7 @@ class Turn {
 
     case $init->comTrain:
       // 軍事訓練
-	  if(Turn::ChkCapLevel($init->comTrain,$island['capital'],$id, $name, $comName) == false){
+	  if($this->ChkCapLevel($init->comTrain,$island['capital'],$id, $name, $comName) == false){
 	  	$returnMode = 0;
 		break;
 	  }
@@ -5788,7 +5789,7 @@ class Turn {
     }
 
     // 各種の値を計算
-    Turn::estimate($island);
+    $this->estimate($island);
 
     // 繁栄、災難賞
     $pop = $island['pop'];
@@ -6827,7 +6828,7 @@ if($island['ffactory']> 0){
   //---------------------------------------------------
   // 範囲内の地形を数える
   //---------------------------------------------------
-  function countAround($land, $x, $y, $kind, $range) {
+  public static function countAround($land, $x, $y, $kind, $range) {
     global $init;
     // 範囲内の地形を数える
     $count = 0;
@@ -6859,7 +6860,7 @@ if($island['ffactory']> 0){
   //---------------------------------------------------
   // 上陸ポイント判定
   //---------------------------------------------------
-  function checkLand($land, $x, $y) {
+  public static function checkLand($land, $x, $y) {
     global $init;
 
       for($i = 0; $i < 7; $i++) {
@@ -6895,7 +6896,7 @@ if($island['ffactory']> 0){
   //---------------------------------------------------
   // 範囲内の地形＋値でカウント
   //---------------------------------------------------
-  function countAroundValue($island, $x, $y, $kind, $lv, $range) {
+  public static function countAroundValue($island, $x, $y, $kind, $lv, $range) {
     global $init;
 
     $land = $island['land'];
@@ -7080,7 +7081,7 @@ function ChkCapLevel($com,$caplv,$id, $name, $comName){
 //-----------------------------------------------
 //　輸送系だけ関数を切り離し
 //-----------------------------------------------
-function comTrades(&$arg,$cost,&$goods,&$tgoods) {
+public static function comTrades(&$arg,$cost,&$goods,&$tgoods) {
 // 輸出量決定
       if($arg == 0) { $arg = 1; }
           $value = min($arg * (-$cost), $goods);
@@ -7089,7 +7090,7 @@ function comTrades(&$arg,$cost,&$goods,&$tgoods) {
 	  return $value;
 	}
 //------------------------------------------------
-function comTradesN($kind,&$cost,&$container,&$str){
+public static function comTradesN($kind,&$cost,&$container,&$str){
     global $init;
 //消費する物資の種類を決定
 	switch ($kind){
@@ -7161,7 +7162,7 @@ function comTradesN($kind,&$cost,&$container,&$str){
       }
 }
 //---------------------------------------------
-function comTradeschk($kind,$turn){
+public static function comTradeschk($kind,$turn){
 //自動輸送時の輸送フラグチェック関数
     global $init;
 	$ftrade = false;
@@ -7242,7 +7243,7 @@ function comTradeschk($kind,$turn){
 //-----------------------------------------------
 //資源採掘処理
 //-----------------------------------------------
-function comMining($kind,$resdep){
+public static function comMining($kind,$resdep){
     global $init;
 
 	$n_value = $init->miningValue[$kind][0] * $resdep;
@@ -7256,7 +7257,7 @@ function comMining($kind,$resdep){
 //---------------------------------------------------
 // 自動ニュース投稿
 //---------------------------------------------------
-function AutoNews($id,$name,$turn,$text,$category){
+public static function AutoNews($id,$name,$turn,$text,$category){
 	$dataset = array("nationID"=>'',"category"=>'',"text"=>'',"turn"=>'',"author"=>'');
 
 	$dataset['nationID'] = $id;
