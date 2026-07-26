@@ -959,10 +959,11 @@ class HtmlMap extends HTML {
 
     // 国ごとの設定と表示設定は、収支レポートの下に表示する。
     print "<hr style=\"clear:both;\">\n";
-    $this->changeIslandInfo($island, $data['PASSWORD']);
-    $this->changeOwnerName($island, $data['PASSWORD']);
-    $this->setStyleSheet();
-    $this->setLocalImage($data);
+    $settings = new HtmlTop;
+    $settings->changeIslandInfo($island, $data['PASSWORD']);
+    $settings->changeOwnerName($island, $data['PASSWORD']);
+    $settings->setStyleSheet();
+    $settings->setLocalImage($data);
 
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";
