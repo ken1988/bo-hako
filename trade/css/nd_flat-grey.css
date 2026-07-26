@@ -463,6 +463,12 @@ h2.Turn {
   text-align: left;
 }
 
+#NaviView::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 #NaviTitle {
   padding-bottom: 4px;
   border-bottom: 2px solid var(--nd-color-primary);
