@@ -1087,11 +1087,13 @@ div.tooltip span {
   align-items: center;
   min-height: 44px;
   padding: 8px 14px;
-  color: var(--nd-color-primary-dark);
-  border: 1px solid var(--nd-color-border-strong);
-  border-radius: var(--nd-radius-sm);
-  background: var(--nd-color-primary-soft);
+  color: #ffffff;
+  border: 1px solid var(--nd-color-primary-dark);
+  border-radius: 10px;
+  background: var(--nd-color-primary);
+  box-shadow: var(--nd-shadow-sm);
   font-weight: 700;
+  text-decoration: none;
 }
 
 .owner-section-nav a:hover,
