@@ -471,11 +471,16 @@ h2.Turn {
 }
 
 .NaviImg {
+  float: left;
   margin: 6px;
 }
 
 .NaviText {
-  margin-left: 15px;
+  margin-left: 52px;
+}
+
+.NaviImg + .NaviText {
+  padding-top: 6px;
 }
 
 /* SECTION: Island map
