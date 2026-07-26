@@ -105,13 +105,13 @@ class Make {
         'arg'    => 0,
         );
     }
-    $lbbs = "";
+    $lbbs = array();
     // 初期掲示板生成
     for($i = 0; $i < $init->lbbsMax; $i++) {
       $lbbs[$i] = "0>>0>>";
     }
 
-    $regT = "";
+    $regT = array();
     // 初期定期輸送生成
     for($i = 0; $i < $init->regTMax; $i++) {
       $regT[$i] = "";
