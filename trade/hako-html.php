@@ -35,7 +35,8 @@ class HTML {
 	header("X-Product-Version: {$PRODUCT_VERSION}");
 
 	$css = (empty($data['defaultSkin'])) ? $init->cssList[0] : $data['defaultSkin'];
-	$bimg =  (empty($data['defaultImg'])) ? $init->imgDir : $data['defaultImg'];
+	// ローカル画像パス設定は廃止し、常にサーバー配信の画像を使う。
+	$bimg = $init->imgDir;
 	$param['bimg'] = $bimg;
 	$param['cssDir'] = $init->cssDir;
 	$param['css'] = $css;
@@ -801,43 +802,6 @@ $styleSheet
 END;
   }
   //---------------------------------------------------
-  // 画像のローカル設定
-  //---------------------------------------------------
-  function setLocalImage($data = "") {
-    global $init;
-    $Himgflag;
-    if(empty($data['defaultImg']) || (strcmp($data['defaultImg'], $init->imgDir) == 0)){
-      $Himgflag = '<span class=attention>未設定</span>';
-    } else {
-      $Himgflag = $data['defaultImg'];
-    }
-    print <<<END
-<div id="localImage">
-<h2>画像のローカル設定</h2>
-<table border width=50%><tr><td class='N'>
-　画像転送によるサーバーへの負荷を軽減するだけでなく、あなたのパソコンにある画像を呼び出すので、表示スピードが飛躍的にアップします。<br>
-　画像は<B><a href="{$init->imgPack}">ここ</a></B>からダウンロードして、１つのフォルダに解凍し、下の設定で「land0.gif」を指定して下さい。<br>
-　詳しくは<B><a href="{$init->imgExp}">説明のページ</a></B>をご覧下さい。
-</td></tr></table>
-<table border=0 width=50%><tr><td class="M">
- 現在の設定<B>[</B> {$Himgflag} <B>]</B>
-<form action="{$GLOBALS['THIS_FILE']}" method="post">
-<input type=file name="IMGLINE">
-<input type="hidden" name="mode" value="imgset">
-<input type="submit" value="設定">
-</form>
-
-<form action="{$GLOBALS['THIS_FILE']}" method="post">
-<input type=hidden name="IMGLINE" value="delete">
-<input type="hidden" name="mode" value="imgset">
-<input type="submit" value="設定を解除する">
-</form>
-</td></tr></table>
-</div>
-
-END;
-  }
-  //---------------------------------------------------
   // 最近の出来事
   //---------------------------------------------------
   function log() {
@@ -946,6 +910,7 @@ class HtmlMap extends HTML {
     }
     $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
     print <<<END
+<main id="owner-page" class="owner-page">
 <nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
 <a href="{$ownerPage}#owner-daily-communication">日常操作</a>
 <a href="{$ownerPage}#owner-national-settings">国家設定</a>
@@ -993,7 +958,6 @@ END;
     print "</section>\n";
     print "<section id=\"owner-display-settings\" class=\"owner-section owner-section-display\" aria-label=\"表示設定\">\n";
     $settings->setStyleSheet();
-    $settings->setLocalImage($data);
     print "</section>\n";
 
     if($init->useBbs) {
@@ -1004,6 +968,7 @@ END;
       print "</div>\n";
     }
     $this->islandRecent($island, 1);
+    print "</main>\n";
   }
 
   //---------------------------------------------------
@@ -2491,7 +2456,8 @@ class HtmlJS extends HtmlMap {
     }
     header("X-Product-Version: {$PRODUCT_VERSION}");
     $css = (empty($data['defaultSkin'])) ? $init->cssList[0] : $data['defaultSkin'];
-    $bimg = (empty($data['defaultImg'])) ? $init->imgDir : $data['defaultImg'];
+    // ローカル画像パス設定は廃止し、常にサーバー配信の画像を使う。
+    $bimg = $init->imgDir;
 
 	$param['bimg'] = $bimg;
 	$param['cssDir'] = $init->cssDir;
@@ -3812,10 +3778,6 @@ class HtmlSetted extends HTML {
   public static function setSkin() {
     global $init;
     print "{$init->tagBig_}スタイルシートを設定しました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
-  }
-  public static function setImg() {
-    global $init;
-    print "{$init->tagBig_}画像のローカル設定をしました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
   }
   public static function comment() {
     global $init;

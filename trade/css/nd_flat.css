@@ -1128,3 +1128,115 @@ div.tooltip span {
     flex: 0 0 auto;
   }
 }
+/* SECTION: Owner screen cards and tabs */
+.owner-page {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 0 12px 24px;
+}
+
+.owner-page #TradeBox,
+.owner-page #BalanceOut,
+.owner-page #toyBox {
+  float: none;
+  width: 100%;
+  padding: 0;
+}
+
+.owner-page .owner-section {
+  clear: both;
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-md);
+  background: var(--nd-color-surface-strong);
+  box-shadow: var(--nd-shadow-sm);
+}
+
+.owner-page .owner-section[hidden] {
+  display: none !important;
+}
+
+.owner-section-nav a[aria-selected="true"] {
+  background: var(--nd-color-primary-dark);
+  box-shadow: 0 0 0 3px var(--nd-color-primary-soft);
+}
+
+#owner-daily-communication,
+#owner-daily-trade,
+#owner-national-settings,
+#owner-national-account-settings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#owner-daily-communication > .owner-section-title,
+#owner-national-settings > .owner-section-title {
+  grid-column: 1 / -1;
+}
+
+.owner-page .owner-section > div,
+.owner-links-form {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--nd-color-border);
+  border-radius: var(--nd-radius-sm);
+  background: var(--nd-color-surface-muted);
+}
+
+.owner-page .owner-section h2 {
+  margin: 0 0 12px;
+}
+
+.owner-link-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.4fr) minmax(220px, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+
+.owner-link-row label,
+.owner-link-row label strong,
+.owner-link-row label span {
+  display: block;
+}
+
+.owner-link-row label span {
+  color: var(--nd-color-muted);
+  font-size: 12px;
+}
+
+.owner-link-row input {
+  width: 100%;
+}
+
+.owner-links-save-all {
+  display: block;
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .owner-page {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  #owner-daily-communication,
+  #owner-daily-trade,
+  #owner-national-settings,
+  #owner-national-account-settings {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-link-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .owner-link-row button,
+  .owner-links-save-all {
+    width: 100%;
+  }
+}
