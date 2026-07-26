@@ -490,6 +490,12 @@ h2.Turn {
   max-width: 100%;
 }
 
+/* Hidden form fields sit between each setting and its action button in
+ * templates/banners.html, so they do not create any visual separation. */
+#toyBox input[type="submit"] {
+  margin-top: 8px;
+}
+
 /* SECTION: Semantic text colors
  * PHPが出力する既存クラスの色指定です。
  * ゲーム上の意味を持つ色なので、変更時は可読性と意味の対応を確認してください。
