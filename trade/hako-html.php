@@ -962,13 +962,7 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "</div>\n";
 
-    // 国ごとの設定と表示設定は、収支レポートの下に表示する。
     print "<hr style=\"clear:both;\">\n";
-    $settings = new HtmlTop;
-    $settings->changeIslandInfo($island, $data['PASSWORD']);
-    $settings->changeOwnerName($island, $data['PASSWORD']);
-    $settings->setStyleSheet();
-    $settings->setLocalImage($data);
 
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";
