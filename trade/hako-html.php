@@ -35,7 +35,8 @@ class HTML {
 	header("X-Product-Version: {$PRODUCT_VERSION}");
 
 	$css = (empty($data['defaultSkin'])) ? $init->cssList[0] : $data['defaultSkin'];
-	$bimg =  (empty($data['defaultImg'])) ? $init->imgDir : $data['defaultImg'];
+	// ローカル画像パス設定は廃止し、常にサーバー配信の画像を使う。
+	$bimg = $init->imgDir;
 	$param['bimg'] = $bimg;
 	$param['cssDir'] = $init->cssDir;
 	$param['css'] = $css;
@@ -683,47 +684,66 @@ END;
     print "<hr>\n";
   }
   //---------------------------------------------------
-  // 国の名前とパスワードの変更
+  // 国名の変更
   //---------------------------------------------------
-  function changeIslandInfo($island, $password) {
+  function changeIslandName($island, $password) {
     $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
-<div id="ChangeInfo">
-<h2>国の名前とパスワードの変更</h2>
+<div id="ChangeIslandName">
+<h2>国名の変更</h2>
 <p>
 (注意)名前の変更には500億Vaかかります。
 </p>
 <form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
 対象国：{$island['name']}<br>
-どんな名前に変えますか？(変更する場合のみ)<br>
+どんな名前に変えますか？<br>
 <input type="text" name="ISLANDNAME" size="32" maxlength="32"><br>
-新しいパスワードは？(変更する時のみ)<br>
-<input type="password" name="PASSWORD" size="32" maxlength="32"><br>
 <input type="hidden" name="ISLANDID" value="{$island['id']}">
 <input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="change">
-<input type="submit" value="変更する">
+<input type="submit" value="国名を変更する">
 </form>
 </div>
 
 END;
   }
   //---------------------------------------------------
-  // オーナー名の変更
+  // パスワードの変更
   //---------------------------------------------------
-  function changeOwnerName($island, $password) {
+  function changeIslandPassword($island, $password) {
+    $password = htmlspecialchars($password, ENT_QUOTES);
+    print <<<END
+<div id="ChangeIslandPassword">
+<h2>パスワードの変更</h2>
+<form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
+対象国：{$island['name']}<br>
+新しいパスワードは？<br>
+<input type="password" name="PASSWORD" size="32" maxlength="32"><br>
+<input type="hidden" name="ISLANDID" value="{$island['id']}">
+<input type="hidden" name="OLDPASS" value="{$password}">
+<input type="hidden" name="mode" value="change">
+<input type="submit" value="パスワードを変更する">
+</form>
+</div>
+
+END;
+  }
+  //---------------------------------------------------
+  // 元首名の変更
+  //---------------------------------------------------
+  function changeHeadOfStateName($island, $password) {
     $password = htmlspecialchars($password, ENT_QUOTES);
     print <<<END
 <div id="ChangeOwnerName">
-<h2>オーナー名の変更</h2>
+<h2>元首名の変更</h2>
 <form action="{$GLOBALS['THIS_FILE']}" method="post" accept-charset="UTF-8">
 対象国：{$island['name']}<br>
-新しいオーナー名は？<br>
+新しい元首名は？<br>
 <input type="text" name="OWNERNAME" size="32" maxlength="32"><br>
 <input type="hidden" name="ISLANDID" value="{$island['id']}">
 <input type="hidden" name="OLDPASS" value="{$password}">
 <input type="hidden" name="mode" value="ChangeOwnerName">
-<input type="submit" value="変更する">
+<input type="submit" value="元首名を変更する">
 </form>
 </div>
 END;
@@ -777,43 +797,6 @@ $styleSheet
 <input type="hidden" name="mode" value="skin">
 <input type="submit" value="設定">
 </form>
-</div>
-
-END;
-  }
-  //---------------------------------------------------
-  // 画像のローカル設定
-  //---------------------------------------------------
-  function setLocalImage($data = "") {
-    global $init;
-    $Himgflag;
-    if(empty($data['defaultImg']) || (strcmp($data['defaultImg'], $init->imgDir) == 0)){
-      $Himgflag = '<span class=attention>未設定</span>';
-    } else {
-      $Himgflag = $data['defaultImg'];
-    }
-    print <<<END
-<div id="localImage">
-<h2>画像のローカル設定</h2>
-<table border width=50%><tr><td class='N'>
-　画像転送によるサーバーへの負荷を軽減するだけでなく、あなたのパソコンにある画像を呼び出すので、表示スピードが飛躍的にアップします。<br>
-　画像は<B><a href="{$init->imgPack}">ここ</a></B>からダウンロードして、１つのフォルダに解凍し、下の設定で「land0.gif」を指定して下さい。<br>
-　詳しくは<B><a href="{$init->imgExp}">説明のページ</a></B>をご覧下さい。
-</td></tr></table>
-<table border=0 width=50%><tr><td class="M">
- 現在の設定<B>[</B> {$Himgflag} <B>]</B>
-<form action="{$GLOBALS['THIS_FILE']}" method="post">
-<input type=file name="IMGLINE">
-<input type="hidden" name="mode" value="imgset">
-<input type="submit" value="設定">
-</form>
-
-<form action="{$GLOBALS['THIS_FILE']}" method="post">
-<input type=hidden name="IMGLINE" value="delete">
-<input type="hidden" name="mode" value="imgset">
-<input type="submit" value="設定を解除する">
-</form>
-</td></tr></table>
 </div>
 
 END;
@@ -925,6 +908,7 @@ class HtmlMap extends HTML {
       HakoError::wrongPassword();
       return;
     }
+    print "<main id=\"owner-page\" class=\"owner-page\">\n";
     $this->tempOwer($hako, $data, $number);
 
     //ＩＰ情報取得
@@ -945,6 +929,7 @@ class HtmlMap extends HTML {
     for($i=0; $i<$ax; $i++) fputs($fp,$log[$i]);
     fclose($fp);
 
+      print "<section id=\"owner-daily-trade\" class=\"owner-section owner-section-daily\" aria-label=\"貿易予約\">\n";
       print "<div id=\"TradeBox\">\n";
 	  $this->regTHead($island);
       $this->regTInputOW($hako,$island, $data);
@@ -952,23 +937,19 @@ class HtmlMap extends HTML {
       print "</div>\n";
       print "<div id=\"BalanceOut\">\n";
 	  $this->BalanceOutput($hako,$island);
-      // 国ごとの設定と表示設定は、収支レポートと同じ欄の直下に表示する。
-      print "<div id=\"ownerSettings\" style=\"clear:both;\">\n";
-      $settings = new HtmlTop;
-      $settings->changeIslandInfo($island, $data['PASSWORD']);
-      $settings->changeOwnerName($island, $data['PASSWORD']);
-      $settings->setStyleSheet();
-      $settings->setLocalImage($data);
       print "</div>\n";
-      print "</div>\n";
+      print "</section>\n";
 
-    // 国ごとの設定と表示設定は、収支レポートの下に表示する。
-    print "<hr style=\"clear:both;\">\n";
+    // テンプレート外で生成される設定も、同じ4分類に所属させる。
     $settings = new HtmlTop;
-    $settings->changeIslandInfo($island, $data['PASSWORD']);
-    $settings->changeOwnerName($island, $data['PASSWORD']);
+    print "<section id=\"owner-national-account-settings\" class=\"owner-section owner-section-national\" aria-label=\"国名・元首名・パスワード設定\">\n";
+    $settings->changeIslandName($island, $data['PASSWORD']);
+    $settings->changeHeadOfStateName($island, $data['PASSWORD']);
+    $settings->changeIslandPassword($island, $data['PASSWORD']);
+    print "</section>\n";
+    print "<section id=\"owner-display-settings\" class=\"owner-section owner-section-display\" aria-label=\"表示設定\">\n";
     $settings->setStyleSheet();
-    $settings->setLocalImage($data);
+    print "</section>\n";
 
     if($init->useBbs) {
       print "<hr style=\"clear:both;\">\n<div id=\"localBBS\">\n";
@@ -978,6 +959,22 @@ class HtmlMap extends HTML {
       print "</div>\n";
     }
     $this->islandRecent($island, 1);
+    print "</main>\n";
+  }
+
+  //---------------------------------------------------
+  // 開発画面の分類タブ
+  //---------------------------------------------------
+  function ownerSectionNavigation() {
+    $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
+    print <<<END
+<nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
+<a href="{$ownerPage}#owner-daily-communication">最新情報・貿易</a>
+<a href="{$ownerPage}#owner-national-settings">国家設定</a>
+<a href="{$ownerPage}#owner-related-links">関連リンク</a>
+<a href="{$ownerPage}#owner-display-settings">表示設定</a>
+</nav>
+END;
   }
 
   //---------------------------------------------------
@@ -2125,6 +2122,8 @@ END;
 </div>
 <hr>
 END;
+    // マップとコマンドの直後、ニュースなどの設定項目より前にタブを置く。
+    $this->ownerSectionNavigation();
 $param['GLTH'] = $GLOBALS['THIS_FILE'];
 $param['comment'] =str_replace( "<br />","\n",$island['comment']);
 $param['PAS'] =   $data['PASSWORD'];
@@ -2465,7 +2464,8 @@ class HtmlJS extends HtmlMap {
     }
     header("X-Product-Version: {$PRODUCT_VERSION}");
     $css = (empty($data['defaultSkin'])) ? $init->cssList[0] : $data['defaultSkin'];
-    $bimg = (empty($data['defaultImg'])) ? $init->imgDir : $data['defaultImg'];
+    // ローカル画像パス設定は廃止し、常にサーバー配信の画像を使う。
+    $bimg = $init->imgDir;
 
 	$param['bimg'] = $bimg;
 	$param['cssDir'] = $init->cssDir;
@@ -3505,6 +3505,8 @@ END;
 </div>
 <div>
 END;
+    // マップとコマンドの直後、ニュースなどの設定項目より前にタブを置く。
+    $this->ownerSectionNavigation();
 $param['GLTH'] = $GLOBALS['THIS_FILE'];
 $param['comment'] =str_replace( "<br />","\n",$island['comment']);
 $param['PAS'] =   $data['PASSWORD'];
@@ -3786,10 +3788,6 @@ class HtmlSetted extends HTML {
   public static function setSkin() {
     global $init;
     print "{$init->tagBig_}スタイルシートを設定しました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
-  }
-  public static function setImg() {
-    global $init;
-    print "{$init->tagBig_}画像のローカル設定をしました。{$init->spanend}{$GLOBALS['BACK_TO_TOP']}\n";
   }
   public static function comment() {
     global $init;
