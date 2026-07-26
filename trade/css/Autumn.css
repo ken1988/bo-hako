@@ -3,7 +3,7 @@
 /*  Edited By : Watson                                              */
 /********************************************************************/
 
-/* ‹¤’Ê ------------------------------------------------------------*/
+/* å…±é€š ------------------------------------------------------------*/
 body {
 	font-family	: "MS UI Gothic", sans-serif;
 	font-size	: 10pt;
@@ -68,7 +68,7 @@ option, input:focus {
    height: 22px;
 }
 #LinkHeader li {
-   float: left; /* ƒŠƒXƒg€–Ú‚ğ‰¡•ûŒü‚É•À‚×‚é */
+   float: left; /* ãƒªã‚¹ãƒˆé …ç›®ã‚’æ¨ªæ–¹å‘ã«ä¸¦ã¹ã‚‹ */
    margin:0 1px 0 0;
    width:125px;
 }
@@ -118,8 +118,8 @@ option, input:focus {
 }
 /**********************************************************************/
 
-/* TOPƒy[ƒW ---------------------------------------------------------*/
-/* ƒ^[ƒ“”ŠÖŒW */
+/* TOPãƒšãƒ¼ã‚¸ ---------------------------------------------------------*/
+/* ã‚¿ãƒ¼ãƒ³æ•°é–¢ä¿‚ */
 h2.Turn {
 	position	: relative;
 	left		: 0%;
@@ -143,7 +143,7 @@ h2.Turn {
 #HakoniwaCup {
 	white-space	: nowrap;
 }
-/* ƒ^ƒCƒgƒ‹ */
+/* ã‚¿ã‚¤ãƒˆãƒ« */
 h1 {
 	position	: relative;
 	top		: 60px;
@@ -158,7 +158,7 @@ h1 {
 	border-width	: 0px 0px 5px 0px;
 	width		: 400px;
 }
-/* ‘å‚«‚¢•¶š */
+/* å¤§ãã„æ–‡å­— */
 .big {
 	font-size	: 24pt;
 }
@@ -166,7 +166,7 @@ h1 {
 .clear hr { display:none; }
 /**********************************************************************/
 
-/* Mapƒy[ƒW ---------------------------------------------------------*/
+/* Mapãƒšãƒ¼ã‚¸ ---------------------------------------------------------*/
 #NaviView{
 	z-index		: 1;
 	background-color: #F0FFFF;
@@ -217,48 +217,48 @@ h1 {
 
 .islName, .islName2, .capName, .number, .head, .headToTo, .command, .disaster, .lbbsSS, .lbbsOW,
 .money, .food, .HCwin, .HClose, .attention, .bumon { font-weight: bold; }
-.islName   { color: #A06040;        } /* “‡‚Ì–¼‘O‚È‚Ç */
-.islName2  { color: #808080;        } /* ”–‚­‚È‚Á‚½“‡‚Ì–¼‘O */
-.capName   { color: #990000;		} /*ñ“s–¼*/
-.number    { color: #800000;        } /* ‡ˆÊ‚Ì”Ô†‚È‚Ç */
-.head      { color: #800000;        } /* ‡ˆÊ•\‚É‚¨‚¯‚éŒ©‚¾‚µ */
-.headToTo  { color: #E9967A;        } /* toto•\‚É‚¨‚¯‚éŒ©‚¾‚µ */
-.command   { color: #D08000;        } /* ŠJ”­Œv‰æ–¼ */
-.disaster  { color: #FF0000;        } /* ĞŠQ */
-.lbbsST    { color: gray;           } /* ŠÏŒõÒ’ÊMi‹É”éj */
-.money     { color: #daa520;      } /* ‚¨‹à */
-.food      { color: #8B4513;        } /* H—¿ */
-.HCwin     { color: #0000FF;        } /* ” ’ëƒJƒbƒvŸ—˜ */
-.HClose    { color: #A06040;        } /* ” ’ëƒJƒbƒv”s–k */
-.attention { color: #FF0000;        } /* ’ˆÓ */
-.bumon     { color: #FFFFFF;        } /* ƒ‰ƒ“ƒLƒ“ƒO‚Ì•”–å–¼ */
+.islName   { color: #A06040;        } /* å³¶ã®åå‰ãªã© */
+.islName2  { color: #808080;        } /* è–„ããªã£ãŸå³¶ã®åå‰ */
+.capName   { color: #990000;		} /*é¦–éƒ½å*/
+.number    { color: #800000;        } /* é †ä½ã®ç•ªå·ãªã© */
+.head      { color: #800000;        } /* é †ä½è¡¨ã«ãŠã‘ã‚‹è¦‹ã ã— */
+.headToTo  { color: #E9967A;        } /* totoè¡¨ã«ãŠã‘ã‚‹è¦‹ã ã— */
+.command   { color: #D08000;        } /* é–‹ç™ºè¨ˆç”»å */
+.disaster  { color: #FF0000;        } /* ç½å®³ */
+.lbbsST    { color: gray;           } /* è¦³å…‰è€…é€šä¿¡ï¼ˆæ¥µç§˜ï¼‰ */
+.money     { color: #daa520;      } /* ãŠé‡‘ */
+.food      { color: #8B4513;        } /* é£Ÿæ–™ */
+.HCwin     { color: #0000FF;        } /* ç®±åº­ã‚«ãƒƒãƒ—å‹åˆ© */
+.HClose    { color: #A06040;        } /* ç®±åº­ã‚«ãƒƒãƒ—æ•—åŒ— */
+.attention { color: #FF0000;        } /* æ³¨æ„ */
+.bumon     { color: #FFFFFF;        } /* ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã®éƒ¨é–€å */
 .point     { color: #CD853F;        } /* point */
-.unemploy1 { color: #CD853F;        } /* ¸‹Æ—¦- */
-.unemploy2 { color: red;            } /* ¸‹Æ—¦+ */
-.shuto     { color: #8B4513;        } /* ñ“s–¼Cƒ†ƒj[ƒN’nŒ` */
-.house     { color: #fa8072;         } /* “‡å‚Ì‰ÆC“‡ID */
-.eisei     { color: #CD853F;        } /* lH‰q¯ */
-.monsm     { color: #8B4513;        } /* ‰öboŒ»’†IC¬’·—¦ */
-.normal    { color: #000000;        } /* ’Êí‚Ì•¶šF */
+.unemploy1 { color: #CD853F;        } /* å¤±æ¥­ç‡- */
+.unemploy2 { color: red;            } /* å¤±æ¥­ç‡+ */
+.shuto     { color: #8B4513;        } /* é¦–éƒ½åï¼Œãƒ¦ãƒ‹ãƒ¼ã‚¯åœ°å½¢ */
+.house     { color: #fa8072;         } /* å³¶ä¸»ã®å®¶ï¼Œå³¶ID */
+.eisei     { color: #CD853F;        } /* äººå·¥è¡›æ˜Ÿ */
+.monsm     { color: #8B4513;        } /* æ€ªç£å‡ºç¾ä¸­ï¼ï¼Œæˆé•·ç‡ */
+.normal    { color: #000000;        } /* é€šå¸¸ã®æ–‡å­—è‰² */
 
-/* ”wŒiF */
-.TitleCell   { background-color: #F4A460;        } /* ‡ˆÊ•\Œ©o‚µ */
+/* èƒŒæ™¯è‰² */
+.TitleCell   { background-color: #F4A460;        } /* é †ä½è¡¨è¦‹å‡ºã— */
 .NumberCella  { background-color: #F8DBA8;        }
 .NumberCellb  { background-color: #F6C362;        }
 .NumberCellc  { background-color: #F7CB7A;        }
 .NumberCelld  { background-color: #F4A460;        }
-.NameCell    { background-color: #F5DEB3;        } /* ‡ˆÊ•\“‡‚Ì–¼‘O */
-.InfoCell    { background-color: #FAEBD7; text-align: right;       } /* ‡ˆÊ•\“‡‚Ìî•ñ */
-.TenkiCell   { background-color: #FAEBD7; text-align: center;       } /* ‡ˆÊ•\“‡‚Ìî•ñ */
-.ItemCell    { background-color: #FAEBD7; text-align: left;       } /* ‡ˆÊ•\“‡‚Ìî•ñ */
-.CommentCell { background-color: #FFFFFF; text-align: left;       } /* ‡ˆÊ•\ƒRƒƒ“ƒg—“ */
-.InputCell   { background-color: #FFDAB9;        } /* ŠJ”­Œv‰æƒtƒH[ƒ€ */
-.MapCell     { background-color: #FFFFFF;        } /* ŠJ”­Œv‰æ’n} */
-.CommandCell { background-color: #FFFFFF;        } /* ŠJ”­Œv‰æ“ü—ÍÏ‚İŒv‰æ */
-.PoinCell    { background-color: #ffe4b5;       } /* Point—“ */
-.TotoCell    { background-color: white;          } /* toto—“ */
-.RankingCell { background-color: #b0c4de; } /* ƒ‰ƒ“ƒLƒ“ƒO—“ */
-.PopupCell   { background-color: #E0FFFF;        } /* Popup ƒRƒ}ƒ“ƒh“ü—Í—“ */
+.NameCell    { background-color: #F5DEB3;        } /* é †ä½è¡¨å³¶ã®åå‰ */
+.InfoCell    { background-color: #FAEBD7; text-align: right;       } /* é †ä½è¡¨å³¶ã®æƒ…å ± */
+.TenkiCell   { background-color: #FAEBD7; text-align: center;       } /* é †ä½è¡¨å³¶ã®æƒ…å ± */
+.ItemCell    { background-color: #FAEBD7; text-align: left;       } /* é †ä½è¡¨å³¶ã®æƒ…å ± */
+.CommentCell { background-color: #FFFFFF; text-align: left;       } /* é †ä½è¡¨ã‚³ãƒ¡ãƒ³ãƒˆæ¬„ */
+.InputCell   { background-color: #FFDAB9;        } /* é–‹ç™ºè¨ˆç”»ãƒ•ã‚©ãƒ¼ãƒ  */
+.MapCell     { background-color: #FFFFFF;        } /* é–‹ç™ºè¨ˆç”»åœ°å›³ */
+.CommandCell { background-color: #FFFFFF;        } /* é–‹ç™ºè¨ˆç”»å…¥åŠ›æ¸ˆã¿è¨ˆç”» */
+.PoinCell    { background-color: #ffe4b5;       } /* Pointæ¬„ */
+.TotoCell    { background-color: white;          } /* totoæ¬„ */
+.RankingCell { background-color: #b0c4de; } /* ãƒ©ãƒ³ã‚­ãƒ³ã‚°æ¬„ */
+.PopupCell   { background-color: #E0FFFF;        } /* Popup ã‚³ãƒãƒ³ãƒ‰å…¥åŠ›æ¬„ */
 
 
 td.prevnat{
@@ -277,7 +277,7 @@ td.prevnat{
 }
 
 .prevnat li {
-   float: left; /* ƒŠƒXƒg€–Ú‚ğ‰¡•ûŒü‚É•À‚×‚é */
+   float: left; /* ãƒªã‚¹ãƒˆé …ç›®ã‚’æ¨ªæ–¹å‘ã«ä¸¦ã¹ã‚‹ */
    display:block;
    text-decoration:none;
    width:40px;
@@ -299,14 +299,14 @@ td.prevnat{
 	overflow-x: hidden;
 }
 
-/* JSƒRƒ}ƒ“ƒh‘—MÏ‚İ */
+/* JSã‚³ãƒãƒ³ãƒ‰é€ä¿¡æ¸ˆã¿ */
 .commandjs1  {
 	border-width	: 0px;
 	color		: #8B4513;
 	width		: 100%;
 	background-color: #fff;
 }
-/* JSƒRƒ}ƒ“ƒh–¢‘—M */
+/* JSã‚³ãƒãƒ³ãƒ‰æœªé€ä¿¡ */
 .commandjs2  {
 	border-width	: 0px;
 	color		: red;
@@ -361,7 +361,39 @@ div.tooltip span{
 	color		: #f00;
 	background-color: transparent;
 }
-/* ‰öbo–v” */
+
+/* Mobile global navigation */
+.global-menu-toggle { display: none; }
+@media (max-width: 700px) {
+  #LinkHeader { position: relative; min-height: 42px; }
+  .global-menu-toggle {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 42px;
+    padding: 7px 12px; color: #fff; background: #8B4513;
+    border: 1px solid #5f2f0d; border-radius: 6px; font-weight: bold;
+  }
+  .global-menu-icon, .global-menu-icon::before, .global-menu-icon::after {
+    display: block; width: 20px; height: 2px; background: currentColor; border-radius: 2px;
+  }
+  .global-menu-icon { position: relative; }
+  .global-menu-icon::before, .global-menu-icon::after {
+    position: absolute; left: 0; content: "";
+  }
+  .global-menu-icon::before { top: -6px; }
+  .global-menu-icon::after { top: 6px; }
+  #LinkHeader #global-menu {
+    display: none; position: absolute; z-index: 1000; top: calc(100% + 4px); left: 0;
+    width: min(320px, calc(100vw - 16px)); height: auto; padding: 8px;
+    background: #FFF5EE; border: 1px solid #F5DEB3; border-radius: 6px;
+    box-shadow: 0 8px 18px rgba(95, 47, 13, 0.2);
+  }
+  #LinkHeader #global-menu.is-open { display: grid; gap: 6px; }
+  #LinkHeader li { float: none; width: 100%; }
+  #LinkHeader li a {
+    width: 100%; min-height: 42px; box-sizing: border-box;
+    background-color: #8B4513; background-image: none;
+  }
+}
+/* æ€ªç£å‡ºæ²¡æ•° */
 .monster{
 	font-size	: 8pt;
 	color		: #f00;

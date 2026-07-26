@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="{cssDir}/exvalidation.css">
 	<title>{title}</title>
 
+	<!-- 外部ライブラリがブロックされてもモバイルメニューを操作できるよう、依存のないローカルスクリプトを使う。 -->
+	<script defer src="{baseDir}/global-menu.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +35,12 @@
 </head>
 <body onload="init()">
 
-<div id="LinkHeader"><strong>
-<ul>
+<div id="LinkHeader">
+<button type="button" class="global-menu-toggle" aria-controls="global-menu" aria-expanded="false">
+	<span class="global-menu-icon" aria-hidden="true"></span>
+	<span>メニュー</span>
+</button>
+<ul id="global-menu">
 	<li><a href="{urlTopPage}"><img src="home.png">トップページ</a></li>
 	<li><a href="{t_title}"><img src="globe.png">箱庭トップ</a></li>	
 	<li><a href="{t_title}?mode=conf"><img src="config.png">設定変更</a></li>
@@ -45,6 +51,5 @@
 	<li><a href="{urlSlack}" target="_blank"><img src="slack.png">貿箱Slack</a></li>
 	<li><a href="{baseDir}/hako-admin.php" target="_blank"><img src="lock.png">管理人室</a></li>
 </ul>
-</strong>
 </div>
 <hr>
