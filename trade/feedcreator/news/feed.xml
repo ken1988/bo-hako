@@ -1,191 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- generator="FeedCreator 1.8.0-dev (info@mypapit.net)" -->
+<!-- generator="FeedCreator 1.7.2-ppt (info@mypapit.net)" -->
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>フリューゲル共同通信</title>
     <subtitle>貿易版箱庭諸国の最新ニュースをお届けします</subtitle>
-    <link rel="alternate" type="text/html" href="https://tanstaafl.tokyo/"/>
-    <id>https://tanstaafl.tokyo/</id>
-    <updated>2026-07-27T11:10:39+00:00</updated>
-    <generator>FeedCreator 1.8.0-dev (info@mypapit.net)</generator>
-<link rel="self" type="application/atom+xml" href="https://tanstaafl.tokyo//trade/hako-main.php" />
+    <link rel="alternate" type="text/html" href="https://tanstaafl.tokyo"/>
+    <id>https://tanstaafl.tokyo</id>
+    <updated>2026-07-27T11:24:35+09:00</updated>
+    <generator>FeedCreator 1.7.2-ppt (info@mypapit.net)</generator>
+<link rel="self" type="application/atom+xml" href="https://tanstaafl.tokyo/trade/hako-main.php" />
     <entry>
-        <title>【政治】全国で着陸記念の祝祭開催さる</title>
+        <title>【経済】アルミホイル製日傘が流行の兆し。あらゆる邪念を打ち払うと開発者。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>自由報道社/ノイエクルス自由国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>アルミホイル製日傘が流行の兆し。あらゆる邪念を打ち払うと開発者。（1272年 1月付 自由報道社/ノイエクルス自由国）</summary>
+    </entry>
+    <entry>
+        <title>【社会】ストラフトン周辺で巨大タコの目撃談。正体は販促用のバルーンか</title>
+        <link rel="alternate" type="text/html" href=""/>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
+        <id></id>
+        <author>
+            <name>自由報道社/ノイエクルス自由国</name>
+        </author>
+        <summary>ストラフトン周辺で巨大タコの目撃談。正体は販促用のバルーンか（1272年 1月付 自由報道社/ノイエクルス自由国）</summary>
+    </entry>
+    <entry>
+        <title>【政治】全国で着陸記念の祝祭開催さる</title>
+        <link rel="alternate" type="text/html" href=""/>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
+        <id></id>
+        <author>
+            <name>自由報道社/ノイエクルス自由国</name>
+        </author>
+        <summary>全国で着陸記念の祝祭開催さる（1272年 1月付 自由報道社/ノイエクルス自由国）</summary>
     </entry>
     <entry>
         <title>【社会】一部地域で抗議運動激化、政府はインフラ再整備に着手</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>自由報道社/ノイエクルス自由国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>一部地域で抗議運動激化、政府はインフラ再整備に着手（1271年 12月付 自由報道社/ノイエクルス自由国）</summary>
     </entry>
     <entry>
         <title>【速報】テスト国の政府機関が機能停止</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/テスト国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>テスト国の政府機関が機能停止（1271年 11月付 国際ニュースネット/テスト国）</summary>
     </entry>
     <entry>
         <title>【速報】テスト国建国。新政府は国際社会への参加を宣言</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/テスト国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>テスト国建国。新政府は国際社会への参加を宣言（1271年 11月付 国際ニュースネット/テスト国）</summary>
     </entry>
     <entry>
         <title>【政治】統治連で離党の動き？一部が社会党に合流か。アプリコフ氏「統治機構の実現諦めない」</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>人民新聞社/トータエ社会主義人民共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>統治連で離党の動き？一部が社会党に合流か。アプリコフ氏「統治機構の実現諦めない」（1271年 9月付 人民新聞社/トータエ社会主義人民共和国）</summary>
     </entry>
     <entry>
         <title>【政治】ジャーナリスト「石見国内での政治革命は人民の前進の証」&quot;反革命罪&quot;を支持</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>人民新聞社/トータエ社会主義人民共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>ジャーナリスト「石見国内での政治革命は人民の前進の証」&quot;反革命罪&quot;を支持（1270年 11月付 人民新聞社/トータエ社会主義人民共和国）</summary>
     </entry>
     <entry>
         <title>【政治】政府、報道機関の国営化及び国名称の変更を検討中と発表。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>石見中央新聞/石見共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>政府、報道機関の国営化及び国名称の変更を検討中と発表。（1270年 11月付 石見中央新聞/石見共和国）</summary>
     </entry>
     <entry>
         <title>【政治】政府、反革命罪の制定を発表。石見元首相派の党員183名以上を拘束。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>石見中央新聞/石見共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>政府、反革命罪の制定を発表。石見元首相派の党員183名以上を拘束。（1270年 11月付 石見中央新聞/石見共和国）</summary>
     </entry>
     <entry>
         <title>【速報】石見共和国に巨大隕石が国内に落下。政府は被害を調査中。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/石見共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>石見共和国に巨大隕石が国内に落下。政府は被害を調査中。（1270年 11月付 国際ニュースネット/石見共和国）</summary>
     </entry>
     <entry>
         <title>【速報】セビーリャ責任国に巨大隕石が国内に落下。政府は被害を調査中。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/セビーリャ責任国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>セビーリャ責任国に巨大隕石が国内に落下。政府は被害を調査中。（1270年 9月付 国際ニュースネット/セビーリャ責任国）</summary>
     </entry>
     <entry>
         <title>【速報】ロシジュア帝聖平和ドミニウムに巨大隕石が国内に落下。政府は被害を調査中。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/ロシジュア帝聖平和ドミニウム</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>ロシジュア帝聖平和ドミニウムに巨大隕石が国内に落下。政府は被害を調査中。（1270年 3月付 国際ニュースネット/ロシジュア帝聖平和ドミニウム）</summary>
     </entry>
     <entry>
         <title>【政治】党中央「レゲロは瓦礫の中から立ち上がるのではない。常に前進し続ける国家である。」</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>レゲロ労働新聞/レゲロ社会主義人民共和国</name>
         </author>
-        <content></content>
-        <summary></summary>
+        <summary>党中央「レゲロは瓦礫の中から立ち上がるのではない。常に前進し続ける国家である。」（1270年 3月付 レゲロ労働新聞/レゲロ社会主義人民共和国）</summary>
     </entry>
     <entry>
         <title>【速報】ホクリクホームに巨大隕石が国内に落下。政府は被害を調査中。</title>
         <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
+        <published>2026-07-27T11:24:35+09:00</published>
+        <updated>2026-07-27T11:24:35+09:00</updated>
         <id></id>
         <author>
             <name>国際ニュースネット/ホクリクホーム</name>
         </author>
-        <content></content>
-        <summary></summary>
-    </entry>
-    <entry>
-        <title>【経済】相次ぐ巨大隕石災害を踏まえ、輸出強化による財政再建を求める声高まる。</title>
-        <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
-        <id></id>
-        <author>
-            <name>ミュンツェンニュース/イスタシア臨時政権</name>
-        </author>
-        <content></content>
-        <summary></summary>
-    </entry>
-    <entry>
-        <title>【速報】イスタシア臨時政権に巨大隕石が国内に落下。政府は被害を調査中。</title>
-        <link rel="alternate" type="text/html" href=""/>
-        <published>2026-07-27T11:10:39+00:00</published>
-        <updated>2026-07-27T11:10:39+00:00</updated>
-        <id></id>
-        <author>
-            <name>国際ニュースネット/イスタシア臨時政権</name>
-        </author>
-        <content></content>
-        <summary></summary>
+        <summary>ホクリクホームに巨大隕石が国内に落下。政府は被害を調査中。（1269年 8月付 国際ニュースネット/ホクリクホーム）</summary>
     </entry>
 </feed>
