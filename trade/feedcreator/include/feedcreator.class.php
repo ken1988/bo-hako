@@ -850,6 +850,16 @@ class FeedDate {
 	var $unix;
 	
 	/**
+	 * PHP 5+ constructor.
+	 *
+	 * The method named after the class below is retained for compatibility with
+	 * applications that may call it directly.
+	 */
+	function __construct($dateString="") {
+		$this->FeedDate($dateString);
+	}
+
+	/**
 	 * Creates a new instance of FeedDate representing a given date.
 	 * Accepts RFC 822, ISO 8601 date formats as well as unix time stamps.
 	 * @param mixed $dateString optional the date this FeedDate will represent. If not specified, the current date and time is used.
