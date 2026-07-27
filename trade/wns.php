@@ -36,8 +36,8 @@ function UpdateRSS($newID){
 	$rss->useCached();
 	$rss->title = "フリューゲル共同通信";
 	$rss->description = "貿易版箱庭諸国の最新ニュースをお届けします";
-	$rss->link = "https://tanstafl.sakura.ne.jp/";
-	$rss->syndicationURL = "https://tanstafl.sakura.ne.jp/" . ($_SERVER['PHP_SELF'] ?? '');
+	$rss->link = "https://tanstaafl.tokyo/";
+	$rss->syndicationURL = "https://tanstaafl.tokyo/" . ($_SERVER['PHP_SELF'] ?? '');
 	
 	$newall = $this->LatestRSS();
 	
@@ -47,7 +47,7 @@ function UpdateRSS($newID){
 		    $item->link = "";
 		    $item->description = $eachdats['text']."（".$eachdats['gamedate']."付 ".$eachdats['author']."）";
 		    $item->date = $eachdats['date'];
-		    $item->source = "http://www.dailyphp.net";
+		    $item->source = "https://tanstaafl.tokyo/";
 		    $item->author = $eachdats['author'];
 		    $item->author_ip = $eachdats['ip'];
 		    $rss->addItem($item);

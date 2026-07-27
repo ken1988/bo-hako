@@ -5505,7 +5505,7 @@ class Turn {
       $this->log->hugeMeteo($id, $name, $point);
 
 	  //自動ニュース
-	  $news_text = "{$name}に巨大隕石が国内に落下。政府は被害を調査中。";
+	  $news_text = "{$name}に巨大隕石が落下。政府は被害を調査中。";
 	  $news_cat  = "【速報】";
       $this->AutoNews($id, $name, $hako->islandTurn, $news_text, $news_cat);
 
