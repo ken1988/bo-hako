@@ -502,12 +502,13 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		}else{
 			$bannerad = "";
 		}
+    $indadn = "";
 		$indad = "";
 		if ($indnum == ""){
 			$indnum = 0;
 		}
-		$indad = 'ind'.$indnum.'.png';
-		$indad = "<IMG SRC=\"{$indad}\">";
+		$indadn = 'ind'.$indnum.'.png';
+		$indad = "<IMG SRC=\"dash_borad/{$indadn}\">";
 
 
 			if ($polit == 0){
@@ -520,7 +521,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 
 			$hmilpop ="<IMG SRC=\"dash_borad/milpop.png\" width=\"25\" height=\"25\" title=\"軍事力\" ALT=\"軍事力\">";
 			if($polit != 2){
-				$mildat = "陸空軍：{$armypop}　海外部隊：{$sfarmypop}  海軍：{$navypop}（戦艦{$senkan}艦隊）";
+				$mildat = "陸空軍：{$armypop}  海外部隊：{$sfarmypop}  海軍：{$navypop}（戦艦{$senkan}艦隊）";
 			}else{
 				$mildat = "非公開";
 			}
@@ -1205,12 +1206,13 @@ END;
 	$mente = $mentinv + $mentedc + $cmente + $mentsoc;
 	$mentad ="<IMG SRC=\"coin.gif\" width=\"20\" height=\"20\" title=\"インフラ：{$mentinv}{$init->unitMoney} 　教育：{$mentedc}{$init->unitMoney} 　公務：{$cmente}{$init->unitMoney}　　社会保障：{$mentsoc}{$init->unitMoney}\" ALT=\"インフラ：{$mentinv}{$init->unitMoney}\"> {$mente}{$init->unitMoney}";
 	//工業レベル
+	$indadn = "";
 	$indad = "";
 	if ($indnum == ""){
 		$indnum = 0;
 	}
-	$indad = 'ind'.$indnum.'.png';
-	$indad = "<IMG SRC=\"{$indad}\" align=\"left\">";
+	$indadn = 'ind'.$indnum.'.png';
+	$indad = "<IMG SRC=\"dash_borad/{$indadn}\" align=\"left\">";
 	$latestnews = $wns->MakeHTML(10,$init->baseDir);
 
       if(!($init->moneyMode) || ($mode == 1)) {
