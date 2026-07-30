@@ -572,6 +572,22 @@ h2.Turn {
   max-width: 100%;
 }
 
+/* ニュース本文は40文字に見合う幅を上限とし、狭い画面でははみ出さないようにします。 */
+#NewsBox table {
+  width: 100%;
+}
+
+#NewsBox .news-content-field {
+  width: 100%;
+}
+
+#NewsBox #news_text {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 40em;
+  min-width: 0;
+}
+
 /* Hidden form fields sit between each setting and its action button in
  * templates/banners.html, so they do not create any visual separation. */
 #toyBox input[type="submit"] {
