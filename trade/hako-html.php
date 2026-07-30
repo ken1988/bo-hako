@@ -971,7 +971,7 @@ class HtmlMap extends HTML {
     $ownerPage = htmlspecialchars($GLOBALS['THIS_FILE'], ENT_QUOTES);
     print <<<END
 <nav id="owner-section-nav" class="owner-section-nav" aria-label="開発画面の設定項目">
-<a href="{$ownerPage}#owner-daily-communication">最新情報・貿易</a>
+<a href="{$ownerPage}#owner-daily-communication">情報・貿易</a>
 <a href="{$ownerPage}#owner-national-settings">国家設定</a>
 <a href="{$ownerPage}#owner-related-links">関連リンク</a>
 <a href="{$ownerPage}#owner-display-settings">表示設定</a>
