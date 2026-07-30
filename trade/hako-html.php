@@ -1545,7 +1545,7 @@ END;
    $j = 0;
    $year = Util::MKCal($hako->islandTurn,1);
    $o_year = $year - 2;
-   $url = "https://tanstafl.sakura.ne.jp/trade/NEST.php?from={$o_year}&to={$year}&id={$island['id']}";
+   $url = "https://tanstaafl.tokyo/trade/NEST.php?from={$o_year}&to={$year}&id={$island['id']}";
    $json = file_get_contents($url);
    $nest_rep = json_decode($json,true);
    $nest_html = Util::MakeNest($nest_rep,$island['name']);
