@@ -1155,30 +1155,30 @@ END;
     }
 	  $happiad = "";
 	  if($hapiness > 81) {
-        $happiad .= "<IMG SRC=\"happy1.png\"";
+        $happiad .= "<IMG SRC=\"dash_borad/happy1.png\"";
       } elseif($hapiness > 61) {
-        $happiad .= "<IMG SRC=\"happy2.png\"";
+        $happiad .= "<IMG SRC=\"dash_borad/happy2.png\"";
       } elseif($hapiness > 41) {
-        $happiad .= "<IMG SRC=\"happy3.png\"";
+        $happiad .= "<IMG SRC=\"dash_borad/happy3.png\"";
       } elseif($hapiness > 21) {
-        $happiad .= "<IMG SRC=\"happy4.png\"";
+        $happiad .= "<IMG SRC=\"dash_borad/happy4.png\"";
       } else {
-        $happiad .= "<IMG SRC=\"happy5.png\"";
+        $happiad .= "<IMG SRC=\"dash_borad/happy5.png\"";
       }
        $happiad .= "width=\"20\" height=\"20\" title=\"幸福度： {$hapiness}\" ALT=\"幸福度： {$hapiness}\"> {$hapiness}";
 
 	$invest = ceil($invest);
 	$investad = "";
 	if ($invest > 0){
-		$investad .="<IMG SRC=\"public.png\" width=\"20\" height=\"20\" title=\"インフラ指数： {$invest}\" ALT=\"インフラ指数： {$invest}\"> {$invest}";
+		$investad .="<IMG SRC=\"dash_borad/public.png\" width=\"20\" height=\"20\" title=\"インフラ指数： {$invest}\" ALT=\"インフラ指数： {$invest}\"> {$invest}";
     }
 	$edinv = ceil($edinv);
 	$edcad = "";
 	if ($edinv > 0){
-		$edcad .="<IMG SRC=\"edc.png\" width=\"20\" height=\"20\" title=\"教育指数：{$edinv}\" ALT=\"教育指数：{$edinv}\"> {$edinv}";
+		$edcad .="<IMG SRC=\"dash_borad/edc.png\" width=\"20\" height=\"20\" title=\"教育指数：{$edinv}\" ALT=\"教育指数：{$edinv}\"> {$edinv}";
 	}
 	$socad = "";
-	$socad .="<IMG SRC=\"socsec.png\" width=\"20\" height=\"20\" title=\"社会保障指数：{$soclv}\" ALT=\"社会保障指数：{$soclv}\"> {$soclv}";
+	$socad .="<IMG SRC=\"dash_borad/socsec.png\" width=\"20\" height=\"20\" title=\"社会保障指数：{$soclv}\" ALT=\"社会保障指数：{$soclv}\"> {$soclv}";
 
 	$bannerad = "img/up/log";
 	$bannerPath = $bannerad.'/'.$banum.'.png';
