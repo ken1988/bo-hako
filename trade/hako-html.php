@@ -477,7 +477,7 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 		$invest = ceil($invest);
 		$investad = "";
 		if ($invest > 0){
-			$investad .="<IMG SRC=\"dash_borad/public.png\" width=\"23\" height=\"23\" title=\"インフラ指数： {$invest}\" ALT=\"インフラ指数： {$invest}\"><br/> {$invest}";
+			$investad .="<IMG SRC=\"dash_borad/public.png\" width=\"23\" height=\"23\" title=\"インフラ指数： {$invest}\" ALT=\"インフラ指数：{$invest}\"><br/> {$invest}";
 	    }
 		$edinv = ceil($edinv);
 		$edcad = "";
@@ -593,16 +593,17 @@ if (($islandListStart != 1) || ($islandListSentinel != $hako->islandNumber)) {
 			<li class=\"IndD\">政体<br/>{$politad}
 			<div  class=\"databox\"><p>政体：{$poltype}<br/>行政：{$scapital}（Lv{$capital}）</p></div></a></li>
 			<li class=\"IndD\">幸福<br/>{$happiad}
-			<div class=\"databox\"><p>幸福度</p></div></a></li>
+			<div class=\"databox\"><p>幸福度：{$hapiness}</p></div></a></li>
 			<li class=\"IndD\">福祉<br/>{$socad}
-			<div class=\"databox\"><p>社会保障</p></div></a></li>
+			<div class=\"databox\"><p>社会保障指数：{$soclv}</p></div></a></li>
 			<li class=\"IndD\">国土<br/>{$investad}
-			<div  class=\"databox\"><p>インフラ</p></div></a></li>
+			<div  class=\"databox\"><p>インフラ指数：{$invest}</p></div></a></li>
 			<li class=\"IndD\">教育<br/>{$edcad}
-			<div  class=\"databox\"><p>教育</p></div></a></li>
+			<div  class=\"databox\"><p>教育指数：{$edinv}</p></div></a></li>
 			<li class=\"IndD\">軍隊<br/>{$hmilpop}
 			<div  class=\"databox\"><p>{$mildat}</p></div></a></li>
-			<li class=\"IndD\">国情<div  class=\"databox\">
+			<li class=\"IndD\">国情<br /><IMG SRC=\"dash_borad/paper_content.png\" width=\"25\" height=\"25\">
+      <div  class=\"databox\">
 			<p>
 			<a href=\"{$wiki_link}\">国情報<IMG SRC=\"dash_borad/paper_content.png\" width=\"30\" height=\"30\"></a>
 			<a href=\"{$trade_link}\">貿易情報<IMG SRC=\"dash_borad/table.png\" width=\"30\" height=\"30\" ALT=\"貿易情報\"></a>
