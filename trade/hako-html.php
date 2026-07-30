@@ -852,15 +852,15 @@ END;
   $nest_html = Util::MakeNest($nest_rep,$island['name']);
   $nest_dat = Util::MakeNest2($nest_rep);
   echo "<script>\n";
-  echo "var data = [];\n";
+  echo "window.balanceReportData = [];\n";
   foreach($nest_dat as $nest_item){
   print <<<END
-  var item{$j} = google.visualization.arrayToDataTable([
+  var item{$j} = [
   ['','{$init->accountName['1000'][1]}', '{$init->accountName['2000'][1]}', '{$init->accountName['3000'][1]}', '{$init->accountName['4000'][1]}', '{$init->accountName['6000'][1]}',
   '{$init->accountName['7000'][1]}', '{$init->accountName['9000'][1]}','{$init->accountName['9998'][1]}','{$init->accountName['9999'][1]}', { role: 'annotation' } ],
-  ['支出', , , , ,{$nest_item[4]},{$nest_item[5]},{$nest_item[6]}, ,{$nest_item[8]},''],
-  ['収入',{$nest_item[0]} ,{$nest_item[1]} ,{$nest_item[2]} ,{$nest_item[3]}, , , ,{$nest_item[7]}, ,'']]);\n
-  data.push(item{$j});\n
+  ['支出', null, null, null, null,{$nest_item[4]},{$nest_item[5]},{$nest_item[6]}, null,{$nest_item[8]},''],
+  ['収入',{$nest_item[0]} ,{$nest_item[1]} ,{$nest_item[2]} ,{$nest_item[3]}, null, null, null,{$nest_item[7]}, null,'']];\n
+  window.balanceReportData.push(item{$j});\n
 END;
   $j++;
   }
@@ -1552,15 +1552,15 @@ END;
    $nest_dat = Util::MakeNest2($nest_rep);
    echo $nest_html;
    echo "<script>\n";
-   echo "var data = [];\n";
+   echo "window.balanceReportData = [];\n";
    foreach($nest_dat as $nest_item){
    print <<<END
-   var item{$j} = google.visualization.arrayToDataTable([
+   var item{$j} = [
    ['','{$init->accountName['1000'][1]}', '{$init->accountName['2000'][1]}', '{$init->accountName['3000'][1]}', '{$init->accountName['4000'][1]}', '{$init->accountName['6000'][1]}',
    '{$init->accountName['7000'][1]}', '{$init->accountName['9000'][1]}','{$init->accountName['9998'][1]}','{$init->accountName['9999'][1]}', { role: 'annotation' } ],
-   ['支出', , , , ,{$nest_item[4]},{$nest_item[5]},{$nest_item[6]}, ,{$nest_item[8]},''],
-   ['収入',{$nest_item[0]} ,{$nest_item[1]} ,{$nest_item[2]} ,{$nest_item[3]}, , , ,{$nest_item[7]}, ,'']]);\n
-   data.push(item{$j});\n
+   ['支出', null, null, null, null,{$nest_item[4]},{$nest_item[5]},{$nest_item[6]}, null,{$nest_item[8]},''],
+   ['収入',{$nest_item[0]} ,{$nest_item[1]} ,{$nest_item[2]} ,{$nest_item[3]}, null, null, null,{$nest_item[7]}, null,'']];\n
+   window.balanceReportData.push(item{$j});\n
 END;
 	$j++;
 	}

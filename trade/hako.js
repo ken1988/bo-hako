@@ -122,7 +122,7 @@ $(function(){
 	$('#wstattable').visualize({type: 'line',width: '700px', title: '人口統計',colFilter: ':lt(4)',parseDirection: 'y'});
 
 	$('.show_table').click(function(){
-	var num = this.id;
+	var num = Number(this.id);
 	var options = {
 	    title: '収支レポート',
 	    width: 300,
@@ -132,8 +132,22 @@ $(function(){
 	    isStacked: true
 	};
 	
-	var chart = new google.visualization.ColumnChart(document.getElementById('show_graph'));
-	chart.draw(data[num], options);
+	var drawChart = function() {
+		if (!window.balanceReportData || !window.balanceReportData[num]) {
+			return;
+		}
+
+		var data = google.visualization.arrayToDataTable(window.balanceReportData[num]);
+		var chart = new google.visualization.ColumnChart(document.getElementById('show_graph'));
+		chart.draw(data, options);
+	};
+
+	// Google Charts のパッケージ読み込みは非同期のため、完了後に描画する。
+	if (google.visualization && google.visualization.ColumnChart) {
+		drawChart();
+	} else {
+		google.charts.setOnLoadCallback(drawChart);
+	}
 	});
 
 
