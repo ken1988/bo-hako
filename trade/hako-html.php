@@ -1451,7 +1451,7 @@ $kinds
 </select>
 </td>
 <td>
-<input type="text" id="sel_val" name="num" autocomplete="on" list="vals" maxlength="3" size="20">
+<input type="text" id="sel_val" name="num" autocomplete="on" list="vals" maxlength="3" size="3">
 <datalist id="vals">
 $num
 </datalist>
@@ -1469,6 +1469,7 @@ $num
 <input id="regtsb" type="submit" value="記録">
 </td>
 </tr>
+</table><br />
 END;
   }
   //---------------------------------------------------
@@ -1534,7 +1535,7 @@ END;
 		  print "<td>{$nallow}</td><td>{$target}へ{$value}{$unit}を{$kind}する</td><td>{$turn}</td><td>{$cancel}{$nacanl}</td></tr>\n";
 	    }
 	}
-    print "<td></td><td></td><td></td><td><input type=\"submit\" name=\"DEL\" value=\"削除\"></td></form></table>\n";
+    print "<td colspan=\"6\" align=\"right\"><input type=\"submit\" name=\"DEL\" value=\"削除\"></td></table></form>\n";
   }
   //---------------------------------------------------
   // 収支出力
