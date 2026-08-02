@@ -5318,23 +5318,25 @@ class Turn {
         // どこに現れるか決める
 		if($fzorasu == true){
 			$clcel = array();
-			for($i = 0; $i < $init->islandSize; $i++){
-				//横方向
-				if($land[$i][0]==$init->landSea){
-					array_push($clcel,"{$i},0");
+			$edge = $init->islandSize - 1;
+			// 上下の外洋。四隅もここで一度だけ調べる。
+			for($x = 0; $x < $init->islandSize; $x++){
+				if($land[$x][0] == $init->landSea){
+					$clcel[] = "{$x},0";
 				}
-				if($land[$i][20]==$init->landSea){
-					array_push($clcel,"{$i},20");
-				}
-				//縦方向
-				if($land[0][$i]==$init->landSea){
-					array_push($clcel,"0,{$i}");
-				}
-				if($land[20][$i]==$init->landSea){
-					array_push($clcel,"20,{$i}");
+				if($land[$x][$edge] == $init->landSea){
+					$clcel[] = "{$x},{$edge}";
 				}
 			}
-			$clcel = array_unique($clcel);
+			// 左端の外洋は奇数行のみ。上下端を除き、右端と併せて調べる。
+			for($y = 1; $y < $edge; $y++){
+				if(($y % 2 == 1) && ($land[0][$y] == $init->landSea)){
+					$clcel[] = "0,{$y}";
+				}
+				if($land[$edge][$y] == $init->landSea){
+					$clcel[] = "{$edge},{$y}";
+				}
+			}
 			if(count($clcel)!=0){
 				//海がある
 				$pnum = Util::random(count($clcel));
