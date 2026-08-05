@@ -5891,7 +5891,7 @@ class Turn {
   //---------------------------------------------------
   // 広域被害ルーチン
   //---------------------------------------------------
-  function wideDamage($id, $name, $land, $landValue, $x, $y) {
+  function wideDamage($id, $name, &$land, &$landValue, $x, $y) {
     global $init;
 
     for($i = 0; $i < 19; $i++) {
@@ -5972,7 +5972,7 @@ class Turn {
   //---------------------------------------------------
   // 広域被害ルーチン2
   //---------------------------------------------------
-  function oilwideDamage($id, $name, $land, $landValue, $x, $y) {
+  function oilwideDamage($id, $name, &$land, &$landValue, $x, $y) {
     global $init;
 
     for($i = 0; $i < 7; $i++) {
