@@ -2153,7 +2153,7 @@ class Turn {
 					$this->log->landFail($id, $name, $comName, $landName, $point);
 					break;
 				} else {
-		            // 目的の場所を精製工場に
+		            // 目的の場所を畜産場に
 		            $land[$x][$y] = $init->landFFactory;
 		            $landValue[$x][$y] = 25; // 規模 = 25(*10)
 	            $island['material'] -= 50;
@@ -2172,7 +2172,7 @@ class Turn {
 					$this->log->landFail($id, $name, $comName, $landName, $point);
 					break;
 				} else {
-		            // 目的の場所を砲弾工場に
+		            // 目的の場所を軍事工場に
 		            $land[$x][$y] = $init->landSFactory;
 		            $landValue[$x][$y] = 10; // 規模 = 10メガトン
 					}
