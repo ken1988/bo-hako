@@ -2060,6 +2060,7 @@ class Turn {
 	        if($landKind != $init->landOil) {
 	          $land[$x][$y] = $init->landOil;
 	          $landValue[$x][$y] = 1; // 候補地
+	          $this->log->landSuc($id, $name, $comName, $point);
 	        } else {
 	          $landValue[$x][$y] ++;
 	          if($landValue[$x][$y] > 10){
