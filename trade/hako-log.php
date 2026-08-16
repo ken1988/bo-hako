@@ -73,6 +73,11 @@ class Log extends LogIO {
     global $init;
     $this->out("<A href=\"{$GLOBALS['THIS_FILE']}?Sight={$id}\">{$init->tagName_}{$name}{$init->_tagName}</A>で予定されていた{$init->tagComName_}{$comName}{$init->_tagComName}は、予定地の{$init->tagName_}{$point}{$init->_tagName}が<strong>{$kind}</strong>だったため中止されました。",$id);
   }
+  // 専門工場が最大規模のため増設できない
+  function factoryMax($id, $name, $comName, $kind, $point) {
+    global $init;
+    $this->out("<A href=\"{$GLOBALS['THIS_FILE']}?Sight={$id}\">{$init->tagName_}{$name}{$init->_tagName}</A>で予定されていた{$init->tagComName_}{$comName}{$init->_tagComName}は、予定地の{$init->tagName_}{$point}{$init->_tagName}にある<strong>{$kind}が最大規模</strong>のため中止されました。",$id);
+  }
   // 対象地形の条件による失敗
   function JoFail($id, $name, $comName, $kind, $point) {
     global $init;
