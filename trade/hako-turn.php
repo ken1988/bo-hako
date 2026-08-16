@@ -3648,17 +3648,17 @@ class Turn {
 		break;
 	  }
       // ターゲット取得
-      $tn = $hako->idToNumber[$target];
-      $tIsland = $hako->islands[$tn];
-      $tName = $tIsland['name'];
-
-      if($tn != 0 && empty($tn)) {
+      if(!isset($hako->idToNumber[$target])) {
         // ターゲットがすでにない
         $this->log->msNoTarget($id, $name, $comName);
 
         $returnMode = 0;
         break;
       }
+
+      $tn = $hako->idToNumber[$target];
+      $tIsland = $hako->islands[$tn];
+      $tName = $tIsland['name'];
 
       if(($hako->islandTurn - $island['starturn']) < $init->noMissile ||
 	  ($island['pop'] < $init->limitpop)) {
