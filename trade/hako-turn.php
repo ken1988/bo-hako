@@ -2163,9 +2163,11 @@ class Turn {
 	        } elseif($arg == 1){
 	          if($landKind == $init->landSFactory) {
 	            // すでに軍事工場の場合
-	            if($landValue[$x][$y] < 142) {
-	              $landValue[$x][$y] += 10;
+	            if($landValue[$x][$y] >= $init->maxSFactorySize) {
+	              $this->log->factoryMax($id, $name, $comName, $landName, $point);
+	              break;
 	            }
+	            $landValue[$x][$y] = min($landValue[$x][$y] + 10, $init->maxSFactorySize);
 	          } else {
 			  	if ($landKind == $init->landFFactory || $landKind == $init->landMFactory) {
 					//精製工場or建材工場だったら
@@ -2183,9 +2185,11 @@ class Turn {
 	        } else {
 	          if($landKind == $init->landMFactory) {
 	            // すでに建材工場の場合
-	            if($landValue[$x][$y] < 172 ) {
-	              $landValue[$x][$y] += 30;
+	            if($landValue[$x][$y] >= $init->maxMFactorySize) {
+	              $this->log->factoryMax($id, $name, $comName, $landName, $point);
+	              break;
 	            }
+	            $landValue[$x][$y] = min($landValue[$x][$y] + 30, $init->maxMFactorySize);
 	          } else {
 			  	if ($landKind == $init->landFFactory || $landKind == $init->landSFactory) {
 					//精製工場or軍事工場だったら
