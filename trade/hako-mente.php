@@ -195,7 +195,7 @@ class Main {
   }
   //----------------------------------------
   function parseInputData() {
-    $this->mode = $_POST['mode'];    
+    $this->mode = $_POST['mode'] ?? '';
     if(!empty($_POST)) {
       foreach($_POST as $name => $value) {
 //        $value = Util::sjis_convert($value);

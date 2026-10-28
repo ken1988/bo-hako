@@ -91,7 +91,7 @@ class HakoIO {
   //---------------------------------------------------
   function readIslandsFile(&$cgi) {
     global $init;
-    $num = $cgi->dataSet['ISLANDID'];
+    $num = $cgi->dataSet['ISLANDID'] ?? 0;
 
     $fileName = "{$init->dirName}/hakojima.dat";
     if(!is_file($fileName)) {

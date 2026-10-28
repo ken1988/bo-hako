@@ -516,7 +516,7 @@ class Hako extends HakoIO {
       $maizo = (int)($lv / 10) * 50;
       $image = 'land15.gif';
       $naviTitle = '採石場';
-      $naviText = "Lv{$level} 埋蔵量{$maizo}{$init->unitSulfur}";
+      $naviText = "Lv{$level} 埋蔵量{$maizo}{$init->unitStone}";
       break;
     case $init->landCoal:
       // 炭坑

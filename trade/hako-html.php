@@ -785,7 +785,7 @@ END;
   //---------------------------------------------------
   function setStyleSheet() {
     global $init;
-    $styleSheet;
+    $styleSheet = '';
     for($i = 0; $i < count($init->cssList); $i++) {
       $styleSheet .= "<option value=\"{$init->cssList[$i]}\">{$init->cssList[$i]}</option>\n";
     }
@@ -1374,6 +1374,9 @@ END;
         $j = $i + 1;
         $com = $command[$i];
         if($com['kind'] < 40) {
+          if (!isset($comStr[$com['x']][$com['y']])) {
+            $comStr[$com['x']][$com['y']] = '';
+          }
           $comStr[$com['x']][$com['y']] .=
             "[{$j}]{$init->comName[$com['kind']]} ";
         }
@@ -1771,14 +1774,14 @@ END;
 END;
     for($i = 0; $i < $init->lbbsMax; $i++) {
       $j = $i + 1;
-      $line = $lbbs[$i];
-      list($secret, $sTemp, $mode, $turn, $message, $color) = explode(">", $line);
-      list($sName, $sId) = explode(",", $sTemp);
-      $sNo = $hako->idToNumber[$sId];
+      $line = $lbbs[$i] ?? '';
+      list($secret, $sTemp, $mode, $turn, $message, $color) = array_pad(explode(">", $line, 6), 6, '');
+      list($sName, $sId) = array_pad(explode(",", $sTemp, 2), 2, '');
+      $sNo = $hako->idToNumber[$sId] ?? null;
       print "<tr><th>{$init->tagNumber_}{$j}{$init->_tagNumber}</th>";
       $speaker = '';
       if($init->lbbsSpeaker && ($sName != '')) {
-        if($sNo == '0' || !empty($sNo)) {
+        if($sNo !== null) {
           $speaker = " <font color=gray><b><small>(<a style=\"text-decoration:none\" href=\"{$GLOBALS['THIS_FILE']}?Sight={$sId}\">{$sName}</a>)</small></b></font>";
         } else {
           $speaker = " <font color=gray><b><small>({$sName})</small></b></font>";
