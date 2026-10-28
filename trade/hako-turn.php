@@ -1766,7 +1766,7 @@ class Turn {
       $island['stone'] -= -$stonecost;
       if($kind == $init->comReclaim2) {
         // 造成はターン消費せず
-        $island['reclaim2']++;
+        $island['reclaim2'] = ($island['reclaim2'] ?? 0) + 1;
         $returnMode =  0;
       } else {
          // 埋め立てはターン消費
@@ -1813,7 +1813,7 @@ class Turn {
       $island['money'] -= $cost;
       if($kind == $init->comDestroy2) {
         // 連続はターン消費せず
-        $island['destroy2']++;
+        $island['destroy2'] = ($island['destroy2'] ?? 0) + 1;
         $returnMode =  0;
       } else {
          // 埋め立てはターン消費
@@ -5293,6 +5293,7 @@ class Turn {
 		  {
         // 怪獣出現
         // 種類を決める
+        $fzorasu = false;
         if($island['monstersend'] > 0) {
           // 揚陸艦
 		  $fzorasu = true;
@@ -6051,6 +6052,7 @@ class Turn {
     $name = $island['name']; // ログ出力用
     $id = $island['id']; // ログ出力用
     $pfuel = 0; // ログ出力用
+    $pfood = 0; // 燃料不足などで生産しない場合
 
     if(($island['wood'] > 0) && (($island['pop'] / 100) >= 1)){
       $num  = (int)($island['pop'] / 100);
@@ -6254,8 +6256,10 @@ if($island['ffactory']> 0){
     $island['food'] = round($island['food'] - $pop * $init->eatenFood - $value * 10 * $init->eatenFood);
 
 	//畜産幸福
-	if($island['alcohol'] > 0){
-		$mneeds = round($pop/10);
+	// 需要が丸めで0になる小人口・無人島では消費も幸福度加算もしない。
+	$mneeds = round($pop/10);
+	$island['percat'] = 0;
+	if($island['alcohol'] > 0 && $mneeds > 0){
 		$mcoms = min($mneeds,$island['alcohol']);
 		$percat = round($island['alcohol']/$mneeds*10);
 		if($percat > 10){
@@ -6279,7 +6283,9 @@ if($island['ffactory']> 0){
     $nest_item = array ("id" => $id, "account" => "2000", "amount" => $smoney);
 	array_push($island['nest'], $nest_item);
 
-	$mentesoc = ceil($island['point']/10*(($island['factory']/2 + $island['market'])/$island['pop'])*$soclv/100);
+	$mentesoc = ($pop > 0)
+		? ceil($island['point']/10*(($island['factory']/2 + $island['market'])/$pop)*$soclv/100)
+		: 0;
 	$island['fsocst'] = False;
 
 	//公務員維持費
@@ -6726,7 +6732,9 @@ if($island['ffactory']> 0){
 	}
 
 	//幸福度関係
-	$unemployed = ($pop - ($service + $farm + $factory + $market) * 10 ) / $pop;
+	$unemployed = ($pop > 0)
+		? ($pop - ($service + $farm + $factory + $market) * 10 ) / $pop
+		: 0;
 
 	$industry = array("農業"=>$farm,"工業"=>$factory,"商業"=>$market);
 	arsort($industry);
@@ -6747,8 +6755,12 @@ if($island['ffactory']> 0){
 			$hapiness = $hapiness * (1 - $unemployed * 0.5);//失業者の幸福度4割減
 		}
 	}
-	$hapiness = $hapiness * (1 + $farm * 10 / $pop * 0.2); //農民は無条件で幸福度20%Up
-	$hapiness = ((int)($hapiness / $pop)); #1人あたり幸福度
+	if ($pop > 0) {
+		$hapiness = $hapiness * (1 + $farm * 10 / $pop * 0.2); //農民は無条件で幸福度20%Up
+		$hapiness = ((int)($hapiness / $pop)); #1人あたり幸福度
+	} else {
+		$hapiness = 0;
+	}
 	if($fsocst != True){
 		$hapiness += ceil($island['soclv']*0.2);
 	}
@@ -6842,7 +6854,7 @@ if($island['ffactory']> 0){
     $island['ship']['tansaku'] = $tansaku;
     $island['ship']['senkan'] = $senkan;
     $island['ship']['viking'] = $viking;
-	$island['hapiness'] = $hapiness;
+	$island['hapiness'] = ($pop > 0) ? $hapiness : 0;
 	$island['capital']  = $capital;
 	$island['Cname']	= $Cname;
 	$island['service']  = $service;
