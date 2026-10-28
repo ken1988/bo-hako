@@ -3,9 +3,10 @@
 header("Content-Type: application/json; charset=UTF-8");
 header("X-Content-Type-Options: nosniff");
 
-$from_year = htmlentities($_GET['from'], ENT_QUOTES, "utf-8");
-$to_year =  htmlentities($_GET['to'], ENT_QUOTES, "utf-8");
-$id = htmlentities($_GET['id'], ENT_QUOTES, "utf-8");
+$mode = '';
+$from_year = htmlentities($_GET['from'] ?? '', ENT_QUOTES, "utf-8");
+$to_year =  htmlentities($_GET['to'] ?? '', ENT_QUOTES, "utf-8");
+$id = htmlentities($_GET['id'] ?? '', ENT_QUOTES, "utf-8");
 
 if(empty($_GET['id'])){
 	$mode = 'ALL';
